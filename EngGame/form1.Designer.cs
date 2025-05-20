@@ -81,9 +81,11 @@
             // 
             // titlePictureBox
             // 
+            titlePictureBox.Image = Properties.Resources.name;
             titlePictureBox.Location = new Point(431, 0);
             titlePictureBox.Name = "titlePictureBox";
             titlePictureBox.Size = new Size(400, 400);
+            titlePictureBox.SizeMode = PictureBoxSizeMode.CenterImage;
             titlePictureBox.TabIndex = 6;
             titlePictureBox.TabStop = false;
             // 
@@ -141,7 +143,7 @@
             Name = "Form1";
             Padding = new Padding(1);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "room escape";
             Load += From1_load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)titlePictureBox).EndInit();
