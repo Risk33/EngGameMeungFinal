@@ -40,7 +40,6 @@ namespace EngGame.screens
         {
             UpdateDialog();
         }
-        int test;
 
         int num = 0;
         bool center = true;
