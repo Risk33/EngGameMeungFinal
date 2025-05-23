@@ -83,6 +83,26 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap mainScreen {
+            get {
+                object obj = ResourceManager.GetObject("mainScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap PlayButton {
+            get {
+                object obj = ResourceManager.GetObject("PlayButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap SampleDialogBox {
             get {
                 object obj = ResourceManager.GetObject("SampleDialogBox", resourceCulture);
@@ -96,6 +116,26 @@ namespace EngGame.Properties {
         internal static System.Drawing.Bitmap SampleDialogBox1 {
             get {
                 object obj = ResourceManager.GetObject("SampleDialogBox1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SchoolButton {
+            get {
+                object obj = ResourceManager.GetObject("SchoolButton", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap SchoolButton1 {
+            get {
+                object obj = ResourceManager.GetObject("SchoolButton1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
