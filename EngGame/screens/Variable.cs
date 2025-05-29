@@ -14,6 +14,15 @@ namespace EngGame.screens
 {
     class Variable
     {
+        static Boolean noise = false;
+        public static void NoiseMade()
+        {
+            noise = true;
+        }
+        public static Boolean IsNoiseMaid()
+        {
+            return noise;
+        }
         public static int checkDialog(String dialog)
         {
             try
