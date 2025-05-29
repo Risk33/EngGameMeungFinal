@@ -184,9 +184,8 @@ namespace EngGame.screens.chap1
                 {
                     nextScreenBadEnd1();
                 }
-                    
-                
-                
+                wmp.URL = @".\Resources\sound\chainDrop.mp3";
+                wmp.controls.play();
             }
         }
 

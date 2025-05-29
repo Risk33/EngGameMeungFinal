@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using EngGame.Properties;
 
 namespace EngGame.screens.chap1
 {
@@ -49,7 +50,7 @@ namespace EngGame.screens.chap1
             catch
             {
                 Console.WriteLine("화면1의 끝입니다.");
-            } // 대사가 끝나면 다음 씬으로
+            } // 대사가 끝나면 중단
 
 
             int returnEventNum;
@@ -85,6 +86,8 @@ namespace EngGame.screens.chap1
                     {
                         case 1:
                             pictureBox1.Visible = true;
+                            enter_button.Visible = true;
+                            peek_button.Visible = true;
                             break;
                     }
 
@@ -103,6 +106,36 @@ namespace EngGame.screens.chap1
                 { "","지하에 도착했다. 어떻게 해야할까?", "imageOpen/eventTempStop" },
     }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
-        
+        private void peek_button_Click(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Resources.배경_제사실_내부_peek;
+            dialog1.Text = "일단은 안전한거 같은데. 친구의 모습은 보이지 않는다." +
+                            "\n...손만 대었는데 문이 삐걱거린다..";
+            peek_button.Visible = false;
+            enter_button.Visible = false;
+            back.Visible = true;
+        }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Resources.배경_제사실_앞;
+            dialog1.Text = "어떻게 할까?";
+            peek_button.Visible = true;
+            enter_button.Visible = true;
+            back.Visible = false;
+        }
+
+        screens.chap1.Scene3 scene3 = new Scene3();
+        private void nextScreen()
+        {
+            panel1.Controls.Clear();
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(scene3);
+        }
+
+        private void enter_button_Click(object sender, EventArgs e)
+        {
+            nextScreen();
+        }
     }
 }

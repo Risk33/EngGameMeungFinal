@@ -193,6 +193,26 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 배경_제사실_내부 {
+            get {
+                object obj = ResourceManager.GetObject("배경.제사실_내부", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 배경_제사실_내부_peek {
+            get {
+                object obj = ResourceManager.GetObject("배경.제사실_내부_peek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 배경_제사실_앞 {
             get {
                 object obj = ResourceManager.GetObject("배경.제사실_앞", resourceCulture);

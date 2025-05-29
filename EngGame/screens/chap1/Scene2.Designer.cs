@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene2));
             panel1 = new Panel();
+            back = new Button();
+            enter_button = new Button();
+            peek_button = new Button();
             dialog1 = new Label();
             name = new Label();
             dialogBox = new PictureBox();
@@ -42,6 +45,9 @@
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.Controls.Add(back);
+            panel1.Controls.Add(enter_button);
+            panel1.Controls.Add(peek_button);
             panel1.Controls.Add(dialog1);
             panel1.Controls.Add(name);
             panel1.Controls.Add(dialogBox);
@@ -52,6 +58,39 @@
             panel1.TabIndex = 0;
             panel1.MouseClick += panel1_MouseClick;
             // 
+            // back
+            // 
+            back.Location = new Point(38, 32);
+            back.Name = "back";
+            back.Size = new Size(130, 38);
+            back.TabIndex = 11;
+            back.Text = "뒤로 가기";
+            back.UseVisualStyleBackColor = true;
+            back.Visible = false;
+            back.Click += back_Click;
+            // 
+            // enter_button
+            // 
+            enter_button.Location = new Point(951, 414);
+            enter_button.Name = "enter_button";
+            enter_button.Size = new Size(169, 38);
+            enter_button.TabIndex = 10;
+            enter_button.Text = "진입하기";
+            enter_button.UseVisualStyleBackColor = true;
+            enter_button.Visible = false;
+            enter_button.Click += enter_button_Click;
+            // 
+            // peek_button
+            // 
+            peek_button.Location = new Point(951, 368);
+            peek_button.Name = "peek_button";
+            peek_button.Size = new Size(169, 38);
+            peek_button.TabIndex = 9;
+            peek_button.Text = "엿보기";
+            peek_button.UseVisualStyleBackColor = true;
+            peek_button.Visible = false;
+            peek_button.Click += peek_button_Click;
+            // 
             // dialog1
             // 
             dialog1.Anchor = AnchorStyles.Top;
@@ -60,11 +99,11 @@
             dialog1.CausesValidation = false;
             dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.White;
-            dialog1.Location = new Point(577, 314);
+            dialog1.Location = new Point(368, 311);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(90, 47);
+            dialog1.Size = new Size(519, 47);
             dialog1.TabIndex = 8;
-            dialog1.Text = "철컥";
+            dialog1.Text = "자물쇠를 풀고 지하로 내려갔다.";
             // 
             // name
             // 
@@ -97,7 +136,7 @@
             pictureBox1.BackColor = Color.Black;
             pictureBox1.BackgroundImage = Properties.Resources.배경_제사실_앞;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(0, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1262, 679);
             pictureBox1.TabIndex = 0;
@@ -125,5 +164,8 @@
         private Label name;
         private PictureBox dialogBox;
         private Label dialog1;
+        private Button enter_button;
+        private Button peek_button;
+        private Button back;
     }
 }

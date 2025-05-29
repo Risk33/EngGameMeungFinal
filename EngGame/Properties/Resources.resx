@@ -121,6 +121,9 @@
   <data name="hint1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\hint1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="자물쇠_교실" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\자물쇠_교실.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SampleDialogBox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SampleDialogBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -133,9 +136,6 @@
   <data name="배경.학교_상담실_낮" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\배경.학교_상담실_낮.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mainScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="cat reacts" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cat reacts.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,31 +145,37 @@
   <data name="배경.제사실_앞" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\배경.제사실_앞.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="A1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\puzzle\A.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="simpleName" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\simpleName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chain1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\chain.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\학교\puzzle\A.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="simpleName" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\simpleName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="자물쇠_교실" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\학교\자물쇠_교실.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mainScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="badend1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\badend1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="chain2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\puzzle\chain.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="A1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\puzzle\A.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SampleDialogBox1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SampleDialogBox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="badend1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\학교\badend1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="배경.제사실_내부_peek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\배경.제사실_내부_peek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="배경.제사실_내부" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\배경.제사실_내부.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
