@@ -46,6 +46,8 @@ namespace EngGame.screens
                 {
                     return 6;
                 }
+                if (dialog == "timerStart")
+                    return 7;
                 return 0;
             }
             catch

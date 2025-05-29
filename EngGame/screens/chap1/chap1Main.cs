@@ -12,11 +12,13 @@ using EngGame;
 using System.Drawing.Text;
 using EngGame.screens.chap1;
 using System.Resources;
+using WMPLib;
 
 namespace EngGame.screens
 {
     public partial class chap1Main : UserControl
     {
+        WindowsMediaPlayer wmp; // 소리 구현
         public chap1Main()
         {
             InitializeComponent();
@@ -28,6 +30,7 @@ namespace EngGame.screens
 
         private void chap1Main_Load(object sender, EventArgs e)
         {
+            wmp = new WindowsMediaPlayer();
             dialog1.Left = (chap1.Width - dialog1.Width) / 2;
         }
 
@@ -51,6 +54,7 @@ namespace EngGame.screens
         int num;
         bool center = true;
         int imgnum = 0;
+        int soundnum = 0;
         private void UpdateDialog() // 대사 넘기기
         {
             num++;
@@ -67,7 +71,7 @@ namespace EngGame.screens
                 nextScreen();
             } // 대사가 끝나면 다음 씬으로
 
-            
+
             int returnEventNum;
             for (int i = 0; i < ss.Length; i++)
             {
@@ -115,6 +119,24 @@ namespace EngGame.screens
                 {
                     chap1.BackgroundImage = null;
                 }   // 이미지 닫기
+                if (returnEventNum == 6)
+                {
+                    soundnum++;
+                    switch (soundnum)
+                    {
+                        case 1:
+                            wmp.URL = @".\Resources\sound\walking-up-the-stairs.mp3";
+                            wmp.controls.play();
+                            Console.WriteLine("계단 소리");
+                            break;
+                        case 2:
+                            wmp.controls.stop(); // 파일을 바꾸기 위해 멈추기
+                            wmp.URL = @".\Resources\sound\수업종9.mp3";
+                            wmp.controls.play();
+                            Console.WriteLine("종소리");
+                            break;
+                    }   
+                }
             }
 
 
@@ -146,7 +168,7 @@ namespace EngGame.screens
                 { "","...","" },
                 { "","연락을 해도 보지도 않고... 이런 애가 아닌데... ", "" },
                 { "","먼저 화요일에 ㅇㅇ이를 불렀다는 선생님께 여쭤봐야겠다.", "" },
-                { "", "...", "soundEffect/WalkingSound.mp3" },
+                { "", "...", "soundPlay" },
                 { "","안녕하세요 선생님, 저 혹시... 화요일에 ㅇㅇ이랑 대화 후에 ㅇㅇ이 어디로 갔는지 아시나요..?","imageOpen" },
                 { "","ㅇㅇ이가 그 이후로 연락이 안되어서요...", "" },
                 { "수학 선생님","아니. 선생님은 잘 모르겠네... 선생님이랑은 간단히 진로 상담만 해서...","" }
@@ -168,10 +190,9 @@ namespace EngGame.screens
                 ,{ "","저희 그럼 늦기 전에 ㅇㅇ이 찾으러 가봐요! 시간이 얼마 남지 않았어요...! 당장 오늘이에요 선생님..!",""}
                 ,{ "ㅁㅁ 선생님","맞아... 그럼 오늘 6시에 너희 반 교실에서 만나자. 그때 만나서 ㅇㅇ이를 찾아보는 거야. 알았지?",""}
                 ,{ "","네 선생님..!",""}
-                ,{ "","당일 방과후 교실","dialogBoxClose/imageClose"}
+                ,{ "","당일 방과후 교실","dialogBoxClose/imageClose/soundPlay"}
                 ,{ "","선생님..! 저 왔어요!","dialogBoxOpen"}
                 ,{ "ㅁㅁ 선생님","쉿. 누가 오고 있어. 숙여!",""}
-                ,{ "","(덜그럭덜그럭 찰칵; 문 잠기는 효과음)","dialogBoxClose/"}
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
 

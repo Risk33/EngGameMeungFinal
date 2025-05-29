@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Drawing.Text;
 using System.Xml.Linq;
+using WMPLib;
+using System.Runtime.CompilerServices;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene1 : UserControl
     {
+        WindowsMediaPlayer wmp; // 소리 구현
         public Scene1()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace EngGame.screens.chap1
 
         private void Scene1_Load(object sender, EventArgs e)
         {
+            wmp = new WindowsMediaPlayer();
             dialog1.BackColor = Color.FromArgb(255, 193, 198);
             dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
         }
@@ -87,6 +91,17 @@ namespace EngGame.screens.chap1
                 {
                     dialogBox.Visible = false;
                 }
+                if (returnEventNum == 6)
+                {
+                    wmp.URL = @".\Resources\sound\doorLocked.mp3";
+                    Console.WriteLine(wmp.URL);
+                    wmp.controls.play();
+                }
+                if (returnEventNum == 7)
+                {
+                    timer1.Enabled = true;
+                    Console.WriteLine("타이머 시작");
+                }
             }
 
 
@@ -102,6 +117,8 @@ namespace EngGame.screens.chap1
             }
         }
 
+
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -109,9 +126,10 @@ namespace EngGame.screens.chap1
 
         private String[,] dialog = new string[,]
             {
-                {"","","endoftheDialog" },
+                {"","","" },
                 { "","선생님... 문이 잠긴 것 같아요....", "dialogBoxOpen" },
-                {"","","endoftheDialog/timerEnable" }
+                { "","친구가 어떻게 될지 모르는데.. 최대한 빨리 나갈 방법을 찾아보자!", "dialogBoxOpen/timerStart" },
+                {"","","endoftheDialog" }
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
         private void hint_button_Click(object sender, EventArgs e)
@@ -133,10 +151,18 @@ namespace EngGame.screens.chap1
         }
 
         screens.chap1.Scene2 Scene2 = new screens.chap1.Scene2();
+        screens.chap1.Badend1 badend1 = new screens.chap1.Badend1();
         private void nextScreen() // 다음 화면
         {
             panel2.Controls.Clear();
             panel2.Controls.Add(Scene2);
+            // 화면 전환
+        }
+
+        private void nextScreenBadEnd1() // 배드 엔드 1로
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(badend1);
             // 화면 전환
         }
 
@@ -147,7 +173,19 @@ namespace EngGame.screens.chap1
                 W2_checkBox.Checked == false && V_checkBox.Checked == false && P_checkBox.Checked == false)
             {
                 Console.WriteLine("옳은 코드 입력");
-                nextScreen();
+                // 분기점 추가 해야함
+                if (timer1.Enabled) {
+                    Console.WriteLine("시간안에 성공");
+                    timer1.Enabled = false;
+                    nextScreen();
+                }
+                else
+                {
+                    nextScreenBadEnd1();
+                }
+                    
+                
+                
             }
         }
 
@@ -304,6 +342,41 @@ namespace EngGame.screens.chap1
             hint.Visible = false;
             dialogBox.Visible = false;
             dialog1.Visible = false;
-        }   
+        }
+
+
+        String[] time = { };
+        int minute = 0;
+        int sec = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            time = timer.Text.Split(":");
+            minute = int.Parse(time[0]);
+            sec = int.Parse(time[1]);
+
+            sec--;
+            if(sec < 0)
+            {
+                minute--;
+                sec += 60;
+            }
+            if (sec == 0 && minute == 0)
+            {
+                timer1.Enabled = false;
+                Console.WriteLine("시간 끝");
+                dialog1.Text = "불길한 예감이 든다.";
+                dialog1.Visible = true;
+                dialogBox.Visible = true;
+            }
+            if (sec < 10)
+            {
+                timer.Text = minute + " : 0" + sec;
+            }
+            else
+            {
+                timer.Text = minute + " : " + sec;
+            }
+        }
     }
 }

@@ -55,6 +55,7 @@
             pictureBox2 = new PictureBox();
             Back = new TextBox();
             panel2 = new Panel();
+            timer = new Label();
             hint = new PictureBox();
             hint_button = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -445,6 +446,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(timer);
             panel2.Controls.Add(hint);
             panel2.Controls.Add(dialog1);
             panel2.Controls.Add(dialogBox);
@@ -457,6 +459,18 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1262, 679);
             panel2.TabIndex = 11;
+            // 
+            // timer
+            // 
+            timer.AutoSize = true;
+            timer.BackColor = Color.FromArgb(255, 128, 0);
+            timer.BorderStyle = BorderStyle.FixedSingle;
+            timer.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            timer.Location = new Point(1149, 19);
+            timer.Name = "timer";
+            timer.Size = new Size(92, 39);
+            timer.TabIndex = 12;
+            timer.Text = "2 : 00";
             // 
             // hint
             // 
@@ -486,6 +500,7 @@
             // timer1
             // 
             timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Scene1
             // 
@@ -537,5 +552,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button hint_button;
         private PictureBox hint;
+        private Label timer;
     }
 }

@@ -1,6 +1,7 @@
 
 using System.Windows.Forms;
 using EngGame.screens;
+using System.Drawing.Imaging;
 
 namespace EngGame
 {
@@ -20,8 +21,8 @@ namespace EngGame
 
         screens.chap1Main chap1 = new screens.chap1Main();   // screen 폴더의 gameScreen 클래스를 정의
         screens.chap2Main chap2 = new screens.chap2Main();
-               
-        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +46,8 @@ namespace EngGame
 
         }
         // 메인 화면 버튼
+
+
 
         private void button1Mid_Click(object sender, EventArgs e)
         {
@@ -122,7 +125,5 @@ namespace EngGame
         {
 
         }
-
-
     }
 }
