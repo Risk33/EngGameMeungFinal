@@ -22,8 +22,9 @@ namespace EngGame.screens.chap1
 
         private void Scene1_Load(object sender, EventArgs e)
         {
-
-        }   
+            dialog1.BackColor = Color.FromArgb(255, 193, 198);
+            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+        }
 
         private void dialogBox_Click(object sender, EventArgs e)
         {
@@ -34,21 +35,24 @@ namespace EngGame.screens.chap1
         bool center = true;
         private void UpdateDialog() // 대사 넘기기
         {
+            string[] ss = { };
             num++;
             try
             {
+                ss = dialog[num, 2].Split("/");
                 dialog1.Text = dialog[num, 1];
                 name.Text = dialog[num, 0];
             }
             catch
             {
                 Console.WriteLine("화면1의 끝입니다.");
+                dialogBox.Visible = false;
                 dialog1.Visible = false;
             } // 대사가 끝나면 다음 씬으로
 
-            string[] ss = dialog[num, 2].Split("/");
+
             int returnEventNum;
-            for (int i = 0; i <= ss.Length; i++)
+            for (int i = 0; i < ss.Length; i++)
             {
                 returnEventNum = Variable.checkDialog(ss[i]);
 
@@ -102,11 +106,183 @@ namespace EngGame.screens.chap1
         {
 
         }
+
         private String[,] dialog = new string[,]
             {
+                {"","","endoftheDialog" },
                 { "","선생님... 문이 잠긴 것 같아요....", "dialogBoxOpen" },
                 {"","","endoftheDialog" }
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
+        private void chainButton_Click(object sender, EventArgs e)
+        {
+            dialog1.Text = "자물쇠를 풀어야 나갈 수 있을거 같다.";
+            dialog1.Visible = true;
+            dialogBox.Visible = true;
+            panel1.Visible = true;
+        }
+
+        private void check_keypad()
+        {
+            if (A_checkbox.Checked && A2_checkBox.Checked  && L_checkBox.Checked &&
+                T_checkBox.Checked && R_checkBox.Checked && W_checkBox.Checked == false &&
+                W2_checkBox.Checked == false && V_checkBox.Checked == false && P_checkBox.Checked == false)
+            {
+                Console.WriteLine("옳은 코드 입력");
+                
+            }
+        }
+
+
+        // 아래는 키패드 입력받기
+        private void A_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] a pressed");
+
+            if (A_checkbox.Checked)
+            {
+                A_checkbox.ImageIndex = 1;
+                A_checkbox.BackColor = Color.Black;
+            }
+            else
+            {
+                A_checkbox.ImageIndex = 0;
+            }
+
+            check_keypad();
+        }
+
+        private void L_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] L pressed");
+
+            if (L_checkBox.Checked)
+            {
+                L_checkBox.ImageIndex = 1;
+                L_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                L_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void A2_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] A2 pressed");
+
+            if (A2_checkBox.Checked)
+            {
+                A2_checkBox.ImageIndex = 1;
+                A2_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                A2_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void T_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] T pressed");
+
+            if (T_checkBox.Checked)
+            {
+                T_checkBox.ImageIndex = 1;
+                T_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                T_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void R_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] R pressed");
+
+            if (R_checkBox.Checked)
+            {
+                R_checkBox.ImageIndex = 1;
+                R_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                R_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+        private void W_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] W pressed");
+
+            if (W_checkBox.Checked)
+            {
+                W_checkBox.ImageIndex = 1;
+                W_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                W_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void W2_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] W2 pressed");
+
+            if (W2_checkBox.Checked)
+            {
+                W2_checkBox.ImageIndex = 1;
+                W2_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                W2_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void V_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] V pressed");
+
+            if (V_checkBox.Checked)
+            {
+                V_checkBox.ImageIndex = 1;
+                V_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                V_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void P_CheckedChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine("[Lock] P pressed");
+
+            if (P_checkBox.Checked)
+            {
+                P_checkBox.ImageIndex = 1;
+                P_checkBox.BackColor = Color.Black;
+            }
+            else
+            {
+                P_checkBox.ImageIndex = 0;
+            }
+            check_keypad();
+        }
+
+        private void Back_MouseClick(object sender, MouseEventArgs e)
+        {
+            Back.Visible = false;
+            panel1.Visible = false;
+        }
     }
 }

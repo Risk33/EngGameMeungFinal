@@ -40,9 +40,8 @@ namespace EngGame
             this.AutoScaleMode = AutoScaleMode.None;
             this.AutoSize = false;
         }
-
-
         // 메인 화면 버튼
+
         private void button1Mid_Click(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
