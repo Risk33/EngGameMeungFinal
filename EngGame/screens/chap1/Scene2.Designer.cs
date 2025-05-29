@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene2));
             panel1 = new Panel();
+            dialog1 = new Label();
             name = new Label();
             dialogBox = new PictureBox();
             pictureBox1 = new PictureBox();
-            dialog1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -52,13 +52,27 @@
             panel1.TabIndex = 0;
             panel1.MouseClick += panel1_MouseClick;
             // 
+            // dialog1
+            // 
+            dialog1.Anchor = AnchorStyles.Top;
+            dialog1.AutoSize = true;
+            dialog1.BackColor = Color.Transparent;
+            dialog1.CausesValidation = false;
+            dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
+            dialog1.Location = new Point(577, 314);
+            dialog1.Name = "dialog1";
+            dialog1.Size = new Size(90, 47);
+            dialog1.TabIndex = 8;
+            dialog1.Text = "철컥";
+            // 
             // name
             // 
             name.AutoSize = true;
             name.BackColor = Color.White;
             name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
             name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.cat_reacts;
+            name.Image = Properties.Resources.simpleName;
             name.Location = new Point(146, 418);
             name.Name = "name";
             name.Size = new Size(0, 45);
@@ -71,7 +85,7 @@
             dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
             dialogBox.ErrorImage = null;
             dialogBox.InitialImage = (Image)resources.GetObject("dialogBox.InitialImage");
-            dialogBox.Location = new Point(139, 471);
+            dialogBox.Location = new Point(139, 463);
             dialogBox.Name = "dialogBox";
             dialogBox.Size = new Size(981, 193);
             dialogBox.TabIndex = 6;
@@ -89,20 +103,6 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Visible = false;
-            // 
-            // dialog1
-            // 
-            dialog1.Anchor = AnchorStyles.Top;
-            dialog1.AutoSize = true;
-            dialog1.BackColor = Color.Transparent;
-            dialog1.CausesValidation = false;
-            dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.White;
-            dialog1.Location = new Point(577, 314);
-            dialog1.Name = "dialog1";
-            dialog1.Size = new Size(90, 47);
-            dialog1.TabIndex = 8;
-            dialog1.Text = "철컥";
             // 
             // Scene2
             // 

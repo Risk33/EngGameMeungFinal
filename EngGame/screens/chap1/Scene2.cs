@@ -64,7 +64,7 @@ namespace EngGame.screens.chap1
                     dialog1.BringToFront();
                     dialog1.ForeColor = Color.Black;
                     dialog1.BackColor = Color.FromArgb(255, 193, 198);
-                    //dialog1.Location = new Point(150, 471);
+                    dialog1.Location = new Point(150, 471);
                     dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
                 }   // 대사 창 켜고 대사 위치 조정

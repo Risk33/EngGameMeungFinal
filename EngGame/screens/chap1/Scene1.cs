@@ -114,6 +114,15 @@ namespace EngGame.screens.chap1
                 {"","","endoftheDialog/timerEnable" }
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
+        private void hint_button_Click(object sender, EventArgs e)
+        {
+            dialog1.Text = "제단...?";
+            dialog1.Visible = true;
+            dialogBox.Visible = true;
+            Back.Visible = true;
+            hint.Visible = true;
+        }
+
         private void chainButton_Click(object sender, EventArgs e)
         {
             dialog1.Text = "자물쇠를 풀어야 나갈 수 있을거 같다.";
@@ -292,11 +301,9 @@ namespace EngGame.screens.chap1
         {
             Back.Visible = false;
             panel1.Visible = false;
-        }
-
-        private void hint_button_Click(object sender, EventArgs e)
-        {
-
-        }
+            hint.Visible = false;
+            dialogBox.Visible = false;
+            dialog1.Visible = false;
+        }   
     }
 }

@@ -78,7 +78,7 @@ namespace EngGame.screens
             name.BackColor = Color.White;
             name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
             name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.cat_reacts;
+            name.Image = Properties.Resources.simpleName;
             name.Location = new Point(151, 412);
             name.Name = "name";
             name.Size = new Size(84, 45);
@@ -102,7 +102,6 @@ namespace EngGame.screens
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            // pictureBox1.Image = Properties.Resources.배경_새벽_병원_외관;
             pictureBox1.Location = new Point(88, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1072, 679);

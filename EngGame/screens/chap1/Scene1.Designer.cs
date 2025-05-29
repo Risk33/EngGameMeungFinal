@@ -55,13 +55,15 @@
             pictureBox2 = new PictureBox();
             Back = new TextBox();
             panel2 = new Panel();
-            timer1 = new System.Windows.Forms.Timer(components);
+            hint = new PictureBox();
             hint_button = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)hint).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -443,6 +445,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(hint);
             panel2.Controls.Add(dialog1);
             panel2.Controls.Add(dialogBox);
             panel2.Controls.Add(hint_button);
@@ -455,9 +458,16 @@
             panel2.Size = new Size(1262, 679);
             panel2.TabIndex = 11;
             // 
-            // timer1
+            // hint
             // 
-            timer1.Interval = 1000;
+            hint.BackgroundImage = Properties.Resources.hint1;
+            hint.BackgroundImageLayout = ImageLayout.Zoom;
+            hint.Location = new Point(428, 57);
+            hint.Name = "hint";
+            hint.Size = new Size(361, 360);
+            hint.TabIndex = 10;
+            hint.TabStop = false;
+            hint.Visible = false;
             // 
             // hint_button
             // 
@@ -472,6 +482,10 @@
             hint_button.TabIndex = 11;
             hint_button.UseVisualStyleBackColor = true;
             hint_button.Click += hint_button_Click;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
             // 
             // Scene1
             // 
@@ -488,6 +502,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)hint).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -521,5 +536,6 @@
         private Panel panel2;
         private System.Windows.Forms.Timer timer1;
         private Button hint_button;
+        private PictureBox hint;
     }
 }

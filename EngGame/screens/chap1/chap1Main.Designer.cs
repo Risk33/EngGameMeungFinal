@@ -58,7 +58,7 @@ namespace EngGame.screens
             name.BackColor = Color.White;
             name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
             name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.cat_reacts;
+            name.Image = Properties.Resources.simpleName;
             name.Location = new Point(151, 412);
             name.Name = "name";
             name.Size = new Size(84, 45);
