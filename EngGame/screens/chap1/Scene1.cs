@@ -111,7 +111,7 @@ namespace EngGame.screens.chap1
             {
                 {"","","endoftheDialog" },
                 { "","선생님... 문이 잠긴 것 같아요....", "dialogBoxOpen" },
-                {"","","endoftheDialog" }
+                {"","","endoftheDialog/timerEnable" }
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
         private void chainButton_Click(object sender, EventArgs e)
@@ -120,6 +120,7 @@ namespace EngGame.screens.chap1
             dialog1.Visible = true;
             dialogBox.Visible = true;
             panel1.Visible = true;
+            Back.Visible = true;
         }
 
         screens.chap1.Scene2 Scene2 = new screens.chap1.Scene2();
@@ -132,7 +133,7 @@ namespace EngGame.screens.chap1
 
         private void check_keypad() // 정답 확인
         {
-            if (A_checkbox.Checked && A2_checkBox.Checked  && L_checkBox.Checked &&
+            if (A_checkbox.Checked && A2_checkBox.Checked && L_checkBox.Checked &&
                 T_checkBox.Checked && R_checkBox.Checked && W_checkBox.Checked == false &&
                 W2_checkBox.Checked == false && V_checkBox.Checked == false && P_checkBox.Checked == false)
             {
@@ -291,6 +292,11 @@ namespace EngGame.screens.chap1
         {
             Back.Visible = false;
             panel1.Visible = false;
+        }
+
+        private void hint_button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

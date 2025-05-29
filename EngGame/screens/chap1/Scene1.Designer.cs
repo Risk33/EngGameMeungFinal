@@ -56,6 +56,7 @@
             Back = new TextBox();
             panel2 = new Panel();
             timer1 = new System.Windows.Forms.Timer(components);
+            hint_button = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             panel1.SuspendLayout();
@@ -78,7 +79,7 @@
             // 
             dialogBox.BackColor = Color.Transparent;
             dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(144, 465);
+            dialogBox.Location = new Point(144, 467);
             dialogBox.Name = "dialogBox";
             dialogBox.Size = new Size(981, 193);
             dialogBox.TabIndex = 1;
@@ -430,8 +431,9 @@
             // 
             Back.BackColor = Color.Silver;
             Back.BorderStyle = BorderStyle.None;
+            Back.Cursor = Cursors.Hand;
             Back.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            Back.Location = new Point(28, 24);
+            Back.Location = new Point(30, 24);
             Back.Name = "Back";
             Back.Size = new Size(78, 26);
             Back.TabIndex = 10;
@@ -441,11 +443,12 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(chainButton);
             panel2.Controls.Add(dialog1);
             panel2.Controls.Add(dialogBox);
-            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(hint_button);
             panel2.Controls.Add(Back);
+            panel2.Controls.Add(chainButton);
+            panel2.Controls.Add(panel1);
             panel2.Controls.Add(pictureBox1);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
@@ -455,6 +458,20 @@
             // timer1
             // 
             timer1.Interval = 1000;
+            // 
+            // hint_button
+            // 
+            hint_button.BackgroundImage = (Image)resources.GetObject("hint_button.BackgroundImage");
+            hint_button.Cursor = Cursors.Hand;
+            hint_button.FlatAppearance.BorderSize = 0;
+            hint_button.FlatStyle = FlatStyle.Flat;
+            hint_button.Location = new Point(342, 525);
+            hint_button.Margin = new Padding(0);
+            hint_button.Name = "hint_button";
+            hint_button.Size = new Size(154, 91);
+            hint_button.TabIndex = 11;
+            hint_button.UseVisualStyleBackColor = true;
+            hint_button.Click += hint_button_Click;
             // 
             // Scene1
             // 
@@ -503,5 +520,6 @@
         private TextBox Back;
         private Panel panel2;
         private System.Windows.Forms.Timer timer1;
+        private Button hint_button;
     }
 }
