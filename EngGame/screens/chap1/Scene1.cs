@@ -99,6 +99,7 @@ namespace EngGame.screens.chap1
                 }
                 if (returnEventNum == 7)
                 {
+                    chainButton.Visible = true;
                     timer1.Enabled = true;
                     Console.WriteLine("타이머 시작");
                 }

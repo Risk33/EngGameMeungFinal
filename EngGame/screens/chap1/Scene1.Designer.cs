@@ -127,6 +127,7 @@
             chainButton.Size = new Size(126, 40);
             chainButton.TabIndex = 7;
             chainButton.UseVisualStyleBackColor = true;
+            chainButton.Visible = false;
             chainButton.Click += chainButton_Click;
             // 
             // panel1
