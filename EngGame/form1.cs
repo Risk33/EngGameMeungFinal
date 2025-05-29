@@ -44,9 +44,8 @@ namespace EngGame
             questionButton2.FlatAppearance.BorderSize = 1;
 
         }
-
-
         // 메인 화면 버튼
+
         private void button1Mid_Click(object sender, EventArgs e)
         {
 

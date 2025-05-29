@@ -45,13 +45,16 @@ namespace EngGame.screens
         {
             UpdateDialog();
         }
-            int num = 0;
+        
+        int num;
         bool center = true;
         private void UpdateDialog() // 대사 넘기기
         {
             num++;
+            string[] ss = { };
             try
             {
+                ss = dialog[num, 2].Split("/");
                 dialog1.Text = dialog[num, 1];
                 name.Text = dialog[num, 0];
             }
@@ -60,28 +63,44 @@ namespace EngGame.screens
                 Console.WriteLine("화면1의 끝입니다.");
                 nextScreen();
             } // 대사가 끝나면 다음 씬으로
-      
-            if (Variable.checkDialog(dialog, num) == 1) // 대사 창이 따로 필요하다면?
+
+            
+            int returnEventNum;
+            for (int i = 0; i < ss.Length; i++)
             {
-                name.Visible = true;
-                dialogBox.Visible = true;
-                dialog1.BringToFront();
-                dialog1.ForeColor = Color.Black;
-                dialog1.BackColor = Color.FromArgb(255, 193, 198);
-                //dialog1.Location = new Point(150, 471);
-                dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-                center = false;
-            }   // 대사 창 켜고 대사 위치 조정
-            if (Variable.checkDialog(dialog, num) == 2) // 대사 창이 필요 없다면?
-            {
-                name.Visible = false;
-                dialogBox.Visible = false;
-                dialog1.ForeColor = Color.White;
-                dialog1.Location = new Point(491, 265);
-                dialog1.BackColor = Color.Black;
-                dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
-                center = true;
-            }   // 원래 자리로 돌려놓고 대사창 끄기
+                returnEventNum = Variable.checkDialog(ss[i]);
+
+                if (returnEventNum == 1) // 대사 창이 따로 필요하다면?
+                {
+                    name.Visible = true;
+                    dialogBox.Visible = true;
+                    dialog1.BringToFront();
+                    dialog1.ForeColor = Color.Black;
+                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
+                    //dialog1.Location = new Point(150, 471);
+                    dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+                    center = false;
+                }   // 대사 창 켜고 대사 위치 조정
+                if (returnEventNum == 2) // 대사 창이 필요 없다면?
+                {
+                    name.Visible = false;
+                    dialogBox.Visible = false;
+                    dialog1.ForeColor = Color.White;
+                    dialog1.Location = new Point(491, 265);
+                    dialog1.BackColor = Color.Black;
+                    dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+                    center = true;
+                }   // 원래 자리로 돌려놓고 대사창 끄기
+                if (returnEventNum == 3)
+                {
+                }   // 이미지 띄우기
+                if (returnEventNum == 4)
+                {
+                }   // 이미지 닫기
+            }
+
+
+
 
             if (center == true)
             {
@@ -104,14 +123,14 @@ namespace EngGame.screens
         private String[,] dialog = new string[,]
             {
                 { "","SampleText", "" },
-                { "","2025년 5월 16일, 오늘도 ㅇㅇ이가 학교에 오지 않았다. ", "dialogBoxClose" },
+                { "","2025년 5월 16일, 오늘도 ㅇㅇ이가 학교에 오지 않았다. ", "dialogBoxOpen" },
                 { "","ㅇㅇ이가 학교에 안온지 이틀째다. ", "" },
                 { "","분명 화요일에 선생님께서 부르셔서 가봐야한다고 간 후에 소식이 끊겼다.","" },
                 { "","연락을 해도 보지도 않고... 이런 애가 아닌데... ", "" },
                 { "","먼저 화요일에 ㅇㅇ이를 불렀다는 선생님께 여쭤봐야겠다.", "" },
                 { "", "...", "soundEffect/WalkingSound.mp3" },
-                { "","안녕하세요 선생님, 저 혹시... 화요일에 ㅇㅇ이랑 대화 후에 ㅇㅇ이 어디로 갔는지 아시나요..?\nㅇㅇ이가 그 이후로 연락이 안되어서요...","dialogBoxOpen" },
-                { "수학 선생님","아니. 선생님은 잘 모르겠네... 선생님이랑은 간단히 진로 상담만 해서...","dialogBoxOpen" }
+                { "","안녕하세요 선생님, 저 혹시... 화요일에 ㅇㅇ이랑 대화 후에 ㅇㅇ이 어디로 갔는지 아시나요..?\nㅇㅇ이가 그 이후로 연락이 안되어서요...","" },
+                { "수학 선생님","아니. 선생님은 잘 모르겠네... 선생님이랑은 간단히 진로 상담만 해서...","" }
                 ,{ "","그렇게 방과후...","dialogBoxClose"}
                 ,{ "","...",""}
                 ,{ "","교실로 돌아가는 중에 옛 과외 선생님인 ㅁㅁ선생님을 만났다. ",""}
@@ -134,7 +153,6 @@ namespace EngGame.screens
                 ,{ "","선생님..! 저 왔어요!","dialogBoxOpen"}
                 ,{ "ㅁㅁ 선생님","쉿. 누가 오고 있어. 숙여!",""}
                 ,{ "","(덜그럭덜그럭 찰칵; 문 잠기는 효과음)","dialogBoxClose"}
-                ,{ "","선생님... 문이 잠긴 것 같아요....","dialogBoxOpen"}
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
 

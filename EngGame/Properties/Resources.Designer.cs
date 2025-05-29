@@ -63,6 +63,26 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap A {
+            get {
+                object obj = ResourceManager.GetObject("A", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap A1 {
+            get {
+                object obj = ResourceManager.GetObject("A1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap background {
             get {
                 object obj = ResourceManager.GetObject("background", resourceCulture);
@@ -83,9 +103,9 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap mainScreen {
+        internal static System.Drawing.Bitmap chain {
             get {
-                object obj = ResourceManager.GetObject("mainScreen", resourceCulture);
+                object obj = ResourceManager.GetObject("chain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +113,19 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap PlayButton {
+        internal static System.Drawing.Bitmap chain1 {
             get {
-                object obj = ResourceManager.GetObject("PlayButton", resourceCulture);
+                object obj = ResourceManager.GetObject("chain1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap chain2 {
+            get {
+                object obj = ResourceManager.GetObject("chain2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,9 +153,9 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap SchoolButton {
+        internal static System.Drawing.Bitmap 배경_새벽_병원_외관 {
             get {
-                object obj = ResourceManager.GetObject("SchoolButton", resourceCulture);
+                object obj = ResourceManager.GetObject("배경.새벽 병원_외관", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +163,9 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap SchoolButton1 {
+        internal static System.Drawing.Bitmap 자물쇠_교실 {
             get {
-                object obj = ResourceManager.GetObject("SchoolButton1", resourceCulture);
+                object obj = ResourceManager.GetObject("자물쇠_교실", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
