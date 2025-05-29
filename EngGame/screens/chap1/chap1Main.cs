@@ -11,6 +11,7 @@ using System.Windows.Forms.VisualStyles;
 using EngGame;
 using System.Drawing.Text;
 using EngGame.screens.chap1;
+using System.Resources;
 
 namespace EngGame.screens
 {
@@ -45,9 +46,11 @@ namespace EngGame.screens
         {
             UpdateDialog();
         }
-        
+
+
         int num;
         bool center = true;
+        int imgnum = 0;
         private void UpdateDialog() // 대사 넘기기
         {
             num++;
@@ -93,9 +96,24 @@ namespace EngGame.screens
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
                 {
+                    imgnum++;
+                    switch (imgnum)
+                    {
+                        case 1 :
+                                chap1.BackgroundImage = Properties.Resources.배경_학교_복도_낮;
+                            break;
+                        case 2:
+                            chap1.BackgroundImage = Properties.Resources.배경_학교_복도_낮;
+                            break;
+                        case 3:
+                            chap1.BackgroundImage = Properties.Resources.배경_학교_상담실_낮;
+                            break;
+                    }
+                    
                 }   // 이미지 띄우기
                 if (returnEventNum == 4)
                 {
+                    chap1.BackgroundImage = null;
                 }   // 이미지 닫기
             }
 
@@ -125,19 +143,20 @@ namespace EngGame.screens
                 { "","SampleText", "" },
                 { "","2025년 5월 16일, 오늘도 ㅇㅇ이가 학교에 오지 않았다. ", "dialogBoxOpen" },
                 { "","ㅇㅇ이가 학교에 안온지 이틀째다. ", "" },
-                { "","분명 화요일에 선생님께서 부르셔서 가봐야한다고 간 후에 소식이 끊겼다.","" },
+                { "","...","" },
                 { "","연락을 해도 보지도 않고... 이런 애가 아닌데... ", "" },
                 { "","먼저 화요일에 ㅇㅇ이를 불렀다는 선생님께 여쭤봐야겠다.", "" },
                 { "", "...", "soundEffect/WalkingSound.mp3" },
-                { "","안녕하세요 선생님, 저 혹시... 화요일에 ㅇㅇ이랑 대화 후에 ㅇㅇ이 어디로 갔는지 아시나요..?\nㅇㅇ이가 그 이후로 연락이 안되어서요...","" },
+                { "","안녕하세요 선생님, 저 혹시... 화요일에 ㅇㅇ이랑 대화 후에 ㅇㅇ이 어디로 갔는지 아시나요..?\nㅇㅇ이가 그 이후로 연락이 안되어서요...","imageOpen" },
                 { "수학 선생님","아니. 선생님은 잘 모르겠네... 선생님이랑은 간단히 진로 상담만 해서...","" }
-                ,{ "","그렇게 방과후...","dialogBoxClose"}
+                ,{ "","아아... 넵 알겠습니다...",""}
+                ,{ "","그렇게 방과후...","dialogBoxClose/imageClose"}
                 ,{ "","...",""}
                 ,{ "","교실로 돌아가는 중에 옛 과외 선생님인 ㅁㅁ선생님을 만났다. ",""}
-                ,{ "","어 선생님..! 혹시 잠깐 시간 되세요..?","dialogBoxOpen"}
+                ,{ "","어 선생님..! 혹시 잠깐 시간 되세요..?","dialogBoxOpen/imageOpen"}
                 ,{ "ㅁㅁ 선생님","어 ㅇㅇ아. 왜?",""}
-                ,{ "","편하게 이야기 하기위해 교무실으로 돌아 왔다.","dialogBoxClose"}
-                ,{ "","다름이 아니고... 제 친구 ㅇㅇ이 아시죠... \r\nㅇㅇ이가 학교에 안온지는 이틀째고.... 연락도 안되어가지구요...","dialogBoxOpen"}
+                ,{ "","편하게 이야기 하기위해 교무실으로 돌아 왔다.","dialogBoxClose/imageClose"}
+                ,{ "","다름이 아니고... 제 친구 ㅇㅇ이 아시죠... \r\nㅇㅇ이가 학교에 안온지는 이틀째고.... 연락도 안되어가지구요...","dialogBoxOpen/imageOpen"}
                 ,{ "ㅁㅁ 선생님","음...\r\n혹시 ㅇㅇ이가 연락 안되기 전에 뭐라고 했는지 기억해?",""}
                 ,{ "","화요일 방과후에 수학 선생님이 부르셔서 갔거든요... 선생님은 간단히 진로상담만 했다고 하셨구요...\r\n아! 그리고 일주일 전에 ㅇㅇ이가 우리 학교에 괴담이 있다고 조사해보고 알려준다고 했었는데... \r\n그거랑 관련있는 걸까요..?",""}
                 ,{ "","...? \r\n어떤 괴담?",""}
@@ -152,7 +171,7 @@ namespace EngGame.screens
                 ,{ "","당일 방과후 교실","dialogBoxClose"}
                 ,{ "","선생님..! 저 왔어요!","dialogBoxOpen"}
                 ,{ "ㅁㅁ 선생님","쉿. 누가 오고 있어. 숙여!",""}
-                ,{ "","(덜그럭덜그럭 찰칵; 문 잠기는 효과음)","dialogBoxClose"}
+                ,{ "","(덜그럭덜그럭 찰칵; 문 잠기는 효과음)","dialogBoxClose/"}
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
 

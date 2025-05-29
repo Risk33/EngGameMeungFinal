@@ -42,6 +42,10 @@ namespace EngGame.screens
                 {
                     return 5;
                 }
+                if (dialog == "soundPlay")
+                {
+                    return 6;
+                }
                 return 0;
             }
             catch
@@ -50,22 +54,6 @@ namespace EngGame.screens
                 return 0;
             }
             return 0;
-        }
-        public static void nextScene()
-        {
-
-        }
-        public static String returnImage(String imagename)
-        {
-            if (imagename.Contains("병원"))
-            {
-                return @"Resources\hospital\배경.새벽 병원_외관.jpg";
-            }
-            if (imagename.Contains("학교"))
-            {
-                return "배경.새벽 병원_내부.jpg";
-            }
-            return "Defaultimg.png";
         }
         // 이벤트 번호 해석
 

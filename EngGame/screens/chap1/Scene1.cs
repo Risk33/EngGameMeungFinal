@@ -122,14 +122,22 @@ namespace EngGame.screens.chap1
             panel1.Visible = true;
         }
 
-        private void check_keypad()
+        screens.chap1.Scene2 Scene2 = new screens.chap1.Scene2();
+        private void nextScreen() // 다음 화면
+        {
+            panel2.Controls.Clear();
+            panel2.Controls.Add(Scene2);
+            // 화면 전환
+        }
+
+        private void check_keypad() // 정답 확인
         {
             if (A_checkbox.Checked && A2_checkBox.Checked  && L_checkBox.Checked &&
                 T_checkBox.Checked && R_checkBox.Checked && W_checkBox.Checked == false &&
                 W2_checkBox.Checked == false && V_checkBox.Checked == false && P_checkBox.Checked == false)
             {
                 Console.WriteLine("옳은 코드 입력");
-                
+                nextScreen();
             }
         }
 
@@ -149,7 +157,7 @@ namespace EngGame.screens.chap1
                 A_checkbox.ImageIndex = 0;
             }
 
-            check_keypad();
+            check_keypad(); // 정답인지 확인
         }
 
         private void L_CheckedChanged(object sender, EventArgs e)

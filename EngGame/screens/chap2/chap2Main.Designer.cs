@@ -102,7 +102,7 @@ namespace EngGame.screens
             // pictureBox1
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = Properties.Resources.배경_새벽_병원_외관;
+            // pictureBox1.Image = Properties.Resources.배경_새벽_병원_외관;
             pictureBox1.Location = new Point(88, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1072, 679);

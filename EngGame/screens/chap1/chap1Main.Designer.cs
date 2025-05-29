@@ -42,6 +42,7 @@ namespace EngGame.screens
             // chap1
             // 
             chap1.BackColor = Color.Black;
+            chap1.BackgroundImageLayout = ImageLayout.Center;
             chap1.Controls.Add(name);
             chap1.Controls.Add(dialogBox);
             chap1.Controls.Add(dialog1);

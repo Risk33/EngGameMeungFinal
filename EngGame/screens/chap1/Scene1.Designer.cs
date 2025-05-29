@@ -54,10 +54,13 @@
             A_checkbox = new CheckBox();
             pictureBox2 = new PictureBox();
             Back = new TextBox();
+            panel2 = new Panel();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -88,7 +91,7 @@
             dialog1.BackColor = Color.WhiteSmoke;
             dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(150, 471);
+            dialog1.Location = new Point(155, 477);
             dialog1.Name = "dialog1";
             dialog1.Size = new Size(21, 20);
             dialog1.TabIndex = 2;
@@ -114,7 +117,7 @@
             chainButton.Cursor = Cursors.Hand;
             chainButton.FlatAppearance.BorderSize = 0;
             chainButton.FlatStyle = FlatStyle.Flat;
-            chainButton.Location = new Point(112, 156);
+            chainButton.Location = new Point(111, 155);
             chainButton.Margin = new Padding(0);
             chainButton.Name = "chainButton";
             chainButton.Size = new Size(126, 40);
@@ -134,7 +137,7 @@
             panel1.Controls.Add(L_checkBox);
             panel1.Controls.Add(A_checkbox);
             panel1.Controls.Add(pictureBox2);
-            panel1.Location = new Point(461, 8);
+            panel1.Location = new Point(459, 6);
             panel1.Name = "panel1";
             panel1.Size = new Size(302, 453);
             panel1.TabIndex = 8;
@@ -428,7 +431,7 @@
             Back.BackColor = Color.Silver;
             Back.BorderStyle = BorderStyle.None;
             Back.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            Back.Location = new Point(31, 25);
+            Back.Location = new Point(28, 24);
             Back.Name = "Back";
             Back.Size = new Size(78, 26);
             Back.TabIndex = 10;
@@ -436,17 +439,29 @@
             Back.Visible = false;
             Back.MouseClick += Back_MouseClick;
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(chainButton);
+            panel2.Controls.Add(dialog1);
+            panel2.Controls.Add(dialogBox);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(Back);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1262, 679);
+            panel2.TabIndex = 11;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            // 
             // Scene1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(Back);
-            Controls.Add(panel1);
-            Controls.Add(chainButton);
             Controls.Add(name);
-            Controls.Add(dialog1);
-            Controls.Add(dialogBox);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
             Name = "Scene1";
             Size = new Size(1262, 679);
             Load += Scene1_Load;
@@ -454,6 +469,8 @@
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -484,5 +501,7 @@
         private CheckBox W2_checkBox;
         private CheckBox W_checkBox;
         private TextBox Back;
+        private Panel panel2;
+        private System.Windows.Forms.Timer timer1;
     }
 }
