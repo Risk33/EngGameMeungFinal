@@ -8,27 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
-using System.Xml.Linq;
 
 namespace EngGame.screens.chap1
 {
-    public partial class Scene3 : UserControl
+    public partial class Scene4 : UserControl
     {
-        public Scene3()
+        public Scene4()
         {
             InitializeComponent();
         }
 
-        private void Dialog1_Click(object sender, EventArgs e)
+        private void Scene4_Load(object sender, EventArgs e)
         {
-            UpdateDialog();
+
         }
 
         private void dialogBox_Click(object sender, EventArgs e)
         {
             UpdateDialog();
         }
-        private void panel1_MouseClick(object sender, MouseEventArgs e)
+
+        private void dialog1_Click(object sender, EventArgs e)
         {
             UpdateDialog();
         }
@@ -46,9 +46,6 @@ namespace EngGame.screens.chap1
             }
             catch
             {
-                hintButton.Visible = true;
-                inputBox.Visible = true;
-                inputConfirm.Visible = true;
                 Console.WriteLine("화면1의 끝입니다.");
             } // 대사가 끝나면 중단
 
@@ -79,65 +76,35 @@ namespace EngGame.screens.chap1
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
                 {
-                    pictureBox2.Visible = true;
+                    //pictureBox2.Visible = true;
                 }   // 이미지 띄우기
                 if (returnEventNum == 4)
                 {
-                    nextScreen();
                 }   // 이미지 닫기
+                if (returnEventNum == 5)
+                {
+                    dialogBox.Visible = false;
+                    dialog1.Visible = false;
+                }   // 대사창 닫기
             }
         }
 
         private String[,] dialog = new string[,]
             {
-                { "","SampleText", "" },
-                { "","잠깐..", "dialogBoxOpen/imageOpen" },
-                { "","이 문은...", "" },
-                { "","어떻게 열어야 하지?", "" },
+                { "","", "" },
+                { "","주위를 둘러보니 일단은 안전해 보인다.", "dialogBoxOpen/imageOpen" },
+                { "","언제 의식이 시작할지 모른다! 빨리 친구를 찾자!", "" },
+                { "","", "endoftheDialog" },
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
-        private void hintButton_Click(object sender, EventArgs e)
+        private void doorButton_Click(object sender, EventArgs e)
         {
-            label1.BringToFront();
-            label1.Visible = true;
-            dialog1.Text = "살짝 만지자 마자 문이 삐걱 거렸다. 최대한               열어야 할거 같다." +
-                "\n(상황에 맞는 영단어를 입력해주세요!)";
+
         }
 
-        screens.chap1.Scene4 scene4 = new Scene4();
-        private void nextScreen()
+        private void button2_Click(object sender, EventArgs e)
         {
-            panel1.Controls.Clear();
-            panel1.Controls.Add(scene4);
-        }
 
-        private void inputConfirm_Click(object sender, EventArgs e)
-        {
-            label1.Visible = false;
-            hintButton.Visible = false;
-            inputBox.Visible = false;
-            inputConfirm.Visible = false;
-            String answer = inputBox.Text;
-            if (answer.ToLower().Contains("silently")){
-                num = 0;
-                dialog = new string[,]
-                {
-                    { "","...", "" },
-                    { "","조용하게 들어갈 수 있었다.", "" },
-                    { "","...", "imageClose" },
-                };
-            }
-            else
-            {
-                num = 0;
-                dialog = new string[,]
-                {
-                    { "","...", "" },
-                    { "","큰소리를 내버렸다... 느낌이 좋지 않다.", "" },
-                    { "","...", "imageClose" },
-                };
-                Variable.NoiseMade();
-            }           
         }
     }
 }
