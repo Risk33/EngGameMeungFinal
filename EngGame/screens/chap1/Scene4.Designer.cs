@@ -40,15 +40,15 @@
             bookHint = new Button();
             swordButton1 = new Button();
             doorpanel = new Panel();
+            lockbutton6 = new Button();
+            imageList1 = new ImageList(components);
+            lockbutton5 = new Button();
+            lockbutton4 = new Button();
+            lockbutton3 = new Button();
+            lockbutton2 = new Button();
+            lockbutton1 = new Button();
             back = new Button();
             panel1 = new Panel();
-            lockbutton1 = new Button();
-            imageList1 = new ImageList(components);
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
-            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             alter.SuspendLayout();
@@ -112,7 +112,7 @@
             swordButton.Cursor = Cursors.Hand;
             swordButton.FlatAppearance.BorderSize = 0;
             swordButton.FlatStyle = FlatStyle.Flat;
-            swordButton.Location = new Point(611, 350);
+            swordButton.Location = new Point(612, 350);
             swordButton.Name = "swordButton";
             swordButton.Size = new Size(32, 160);
             swordButton.TabIndex = 6;
@@ -126,7 +126,7 @@
             alter.BackgroundImageLayout = ImageLayout.Zoom;
             alter.Controls.Add(bookHint);
             alter.Controls.Add(swordButton1);
-            alter.Location = new Point(203, 57);
+            alter.Location = new Point(496, 57);
             alter.Name = "alter";
             alter.Size = new Size(265, 407);
             alter.TabIndex = 7;
@@ -164,49 +164,31 @@
             // 
             doorpanel.BackgroundImage = (Image)resources.GetObject("doorpanel.BackgroundImage");
             doorpanel.BackgroundImageLayout = ImageLayout.Zoom;
-            doorpanel.Controls.Add(button5);
-            doorpanel.Controls.Add(button4);
-            doorpanel.Controls.Add(button3);
-            doorpanel.Controls.Add(button2);
-            doorpanel.Controls.Add(button1);
+            doorpanel.Controls.Add(lockbutton6);
+            doorpanel.Controls.Add(lockbutton5);
+            doorpanel.Controls.Add(lockbutton4);
+            doorpanel.Controls.Add(lockbutton3);
+            doorpanel.Controls.Add(lockbutton2);
             doorpanel.Controls.Add(lockbutton1);
-            doorpanel.Location = new Point(614, 120);
+            doorpanel.Location = new Point(445, 136);
             doorpanel.Name = "doorpanel";
             doorpanel.Size = new Size(368, 235);
             doorpanel.TabIndex = 8;
             doorpanel.Visible = false;
             // 
-            // back
+            // lockbutton6
             // 
-            back.Location = new Point(149, 25);
-            back.Name = "back";
-            back.Size = new Size(130, 38);
-            back.TabIndex = 12;
-            back.Text = "뒤로 가기";
-            back.UseVisualStyleBackColor = true;
-            back.Visible = false;
-            back.Click += back_Click;
-            // 
-            // panel1
-            // 
-            panel1.Location = new Point(611, 350);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(32, 100);
-            panel1.TabIndex = 13;
-            panel1.Visible = false;
-            // 
-            // lockbutton1
-            // 
-            lockbutton1.BackColor = Color.Transparent;
-            lockbutton1.FlatAppearance.BorderSize = 0;
-            lockbutton1.FlatStyle = FlatStyle.Flat;
-            lockbutton1.ImageIndex = 0;
-            lockbutton1.ImageList = imageList1;
-            lockbutton1.Location = new Point(80, 141);
-            lockbutton1.Name = "lockbutton1";
-            lockbutton1.Size = new Size(31, 41);
-            lockbutton1.TabIndex = 0;
-            lockbutton1.UseVisualStyleBackColor = false;
+            lockbutton6.BackColor = Color.Transparent;
+            lockbutton6.FlatAppearance.BorderSize = 0;
+            lockbutton6.FlatStyle = FlatStyle.Flat;
+            lockbutton6.ImageIndex = 0;
+            lockbutton6.ImageList = imageList1;
+            lockbutton6.Location = new Point(255, 141);
+            lockbutton6.Name = "lockbutton6";
+            lockbutton6.Size = new Size(32, 41);
+            lockbutton6.TabIndex = 5;
+            lockbutton6.UseVisualStyleBackColor = false;
+            lockbutton6.Click += lockbutton6_Click;
             // 
             // imageList1
             // 
@@ -222,83 +204,107 @@
             imageList1.Images.SetKeyName(6, "I_Lock.PNG");
             imageList1.Images.SetKeyName(7, "T_Lock.PNG");
             // 
-            // button1
+            // lockbutton5
             // 
-            button1.BackColor = Color.Transparent;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ImageIndex = 0;
-            button1.ImageList = imageList1;
-            button1.Location = new Point(115, 141);
-            button1.Name = "button1";
-            button1.Size = new Size(31, 41);
-            button1.TabIndex = 1;
-            button1.UseVisualStyleBackColor = false;
+            lockbutton5.BackColor = Color.Transparent;
+            lockbutton5.FlatAppearance.BorderSize = 0;
+            lockbutton5.FlatStyle = FlatStyle.Flat;
+            lockbutton5.ImageIndex = 0;
+            lockbutton5.ImageList = imageList1;
+            lockbutton5.Location = new Point(218, 141);
+            lockbutton5.Name = "lockbutton5";
+            lockbutton5.Size = new Size(32, 41);
+            lockbutton5.TabIndex = 4;
+            lockbutton5.UseVisualStyleBackColor = false;
+            lockbutton5.Click += lockbutton5_Click;
             // 
-            // button2
+            // lockbutton4
             // 
-            button2.BackColor = Color.Transparent;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ImageIndex = 0;
-            button2.ImageList = imageList1;
-            button2.Location = new Point(151, 141);
-            button2.Name = "button2";
-            button2.Size = new Size(29, 41);
-            button2.TabIndex = 2;
-            button2.UseVisualStyleBackColor = false;
+            lockbutton4.BackColor = Color.Transparent;
+            lockbutton4.FlatAppearance.BorderSize = 0;
+            lockbutton4.FlatStyle = FlatStyle.Flat;
+            lockbutton4.ImageIndex = 0;
+            lockbutton4.ImageList = imageList1;
+            lockbutton4.Location = new Point(184, 141);
+            lockbutton4.Name = "lockbutton4";
+            lockbutton4.Size = new Size(29, 41);
+            lockbutton4.TabIndex = 3;
+            lockbutton4.UseVisualStyleBackColor = false;
+            lockbutton4.Click += lockbutton4_Click;
             // 
-            // button3
+            // lockbutton3
             // 
-            button3.BackColor = Color.Transparent;
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ImageIndex = 0;
-            button3.ImageList = imageList1;
-            button3.Location = new Point(184, 141);
-            button3.Name = "button3";
-            button3.Size = new Size(29, 41);
-            button3.TabIndex = 3;
-            button3.UseVisualStyleBackColor = false;
+            lockbutton3.BackColor = Color.Transparent;
+            lockbutton3.FlatAppearance.BorderSize = 0;
+            lockbutton3.FlatStyle = FlatStyle.Flat;
+            lockbutton3.ImageIndex = 0;
+            lockbutton3.ImageList = imageList1;
+            lockbutton3.Location = new Point(151, 141);
+            lockbutton3.Name = "lockbutton3";
+            lockbutton3.Size = new Size(29, 41);
+            lockbutton3.TabIndex = 2;
+            lockbutton3.UseVisualStyleBackColor = false;
+            lockbutton3.Click += lockbutton3_Click;
             // 
-            // button4
+            // lockbutton2
             // 
-            button4.BackColor = Color.Transparent;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.ImageIndex = 0;
-            button4.ImageList = imageList1;
-            button4.Location = new Point(218, 141);
-            button4.Name = "button4";
-            button4.Size = new Size(32, 41);
-            button4.TabIndex = 4;
-            button4.UseVisualStyleBackColor = false;
+            lockbutton2.BackColor = Color.Transparent;
+            lockbutton2.FlatAppearance.BorderSize = 0;
+            lockbutton2.FlatStyle = FlatStyle.Flat;
+            lockbutton2.ImageIndex = 0;
+            lockbutton2.ImageList = imageList1;
+            lockbutton2.Location = new Point(115, 141);
+            lockbutton2.Name = "lockbutton2";
+            lockbutton2.Size = new Size(31, 41);
+            lockbutton2.TabIndex = 1;
+            lockbutton2.UseVisualStyleBackColor = false;
+            lockbutton2.Click += lockbutton2_Click;
             // 
-            // button5
+            // lockbutton1
             // 
-            button5.BackColor = Color.Transparent;
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.ImageIndex = 0;
-            button5.ImageList = imageList1;
-            button5.Location = new Point(255, 141);
-            button5.Name = "button5";
-            button5.Size = new Size(32, 41);
-            button5.TabIndex = 5;
-            button5.UseVisualStyleBackColor = false;
+            lockbutton1.BackColor = Color.Transparent;
+            lockbutton1.FlatAppearance.BorderSize = 0;
+            lockbutton1.FlatStyle = FlatStyle.Flat;
+            lockbutton1.ImageIndex = 0;
+            lockbutton1.ImageList = imageList1;
+            lockbutton1.Location = new Point(80, 141);
+            lockbutton1.Name = "lockbutton1";
+            lockbutton1.Size = new Size(31, 41);
+            lockbutton1.TabIndex = 0;
+            lockbutton1.UseVisualStyleBackColor = false;
+            lockbutton1.Click += lockbutton1_Click;
+            // 
+            // back
+            // 
+            back.Location = new Point(149, 25);
+            back.Name = "back";
+            back.Size = new Size(130, 38);
+            back.TabIndex = 12;
+            back.Text = "뒤로 가기";
+            back.UseVisualStyleBackColor = true;
+            back.Visible = false;
+            back.Click += back_Click;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(612, 350);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(32, 100);
+            panel1.TabIndex = 13;
+            panel1.Visible = false;
             // 
             // Scene4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(alter);
             Controls.Add(dialog1);
             Controls.Add(dialogBox);
             Controls.Add(swordButton);
             Controls.Add(panel1);
             Controls.Add(back);
             Controls.Add(doorpanel);
-            Controls.Add(alter);
             Controls.Add(doorButton);
             Controls.Add(pictureBox1);
             Name = "Scene4";
@@ -328,10 +334,10 @@
         private Panel panel1;
         private Button lockbutton1;
         private ImageList imageList1;
-        private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button lockbutton6;
+        private Button lockbutton5;
+        private Button lockbutton4;
+        private Button lockbutton3;
+        private Button lockbutton2;
     }
 }

@@ -110,6 +110,7 @@ namespace EngGame.screens.chap1
             num = 0;
             dialog1.Visible = true;
             dialogBox.Visible = true;
+            doorButton.Visible = false;
             dialog1.Text = "이 뒤에 친구가 있는게 분명하다!";
             dialog = new string[,]
             {
@@ -119,6 +120,8 @@ namespace EngGame.screens.chap1
             };
             back.Visible = true;
             doorpanel.Visible = true;
+            swordButton.Visible = false;
+            panel1.Visible = false;
         }
         private void bookHint_Click(object sender, EventArgs e)
         {
@@ -129,7 +132,7 @@ namespace EngGame.screens.chap1
             dialog = new string[,]
             {
                 { "","노트다.", "" },
-                { "","...", "" },                
+                { "","...", "" },
                 { "","제사장의 일기가 적혀 있는거 같다.", "" },
                 { "","5월 14일" +
                 "\n새로운 결함품을 잡아들였다.", "" },
@@ -150,6 +153,9 @@ namespace EngGame.screens.chap1
             alter.Visible = false;
             dialogBox.Visible = false;
             dialog1.Visible = false;
+            swordButton.Visible = true;
+            panel1.Visible = true;
+            doorButton.Visible = true;
         }
 
         private void swordButton1_Click(object sender, EventArgs e)
@@ -157,7 +163,7 @@ namespace EngGame.screens.chap1
             num = 0;
             dialog = new string[,]
             {
-                { "","", "" },
+                { "","",""},
                 { "","제물 의식에 쓰이는 칼인거 같다.", "" },
                 { "","너무 무거워서 들수는 없을거 같다.", "" },
                 { "","...", "" },
@@ -165,10 +171,6 @@ namespace EngGame.screens.chap1
                 { "","\"결점을 도려 이상으로\"", "" },
                 { "","", "endoftheDialog" },
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
-            for(int i=0; i < dialog.Length; i++)
-            {
-                Console.WriteLine(dialog[1, i]);
-            }
             dialog1.Visible = true;
             dialogBox.Visible = true;
         }
@@ -180,6 +182,73 @@ namespace EngGame.screens.chap1
             alter.Visible = true;
             dialog1.Visible = true;
             dialogBox.Visible = true;
+            swordButton.Visible = false;
+            panel1.Visible = false;
+        }
+
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+        int num4 = 0;
+        int num5 = 0;
+        int num6 = 0;
+        private void lockbutton1_Click(object sender, EventArgs e)
+        {
+            num1++;
+            if(num1 == 8){
+                num1 = 0;
+            }
+            lockbutton1.ImageIndex = num1;            
+        }
+
+        private void lockbutton2_Click(object sender, EventArgs e)
+        {
+            num2++;
+            if (num2 == 8)
+            {
+                num2 = 0;
+            }
+            lockbutton2.ImageIndex = num2;
+        }
+
+        private void lockbutton3_Click(object sender, EventArgs e)
+        {
+            num3++;
+            if (num3 == 8)
+            {
+                num3 = 0;
+            }
+            lockbutton3.ImageIndex = num3;
+        }
+
+        private void lockbutton4_Click(object sender, EventArgs e)
+        {
+            num4++;
+            if (num4 == 8)
+            {
+                num4 = 0;
+            }
+            lockbutton4.ImageIndex = num4;
+        }
+
+        private void lockbutton5_Click(object sender, EventArgs e)
+        {
+            num5++;
+            if (num5 == 8)
+            {
+                num5 = 0;
+            }
+            lockbutton5.ImageIndex = num5;
+        }
+
+        private void lockbutton6_Click(object sender, EventArgs e)
+        {
+            num6++;
+            if (num6 == 8)
+            {
+                num6 = 0;
+            }
+            lockbutton6.ImageIndex = num6;
         }
     }
 }
