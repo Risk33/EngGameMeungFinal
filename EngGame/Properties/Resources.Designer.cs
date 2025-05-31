@@ -133,6 +133,16 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap bookB {
+            get {
+                object obj = ResourceManager.GetObject("bookB", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap cat_reacts {
             get {
                 object obj = ResourceManager.GetObject("cat reacts", resourceCulture);
@@ -213,6 +223,16 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap safe {
+            get {
+                object obj = ResourceManager.GetObject("safe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap SampleDialogBox {
             get {
                 object obj = ResourceManager.GetObject("SampleDialogBox", resourceCulture);
@@ -276,6 +296,16 @@ namespace EngGame.Properties {
         internal static System.Drawing.Bitmap 배경_제사실_앞 {
             get {
                 object obj = ResourceManager.GetObject("배경.제사실_앞", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 배경_창고 {
+            get {
+                object obj = ResourceManager.GetObject("배경.창고", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

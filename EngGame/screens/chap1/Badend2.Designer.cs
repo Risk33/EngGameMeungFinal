@@ -57,6 +57,7 @@
             dialog1.Size = new Size(21, 20);
             dialog1.TabIndex = 4;
             dialog1.Text = "...";
+            dialog1.Click += dialogBox_Click;
             // 
             // dialogBox
             // 
@@ -67,6 +68,7 @@
             dialogBox.Size = new Size(981, 193);
             dialogBox.TabIndex = 3;
             dialogBox.TabStop = false;
+            dialogBox.Click += dialogBox_Click;
             // 
             // Badend2
             // 

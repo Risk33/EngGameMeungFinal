@@ -28,16 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene5));
             panel1 = new Panel();
+            dialog1 = new Label();
+            dialogBox = new PictureBox();
+            bookButton = new Button();
+            safebutton = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Black;
+            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(safebutton);
+            panel1.Controls.Add(bookButton);
+            panel1.Controls.Add(dialog1);
+            panel1.Controls.Add(dialogBox);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
+            // 
+            // dialog1
+            // 
+            dialog1.AutoSize = true;
+            dialog1.BackColor = Color.WhiteSmoke;
+            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.Black;
+            dialog1.Location = new Point(145, 473);
+            dialog1.Name = "dialog1";
+            dialog1.Size = new Size(21, 20);
+            dialog1.TabIndex = 6;
+            dialog1.Text = "...";
+            // 
+            // dialogBox
+            // 
+            dialogBox.BackColor = Color.Transparent;
+            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
+            dialogBox.Location = new Point(134, 463);
+            dialogBox.Name = "dialogBox";
+            dialogBox.Size = new Size(981, 193);
+            dialogBox.TabIndex = 5;
+            dialogBox.TabStop = false;
+            // 
+            // bookButton
+            // 
+            bookButton.BackgroundImage = Properties.Resources.bookB;
+            bookButton.FlatAppearance.BorderSize = 0;
+            bookButton.FlatStyle = FlatStyle.Flat;
+            bookButton.Location = new Point(199, 47);
+            bookButton.Name = "bookButton";
+            bookButton.Size = new Size(260, 48);
+            bookButton.TabIndex = 7;
+            bookButton.UseVisualStyleBackColor = true;
+            bookButton.Click += this.bookButton_Click;
+            // 
+            // safebutton
+            // 
+            safebutton.FlatAppearance.BorderSize = 0;
+            safebutton.FlatStyle = FlatStyle.Flat;
+            safebutton.Image = Properties.Resources.safe;
+            safebutton.Location = new Point(139, 175);
+            safebutton.Name = "safebutton";
+            safebutton.Size = new Size(134, 270);
+            safebutton.TabIndex = 8;
+            safebutton.Text = "button2";
+            safebutton.UseVisualStyleBackColor = true;
+            safebutton.Click += this.safebutton_Click;
             // 
             // Scene5
             // 
@@ -46,11 +106,18 @@
             Controls.Add(panel1);
             Name = "Scene5";
             Size = new Size(1262, 679);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
+        private Label dialog1;
+        private PictureBox dialogBox;
+        private Button bookButton;
+        private Button safebutton;
     }
 }

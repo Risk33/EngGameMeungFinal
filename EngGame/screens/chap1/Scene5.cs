@@ -16,5 +16,80 @@ namespace EngGame.screens.chap1
         {
             InitializeComponent();
         }
+
+        int num;
+        bool center = true;
+        int imgnum = 0;
+
+        private void UpdateDialog() // 대사 넘기기
+        {
+            num++;
+            string[] ss = { };
+            try
+            {
+                ss = dialog[num, 2].Split("/");
+                dialog1.Text = dialog[num, 1];
+            }
+            catch
+            {
+                Console.WriteLine("화면1의 끝입니다.");
+            } // 대사가 끝나면 중단
+
+
+            int returnEventNum;
+            for (int i = 0; i < ss.Length; i++)
+            {
+                returnEventNum = Variable.checkDialog(ss[i]);
+
+                if (returnEventNum == 1) // 대사 창이 따로 필요하다면?
+                {
+                    dialogBox.Visible = true;
+                    dialog1.BringToFront();
+                    dialog1.ForeColor = Color.Black;
+                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
+                    dialog1.Location = new Point(150, 471);
+                    dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+                    center = false;
+                }   // 대사 창 켜고 대사 위치 조정
+                if (returnEventNum == 2) // 대사 창이 필요 없다면?
+                {
+                    dialogBox.Visible = false;
+                    dialog1.ForeColor = Color.White;
+                    dialog1.Location = new Point(491, 265);
+                    dialog1.BackColor = Color.Black;
+                    dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+                    center = true;
+                }   // 원래 자리로 돌려놓고 대사창 끄기
+                if (returnEventNum == 3)
+                {
+                }   // 이미지 띄우기
+                if (returnEventNum == 4)
+                {
+                }   // 이미지 닫기
+            }
+        }
+
+        private String[,] dialog = new string[,]
+        {
+                { "","ㅇㅇ아..! 얼른 수갑을 풀어줘야겠어..!", "" },
+                { "","ㅇㅇ아! 일어나!", "dialogBoxOpen/imageOpen" },
+                { "","(숨은 쉬는데 반응이 없다...)", "" },
+                { "","빨리 ㅇㅇ이의 수갑을 풀고 탈출하자!", "endoftheDialog" },
+        }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
+
+        private void dialogBox_Click(object sender, EventArgs e)
+        {
+            UpdateDialog();
+        }
+
+        private void bookButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void safebutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
