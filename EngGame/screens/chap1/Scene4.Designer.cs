@@ -50,17 +50,20 @@
             back = new Button();
             panel1 = new Panel();
             timer = new Label();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             alter.SuspendLayout();
             doorpanel.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.BackgroundImage = Properties.Resources.배경1;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Location = new Point(-1, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1259, 676);
             pictureBox1.TabIndex = 0;
@@ -77,7 +80,7 @@
             dialog1.BackColor = Color.FromArgb(255, 193, 198);
             dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(150, 489);
+            dialog1.Location = new Point(152, 490);
             dialog1.Name = "dialog1";
             dialog1.Size = new Size(21, 20);
             dialog1.TabIndex = 4;
@@ -118,7 +121,7 @@
             swordButton.Cursor = Cursors.Hand;
             swordButton.FlatAppearance.BorderSize = 0;
             swordButton.FlatStyle = FlatStyle.Flat;
-            swordButton.Location = new Point(612, 350);
+            swordButton.Location = new Point(0, 0);
             swordButton.Name = "swordButton";
             swordButton.Size = new Size(32, 160);
             swordButton.TabIndex = 6;
@@ -132,11 +135,12 @@
             alter.BackgroundImageLayout = ImageLayout.Zoom;
             alter.Controls.Add(bookHint);
             alter.Controls.Add(swordButton1);
-            alter.Location = new Point(496, 57);
+            alter.Location = new Point(494, 57);
             alter.Name = "alter";
             alter.Size = new Size(265, 407);
             alter.TabIndex = 7;
             alter.Visible = false;
+            alter.Paint += alter_Paint;
             // 
             // bookHint
             // 
@@ -176,7 +180,7 @@
             doorpanel.Controls.Add(lockbutton3);
             doorpanel.Controls.Add(lockbutton2);
             doorpanel.Controls.Add(lockbutton1);
-            doorpanel.Location = new Point(445, 136);
+            doorpanel.Location = new Point(443, 131);
             doorpanel.Name = "doorpanel";
             doorpanel.Size = new Size(368, 235);
             doorpanel.TabIndex = 8;
@@ -282,7 +286,7 @@
             // 
             // back
             // 
-            back.Location = new Point(149, 25);
+            back.Location = new Point(137, 25);
             back.Name = "back";
             back.Size = new Size(130, 38);
             back.TabIndex = 12;
@@ -293,6 +297,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(swordButton);
             panel1.Location = new Point(612, 350);
             panel1.Name = "panel1";
             panel1.Size = new Size(32, 100);
@@ -311,21 +316,28 @@
             timer.TabIndex = 14;
             timer.Text = "2 : 00";
             // 
+            // panel2
+            // 
+            panel2.Controls.Add(alter);
+            panel2.Controls.Add(doorButton);
+            panel2.Controls.Add(doorpanel);
+            panel2.Controls.Add(dialog1);
+            panel2.Controls.Add(dialogBox);
+            panel2.Controls.Add(timer);
+            panel2.Controls.Add(back);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1262, 679);
+            panel2.TabIndex = 15;
+            // 
             // Scene4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            Controls.Add(timer);
-            Controls.Add(doorpanel);
-            Controls.Add(alter);
-            Controls.Add(dialog1);
-            Controls.Add(dialogBox);
-            Controls.Add(swordButton);
             Controls.Add(panel1);
-            Controls.Add(back);
-            Controls.Add(doorButton);
-            Controls.Add(pictureBox1);
+            Controls.Add(panel2);
             Name = "Scene4";
             Size = new Size(1262, 679);
             Load += Scene4_Load;
@@ -333,8 +345,11 @@
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             alter.ResumeLayout(false);
             doorpanel.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -359,5 +374,6 @@
         private Button lockbutton3;
         private Button lockbutton2;
         private Label timer;
+        private Panel panel2;
     }
 }

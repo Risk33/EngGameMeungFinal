@@ -205,7 +205,8 @@ namespace EngGame.screens.chap1
         private void lockbutton1_Click(object sender, EventArgs e)
         {
             num1++;
-            if(num1 == 8){
+            if (num1 == 8)
+            {
                 num1 = 0;
             }
             lockbutton1.ImageIndex = num1;
@@ -268,13 +269,30 @@ namespace EngGame.screens.chap1
         }
         private void answerCheck()
         {
-            if(num1 == 2 && num2 == 3 && num3 == 4 && num4 == 3 && num5 == 1 && num6 ==7)
+            if (num1 == 2 && num2 == 3 && num3 == 4 && num4 == 3 && num5 == 1 && num6 == 7)
             {
                 Console.WriteLine("옳은 코드입니다.");
+                nextScreen();
             }
         } // 답 체크
+        screens.chap1.Badend2 badend2 = new Badend2();
+        screens.chap1.Scene5 scene5 = new Scene5();
+        private void nextScreen()
+        {
+            timer1.Stop();
+            panel1.Controls.Clear();
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(scene5);
+        }
 
-        
+        private void nextScreenBad()
+        {
+            timer1.Stop();
+            panel1.Controls.Clear();
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(badend2);
+        }
+
         // 타이머 구현
         String[] time = { };
         int minute = 0;
@@ -296,6 +314,7 @@ namespace EngGame.screens.chap1
             {
                 timer1.Enabled = false;
                 Console.WriteLine("시간 끝");
+                nextScreenBad();
             }
             if (sec < 10)
             {
@@ -305,6 +324,11 @@ namespace EngGame.screens.chap1
             {
                 timer.Text = minute + " : " + sec;
             }
+        }
+
+        private void alter_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
