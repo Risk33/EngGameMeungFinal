@@ -13,6 +13,7 @@ using System.Drawing.Text;
 using EngGame.screens.chap1;
 using System.Resources;
 using WMPLib;
+using System.Security.Policy;
 
 namespace EngGame.screens
 {
@@ -125,14 +126,19 @@ namespace EngGame.screens
                     switch (soundnum)
                     {
                         case 1:
+                            PlayFile(@".\Resources\sound\high_school_indoor_ambience.mp3");
+                            Console.WriteLine("배경 소리");
+                            break;
+                        case 2:
                             wmp.URL = @".\Resources\sound\walking-up-the-stairs.mp3";
                             wmp.controls.play();
                             Console.WriteLine("계단 소리");
                             break;
-                        case 2:
+                        case 3:
                             wmp.controls.stop(); // 파일을 바꾸기 위해 멈추기
                             wmp.URL = @".\Resources\sound\수업종9.mp3";
                             wmp.controls.play();
+                            Player.controls.stop();
                             Console.WriteLine("종소리");
                             break;
                     }   
@@ -163,7 +169,7 @@ namespace EngGame.screens
         private String[,] dialog = new string[,]
             {
                 { "","SampleText", "" },
-                { "","2025년 5월 16일, 오늘도 ㅇㅇ이가 학교에 오지 않았다. ", "dialogBoxOpen" },
+                { "","2025년 5월 16일, 오늘도 ㅇㅇ이가 학교에 오지 않았다. ", "dialogBoxOpen/soundPlay" },
                 { "","ㅇㅇ이가 학교에 안온지 이틀째다. ", "" },
                 { "","...","" },
                 { "","연락을 해도 보지도 않고... 이런 애가 아닌데... ", "" },
@@ -195,6 +201,13 @@ namespace EngGame.screens
                 ,{ "ㅁㅁ 선생님","쉿. 누가 오고 있어. 숙여!",""}
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
-
+        WindowsMediaPlayer Player;
+        private void PlayFile(String url)
+        {
+            Player = new WindowsMediaPlayer();
+            Player.URL = url;
+            Player.controls.play();
+        }
+        // 참조 : https://learn.microsoft.com/ko-kr/previous-versions/windows/desktop/wmp/creating-the-windows-media-player-control-programmatically?redirectedfrom=MSDN
     }
 }

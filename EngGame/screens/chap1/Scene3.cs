@@ -9,11 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Xml.Linq;
+using WMPLib;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene3 : UserControl
     {
+        WindowsMediaPlayer wmp;
         public Scene3()
         {
             InitializeComponent();
@@ -111,14 +113,16 @@ namespace EngGame.screens.chap1
             panel1.Controls.Add(scene4);
         }
 
-        private void inputConfirm_Click(object sender, EventArgs e)
+        private void inputConfirm_Click(object sender, EventArgs e) // 영단어 체크
         {
             label1.Visible = false;
             hintButton.Visible = false;
             inputBox.Visible = false;
             inputConfirm.Visible = false;
+            wmp.URL = @"Resources\sound\creaking-wooden-door-loud.mp3";
             String answer = inputBox.Text;
-            if (answer.ToLower().Contains("silently")){
+            if (answer.ToLower().Contains("silently"))
+            {
                 num = 0;
                 dialog = new string[,]
                 {
@@ -129,6 +133,7 @@ namespace EngGame.screens.chap1
             }
             else
             {
+                wmp.controls.play();
                 num = 0;
                 dialog = new string[,]
                 {
@@ -136,8 +141,14 @@ namespace EngGame.screens.chap1
                     { "","큰소리를 내버렸다... 느낌이 좋지 않다.", "" },
                     { "","...", "imageClose" },
                 };
+
                 Variable.NoiseMade();
-            }           
+            }
+        }
+
+        private void Scene3_Load(object sender, EventArgs e)
+        {
+            wmp = new WindowsMediaPlayer();
         }
     }
 }

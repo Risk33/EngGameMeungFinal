@@ -49,6 +49,7 @@
             lockbutton1 = new Button();
             back = new Button();
             panel1 = new Panel();
+            timer = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             alter.SuspendLayout();
@@ -64,6 +65,11 @@
             pictureBox1.Size = new Size(1259, 676);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // dialog1
             // 
@@ -293,18 +299,31 @@
             panel1.TabIndex = 13;
             panel1.Visible = false;
             // 
+            // timer
+            // 
+            timer.AutoSize = true;
+            timer.BackColor = Color.FromArgb(255, 128, 0);
+            timer.BorderStyle = BorderStyle.FixedSingle;
+            timer.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            timer.Location = new Point(1026, 18);
+            timer.Name = "timer";
+            timer.Size = new Size(92, 39);
+            timer.TabIndex = 14;
+            timer.Text = "2 : 00";
+            // 
             // Scene4
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(timer);
+            Controls.Add(doorpanel);
             Controls.Add(alter);
             Controls.Add(dialog1);
             Controls.Add(dialogBox);
             Controls.Add(swordButton);
             Controls.Add(panel1);
             Controls.Add(back);
-            Controls.Add(doorpanel);
             Controls.Add(doorButton);
             Controls.Add(pictureBox1);
             Name = "Scene4";
@@ -339,5 +358,6 @@
         private Button lockbutton4;
         private Button lockbutton3;
         private Button lockbutton2;
+        private Label timer;
     }
 }

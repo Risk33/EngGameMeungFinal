@@ -165,6 +165,7 @@
             Controls.Add(panel1);
             Name = "Scene3";
             Size = new Size(1262, 679);
+            Load += Scene3_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

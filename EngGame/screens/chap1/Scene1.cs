@@ -93,7 +93,7 @@ namespace EngGame.screens.chap1
                 }
                 if (returnEventNum == 6)
                 {
-                    wmp.URL = @".\Resources\sound\doorLocked.mp3";
+                    
                     Console.WriteLine(wmp.URL);
                     wmp.controls.play();
                 }
@@ -149,6 +149,7 @@ namespace EngGame.screens.chap1
             dialogBox.Visible = true;
             panel1.Visible = true;
             Back.Visible = true;
+
         }
 
         screens.chap1.Scene2 Scene2 = new screens.chap1.Scene2();
@@ -169,6 +170,7 @@ namespace EngGame.screens.chap1
 
         private void check_keypad() // 정답 확인
         {
+            wmp.URL = @".\Resources\sound\doorLocked.mp3";
             if (A_checkbox.Checked && A2_checkBox.Checked && L_checkBox.Checked &&
                 T_checkBox.Checked && R_checkBox.Checked && W_checkBox.Checked == false &&
                 W2_checkBox.Checked == false && V_checkBox.Checked == false && P_checkBox.Checked == false)
@@ -189,6 +191,11 @@ namespace EngGame.screens.chap1
             }
         }
 
+        private void thunkNoise()
+        {
+            wmp.URL = @".\Resources\sound\buttonToggle.mp3";
+            wmp.controls.play();
+        }
 
         // 아래는 키패드 입력받기
         private void A_CheckedChanged(object sender, EventArgs e)
@@ -204,7 +211,7 @@ namespace EngGame.screens.chap1
             {
                 A_checkbox.ImageIndex = 0;
             }
-
+            thunkNoise();
             check_keypad(); // 정답인지 확인
         }
 
@@ -221,6 +228,7 @@ namespace EngGame.screens.chap1
             {
                 L_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -237,6 +245,7 @@ namespace EngGame.screens.chap1
             {
                 A2_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -253,6 +262,7 @@ namespace EngGame.screens.chap1
             {
                 T_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -269,6 +279,7 @@ namespace EngGame.screens.chap1
             {
                 R_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
         private void W_CheckedChanged(object sender, EventArgs e)
@@ -284,6 +295,7 @@ namespace EngGame.screens.chap1
             {
                 W_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -300,6 +312,7 @@ namespace EngGame.screens.chap1
             {
                 W2_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -316,6 +329,7 @@ namespace EngGame.screens.chap1
             {
                 V_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
@@ -332,11 +346,13 @@ namespace EngGame.screens.chap1
             {
                 P_checkBox.ImageIndex = 0;
             }
+            thunkNoise();
             check_keypad();
         }
 
         private void Back_MouseClick(object sender, MouseEventArgs e)
         {
+            wmp.controls.stop();
             Back.Visible = false;
             panel1.Visible = false;
             hint.Visible = false;

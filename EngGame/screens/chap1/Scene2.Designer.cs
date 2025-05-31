@@ -150,6 +150,7 @@
             Controls.Add(panel1);
             Name = "Scene2";
             Size = new Size(1262, 679);
+            Load += Scene2_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();

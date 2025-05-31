@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using WMPLib;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene4 : UserControl
     {
+        WindowsMediaPlayer wmp;
         public Scene4()
         {
             InitializeComponent();
@@ -20,7 +22,11 @@ namespace EngGame.screens.chap1
 
         private void Scene4_Load(object sender, EventArgs e)
         {
-
+            wmp = new WindowsMediaPlayer();
+            if (Variable.IsNoiseMaid() == true)
+            {
+                timer.Text = "1 : 00";
+            }
         }
 
         private void dialogBox_Click(object sender, EventArgs e)
@@ -122,10 +128,13 @@ namespace EngGame.screens.chap1
             doorpanel.Visible = true;
             swordButton.Visible = false;
             panel1.Visible = false;
-        }
+        } // 문을 누르면?
         private void bookHint_Click(object sender, EventArgs e)
         {
             num = 0;
+            wmp.controls.stop();
+            wmp.URL = @".\Resources\sounds\paper-turning.mp3";
+            wmp.controls.play();
             dialog1.Visible = true;
             dialogBox.Visible = true;
             dialog1.Text = "노트다.";
@@ -144,7 +153,7 @@ namespace EngGame.screens.chap1
                 { "","내 친구의 이야기인거 같다. 빨리 찾아야 하는데..", "" },
                 { "","", "endoftheDialog" },
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
-        }
+        } // 제단 위에 책을 누르면?
 
         private void back_Click(object sender, EventArgs e)
         {
@@ -156,7 +165,7 @@ namespace EngGame.screens.chap1
             swordButton.Visible = true;
             panel1.Visible = true;
             doorButton.Visible = true;
-        }
+        } // 뒤로 가기를 누르면??
 
         private void swordButton1_Click(object sender, EventArgs e)
         {
@@ -173,7 +182,7 @@ namespace EngGame.screens.chap1
             }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
             dialog1.Visible = true;
             dialogBox.Visible = true;
-        }
+        } // 제단의 칼을 누르면?
 
         private void swordButton_Click(object sender, EventArgs e)
         {
@@ -184,8 +193,9 @@ namespace EngGame.screens.chap1
             dialogBox.Visible = true;
             swordButton.Visible = false;
             panel1.Visible = false;
-        }
+        } // 제단을 누르면?
 
+        // 아래는 자물쇠 구현
         int num1 = 0;
         int num2 = 0;
         int num3 = 0;
@@ -198,7 +208,8 @@ namespace EngGame.screens.chap1
             if(num1 == 8){
                 num1 = 0;
             }
-            lockbutton1.ImageIndex = num1;            
+            lockbutton1.ImageIndex = num1;
+            answerCheck();
         }
 
         private void lockbutton2_Click(object sender, EventArgs e)
@@ -209,6 +220,7 @@ namespace EngGame.screens.chap1
                 num2 = 0;
             }
             lockbutton2.ImageIndex = num2;
+            answerCheck();
         }
 
         private void lockbutton3_Click(object sender, EventArgs e)
@@ -219,6 +231,7 @@ namespace EngGame.screens.chap1
                 num3 = 0;
             }
             lockbutton3.ImageIndex = num3;
+            answerCheck();
         }
 
         private void lockbutton4_Click(object sender, EventArgs e)
@@ -229,6 +242,7 @@ namespace EngGame.screens.chap1
                 num4 = 0;
             }
             lockbutton4.ImageIndex = num4;
+            answerCheck();
         }
 
         private void lockbutton5_Click(object sender, EventArgs e)
@@ -239,6 +253,7 @@ namespace EngGame.screens.chap1
                 num5 = 0;
             }
             lockbutton5.ImageIndex = num5;
+            answerCheck();
         }
 
         private void lockbutton6_Click(object sender, EventArgs e)
@@ -249,6 +264,47 @@ namespace EngGame.screens.chap1
                 num6 = 0;
             }
             lockbutton6.ImageIndex = num6;
+            answerCheck();
+        }
+        private void answerCheck()
+        {
+            if(num1 == 2 && num2 == 3 && num3 == 4 && num4 == 3 && num5 == 1 && num6 ==7)
+            {
+                Console.WriteLine("옳은 코드입니다.");
+            }
+        } // 답 체크
+
+        
+        // 타이머 구현
+        String[] time = { };
+        int minute = 0;
+        int sec = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            time = timer.Text.Split(":");
+            minute = int.Parse(time[0]);
+            sec = int.Parse(time[1]);
+
+            sec--;
+            if (sec < 0)
+            {
+                minute--;
+                sec += 60;
+            }
+            if (sec == 0 && minute == 0)
+            {
+                timer1.Enabled = false;
+                Console.WriteLine("시간 끝");
+            }
+            if (sec < 10)
+            {
+                timer.Text = minute + " : 0" + sec;
+            }
+            else
+            {
+                timer.Text = minute + " : " + sec;
+            }
         }
     }
 }

@@ -44,7 +44,7 @@ namespace EngGame.screens
                 }
                 if (dialog.Contains("imageClose"))
                 {
-                    Console.WriteLine("이미지 ek");
+                    Console.WriteLine("이미지 닫기");
                     return 4;
                 }
                 if (dialog == "endoftheDialog")
@@ -66,7 +66,7 @@ namespace EngGame.screens
             }
             return 0;
         }
-        // 이벤트 번호 해석
+        // 이벤트 번호 해석(맞지 않을 수도 있음)
 
 
 

@@ -9,11 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using EngGame.Properties;
+using WMPLib;
+using System.Media;
+using System.Numerics;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene2 : UserControl
     {
+        WindowsMediaPlayer wmp; // 소리 구현
         public Scene2()
         {
             InitializeComponent();
@@ -108,6 +112,8 @@ namespace EngGame.screens.chap1
 
         private void peek_button_Click(object sender, EventArgs e)
         {
+            wmp.URL = @".\Resources\sound\wood-creek-short.mp3";
+            wmp.controls.play();
             pictureBox1.BackgroundImage = Resources.배경_제사실_내부_peek;
             dialog1.Text = "일단은 안전한거 같은데. 친구의 모습은 보이지 않는다." +
                             "\n...손만 대었는데 문이 삐걱거린다..";
@@ -137,5 +143,29 @@ namespace EngGame.screens.chap1
         {
             nextScreen();
         }
+
+        private void Scene2_Load(object sender, EventArgs e)
+        {
+            PlayFile(@".\Resources\sound\horror-background-atmosphere.mp3");
+            wmp = new WindowsMediaPlayer();
+        }
+
+        WindowsMediaPlayer Player;
+        private void PlayFile(String url)
+        {
+            Player = new WindowsMediaPlayer();
+            Player.PlayStateChange +=
+                new _WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
+            Player.URL = url;
+            Player.controls.play();
+        }
+        private void Player_PlayStateChange(int NewState)
+        {
+            if ((WMPPlayState)NewState == WMPPlayState.wmppsStopped)
+            {
+                PlayFile(@"\Resources\sound\horror-background-atmosphere-loop.mp3");
+            }
+        }
+        // 참조 : https://learn.microsoft.com/ko-kr/previous-versions/windows/desktop/wmp/creating-the-windows-media-player-control-programmatically?redirectedfrom=MSDN
     }
 }
