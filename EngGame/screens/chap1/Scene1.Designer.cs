@@ -477,7 +477,7 @@
             // 
             hint.BackgroundImage = Properties.Resources.hint1;
             hint.BackgroundImageLayout = ImageLayout.Zoom;
-            hint.Location = new Point(428, 57);
+            hint.Location = new Point(429, 49);
             hint.Name = "hint";
             hint.Size = new Size(361, 360);
             hint.TabIndex = 10;
