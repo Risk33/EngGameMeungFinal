@@ -318,9 +318,9 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(doorpanel);
             panel2.Controls.Add(alter);
             panel2.Controls.Add(doorButton);
-            panel2.Controls.Add(doorpanel);
             panel2.Controls.Add(dialog1);
             panel2.Controls.Add(dialogBox);
             panel2.Controls.Add(timer);

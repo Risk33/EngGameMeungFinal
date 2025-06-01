@@ -7,16 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
+using System.Runtime.CompilerServices;
 
 namespace EngGame.screens.chap1
 {
-    public partial class Scene5: UserControl
+    public partial class Scene5 : UserControl
     {
+        WindowsMediaPlayer wmp;
+        
         public Scene5()
         {
             InitializeComponent();
+            wmp = new WindowsMediaPlayer();
         }
-
+        
         int num;
         bool center = true;
         int imgnum = 0;
@@ -35,7 +40,6 @@ namespace EngGame.screens.chap1
                 Console.WriteLine("화면1의 끝입니다.");
             } // 대사가 끝나면 중단
 
-
             int returnEventNum;
             for (int i = 0; i < ss.Length; i++)
             {
@@ -53,6 +57,7 @@ namespace EngGame.screens.chap1
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
                 {
+                    dialog1.BringToFront();
                     dialogBox.Visible = false;
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
@@ -66,15 +71,33 @@ namespace EngGame.screens.chap1
                 if (returnEventNum == 4)
                 {
                 }   // 이미지 닫기
+                if (returnEventNum == 5)
+                {
+                    bookButton.Visible = true;
+                    dialog1.Visible = false;
+                    dialogBox.Visible = false;
+                    safebutton.Visible = true;
+                    panel1.Visible = true;
+                    Console.WriteLine("타이머 다시 시작");
+                }
             }
+        }
+
+        chap1.End end = new chap1.End();
+        private void nextScreen()
+        {
+            panel1.Controls.Clear();
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(end);
         }
 
         private String[,] dialog = new string[,]
         {
                 { "","ㅇㅇ아..! 얼른 수갑을 풀어줘야겠어..!", "" },
-                { "","ㅇㅇ아! 일어나!", "dialogBoxOpen/imageOpen" },
+                { "","ㅇㅇ아! 일어나!", "" },
                 { "","(숨은 쉬는데 반응이 없다...)", "" },
-                { "","빨리 ㅇㅇ이의 수갑을 풀고 탈출하자!", "endoftheDialog" },
+                { "","빨리 ㅇㅇ이의 수갑을 풀고 탈출하자!", "" },
+                { "","", "endoftheDialog" },
         }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
         private void dialogBox_Click(object sender, EventArgs e)
@@ -84,12 +107,124 @@ namespace EngGame.screens.chap1
 
         private void bookButton_Click(object sender, EventArgs e)
         {
-
+            num = 0;
+            back.Visible = true;
+            bookButton.Visible = false;
+            safebutton.Visible = false;
+            dialog = new string[,]
+            {
+                { "","창고를 관리하는 장부 같다.", "" },
+                { "","\"5월 1일\"" +
+                "\n월간 순기 업무로 금고 비밀번호 변경 완료했습니다." +
+                "\n비밀번호는 다들 알듯이 \"이번달 의식\" 날짜에다 \"희생 횟수\"입니다.", "" },
+                { "","의식 날짜는 당연히 오늘인 5월 16일 일 것이고, \"희생 횟수\"는 뭐지?", "" },
+            };
         }
 
         private void safebutton_Click(object sender, EventArgs e)
         {
+            wmp.URL = @".\Resources\sound\safe-dial-switch.mp3";
+            inputSTOP = false;
+            panel2.MouseWheel += VaultPasswordEvent;
+            bookButton.Visible = false;
+            back.Visible = true;
+            panel2.Visible = true;
+            pass1.Text = "00";
+            pass2.Text = "00";
+            num = 0;
+            dialog = new string[,]
+            {
+                { "","금고다! 이 안에 분명히 ㅁㅁ이를 깨우는 약이 들어있을꺼야!", "" },
+                { "","비밀번호가 필요한거 같다. 어딘가에 적혀 있지 않을까?", "" },
+                { "","마우스 휠으로 입력", "" },
+            };
+        }
+        int vaultNum = 0;
+        Boolean inputSTOP = false; //!!!!
+        private void VaultPasswordEvent(object sender, MouseEventArgs e)
+        {           
+            if (inputSTOP == false)
+            {
+                if (e.Delta > 0)
+                {
+                    vaultNum++;
+                    wmp.controls.play();
+                    if (vaultNum > 100)
+                    {
+                        vaultNum = 0;
+                    }
+                    if (vaultNum < 10)
+                        pass1.Text = "0" + vaultNum;
+                    else
+                        pass1.Text = "" + vaultNum;
+                    Console.WriteLine(vaultNum);
+                }
+                else if (e.Delta < 0)
+                {
+                    inputSTOP = true;
+                    vaultNum = 0;
+                }
+            }
+            else if (inputSTOP)
+            {
+                if (e.Delta < 0)
+                {
+                    vaultNum++;
+                    if (vaultNum > 100)
+                    {
+                        vaultNum = 0;
+                    }
+                    if (vaultNum < 10)
+                        pass2.Text = "0" + vaultNum;
+                    else
+                        pass2.Text = "" + vaultNum;
+                    Console.WriteLine(vaultNum);
+                    wmp.controls.play();
+                }
+                else if (e.Delta > 0)
+                {
+                    inputSTOP = true;
+                    panel2.MouseWheel -= VaultPasswordEvent;
+                }
+            }
+        }
 
+        private void back_Click(object sender, EventArgs e)
+        {
+            bookButton.Visible = true;
+            panel2.Visible = false;
+            safebutton.Visible = true;
+            back.Visible = false;
+            dialog1.Visible = false;
+            dialogBox.Visible = false;
+        }
+
+        private void passSubmit_Click(object sender, EventArgs e)
+        {
+            if(pass1.Text == "16" && pass2.Text == "13")
+            {
+                wmp.URL = @".\Resources\sound\금고_open.mp3";
+                afterVault();
+            }
+            else
+            {
+                dialogBox.Visible = true;
+                dialog1.Visible = true;
+                dialog1.Text = "코드를 잘못 입력한거 같다.";
+            }
+        }
+
+        private void afterVault()
+        {
+            dialogBox.Visible = true;
+            dialog1.Visible = true;
+            dialog = new string[,]
+            {
+                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "" },
+                { "","네, 선생님!", "" },
+                { "","그렇게 우리는 약을 먹이고 탈출했다.", "dialogClose" },
+                { "","", "dialogClose" },
+            };
         }
     }
 }

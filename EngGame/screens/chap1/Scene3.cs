@@ -72,6 +72,7 @@ namespace EngGame.screens.chap1
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
                 {
+                    
                     dialogBox.Visible = false;
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);

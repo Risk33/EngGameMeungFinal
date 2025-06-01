@@ -121,6 +121,9 @@
   <data name="chain" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\chain.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="탈출" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\탈출.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="제단1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\제단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,11 +166,17 @@
   <data name="배경1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\배경.제사실_내부.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="safe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\puzzle\safe.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="door" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\puzzle\door.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="A" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\puzzle\A.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="vault_submit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\puzzle\vault_submit.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="배경2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\배경.제사실_내부_peek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,8 +193,8 @@
   <data name="simpleName" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\simpleName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\학교\puzzle\sword.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="vault" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\vault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="badend1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\badend1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +217,9 @@
   <data name="A1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\puzzle\A.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="sword" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\puzzle\sword.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="mainScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mainScreen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -217,7 +229,7 @@
   <data name="제단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\제단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="safe" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\학교\puzzle\safe.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="openSafe" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\학교\openSafe.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -213,6 +213,16 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap openSafe {
+            get {
+                object obj = ResourceManager.GetObject("openSafe", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap openthedoor {
             get {
                 object obj = ResourceManager.GetObject("openthedoor", resourceCulture);
@@ -276,6 +286,26 @@ namespace EngGame.Properties {
         internal static System.Drawing.Bitmap sworddisc {
             get {
                 object obj = ResourceManager.GetObject("sworddisc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap vault {
+            get {
+                object obj = ResourceManager.GetObject("vault", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap vault_submit {
+            get {
+                object obj = ResourceManager.GetObject("vault_submit", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -396,6 +426,16 @@ namespace EngGame.Properties {
         internal static System.Drawing.Bitmap 제목_없음 {
             get {
                 object obj = ResourceManager.GetObject("제목 없음", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 탈출 {
+            get {
+                object obj = ResourceManager.GetObject("탈출", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

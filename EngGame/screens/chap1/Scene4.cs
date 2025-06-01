@@ -120,7 +120,8 @@ namespace EngGame.screens.chap1
             dialog1.Text = "이 뒤에 친구가 있는게 분명하다!";
             dialog = new string[,]
             {
-                { "","이 뒤에 친구가 있는게 분명하다!", "" },
+                { "ㅁㅁ 선생님","설마 설마 했는데 학교 지하에 이런곳이 존재하다니...", "" },
+                { "","이 주위에 친구가 있는게 분명하다!", "" },
                 { "","이 주위에 힌트가 될만한게 있지 않을까?", "" },
                 { "","", "endoftheDialog" },
             };
@@ -142,9 +143,10 @@ namespace EngGame.screens.chap1
             {
                 { "","노트다.", "" },
                 { "","...", "" },
-                { "","제사장의 일기가 적혀 있는거 같다.", "" },
+                { "","제사장의 일기가 적혀 있는거 같다.", "" },                
                 { "","5월 14일" +
                 "\n새로운 결함품을 잡아들였다.", "" },
+                { "","이번이 벌써 13번째인가..", "" },
                 { "","그 분의 말씀은 우리가 태어나기도 전, 오래전부터 이어진 것이니,", "" },
                 { "","앞으로도 외부인이 알아내서도, 알려져도 안된다.", "" },
                 { "","계속 하나씩 결함을 가진 우리들을 고쳐나가야한다.", "" },
@@ -193,6 +195,7 @@ namespace EngGame.screens.chap1
             dialogBox.Visible = true;
             swordButton.Visible = false;
             panel1.Visible = false;
+            doorButton.Visible = false;
         } // 제단을 누르면?
 
         // 아래는 자물쇠 구현
@@ -272,6 +275,7 @@ namespace EngGame.screens.chap1
             if (num1 == 2 && num2 == 3 && num3 == 4 && num4 == 3 && num5 == 1 && num6 == 7)
             {
                 Console.WriteLine("옳은 코드입니다.");
+                dialog1.Text = "자물쇠를 열었다.";
                 nextScreen();
             }
         } // 답 체크
@@ -280,17 +284,17 @@ namespace EngGame.screens.chap1
         private void nextScreen()
         {
             timer1.Stop();
-            panel1.Controls.Clear();
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(scene5);
+            panel2.Controls.Clear();
+            panel2.BackColor = Color.Black;
+            panel2.Controls.Add(scene5);
         }
 
         private void nextScreenBad()
         {
             timer1.Stop();
-            panel1.Controls.Clear();
-            panel1.BackColor = Color.Black;
-            panel1.Controls.Add(badend2);
+            panel2.Controls.Clear();
+            panel2.BackColor = Color.Black;
+            panel2.Controls.Add(badend2);
         }
 
         // 타이머 구현
