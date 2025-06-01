@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EngGame.Properties;
+using WMPLib;
 
 namespace EngGame.screens.chap1
 {
     public partial class End : UserControl
     {
+        WindowsMediaPlayer wmp = new WindowsMediaPlayer();
         public End()
         {
             InitializeComponent();
@@ -36,6 +39,7 @@ namespace EngGame.screens.chap1
             } // 대사가 끝나면 중단
 
             int returnEventNum;
+            int soundNum = 0;
             for (int i = 0; i < ss.Length; i++)
             {
                 returnEventNum = Variable.checkDialog(ss[i]);
@@ -61,10 +65,28 @@ namespace EngGame.screens.chap1
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
                 {
+
                 }   // 이미지 띄우기
                 if (returnEventNum == 4)
                 {
+                    panel1.BackgroundImage.Dispose();
                 }   // 이미지 닫기
+                if (returnEventNum == 6)
+                {
+                    soundNum++;
+                    switch (soundNum)
+                    {
+                        case 1:
+                            wmp.URL = @".\Resources\sound\lecture_fadein.mp3";
+                            wmp.controls.play();
+                            break;
+                        case 2:
+                            wmp.controls.stop();
+                            wmp.URL = @".\Resources\sound\lecture_fadeout.mp3";
+                            wmp.controls.play();
+                            break;
+                    }
+                } //소리 플래이
             }
         }
 
@@ -72,10 +94,13 @@ namespace EngGame.screens.chap1
         {
                 { "","", "" },
                 { "","우리는 운이 좋게 아무도 마주치지 않고 빠져나올 수 있었다.", "dialogBoxOpen/imageOpen" },
-                { "","이후 학교에 경찰이 방문하고, 친했던 선생님들이 잡혀가는 등 많은 일이 있었다.", "" },
+                { "","탈출한 우리들은 바로 경찰에 신고하고, 친구를 병원에 대려갔다.", "dialogBoxOpen/imageOpen" },
+                { "","이후 학교에 경찰이 방문하고, 학교의 교직원들이 통째로 바뀌는 등 많은 일이 있었다.", "" },
+                { "","...", "dialogBoxClose/soundPlay" },
                 { "","물론 그 일이 있었던 것도 이제는 거의 3달전...", "" },
                 { "","학교는 원래의 활기찬 분위기를 되찾았고,", "" },
-                { "","창문 밖에서도 뛰고 있는 학생들의 열기가 여기까지 느껴지는듯 하나,", "" },
+                { "","제단이 있던 장소는 조사가 모두 끝나 탁구장으로 리모델링을 한다고 한다.", "" },
+                { "","창문 밖에서도 뛰고 있는 학생들의 열기가 여기까지 느껴지는듯 하나...", "" },
                 { "","그들은 알까? 학교 아래에 그런 장소가 있었다는 걸?", "" },
                 { "","...", "" },
                 { "","The End", "dialogBoxClose/imageClose" },
@@ -91,6 +116,9 @@ namespace EngGame.screens.chap1
             UpdateDialog();
         }
 
-        
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            panel2.Visible = false;
+        }
     }
 }

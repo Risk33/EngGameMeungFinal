@@ -166,6 +166,10 @@ namespace EngGame.screens.chap1
                 PlayFile(@"\Resources\sound\horror-background-atmosphere-loop.mp3");
             }
         }
+        public void Player_Stop()
+        {
+            Player.controls.stop();
+        }
         // 참조 : https://learn.microsoft.com/ko-kr/previous-versions/windows/desktop/wmp/creating-the-windows-media-player-control-programmatically?redirectedfrom=MSDN
     }
 }

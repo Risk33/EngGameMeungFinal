@@ -15,6 +15,7 @@ namespace EngGame.screens
     class Variable
     {
         static Boolean noise = false;
+        static String leftOverTime = "";
         public static void NoiseMade()
         {
             noise = true;
@@ -22,6 +23,14 @@ namespace EngGame.screens
         public static Boolean IsNoiseMaid()
         {
             return noise;
+        }
+        public static void timeSet(String time)
+        {
+            leftOverTime = time;
+        }
+        public static String timeGet()
+        {
+            return leftOverTime;
         }
         public static int checkDialog(String dialog)
         {

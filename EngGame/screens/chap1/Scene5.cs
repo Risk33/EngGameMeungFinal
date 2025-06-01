@@ -67,10 +67,13 @@ namespace EngGame.screens.chap1
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
                 {
+                    openSafePanel.Visible = true;
+                    panel2.Visible = false;
                 }   // 이미지 띄우기
                 if (returnEventNum == 4)
                 {
-                }   // 이미지 닫기
+                    nextScreen();
+                }   // 이미지 닫기 였던것
                 if (returnEventNum == 5)
                 {
                     bookButton.Visible = true;
@@ -78,6 +81,9 @@ namespace EngGame.screens.chap1
                     dialogBox.Visible = false;
                     safebutton.Visible = true;
                     panel1.Visible = true;
+                    timer.Visible = true;
+                    timer.Text = Variable.timeGet();
+                    timer1.Enabled = true;
                     Console.WriteLine("타이머 다시 시작");
                 }
             }
@@ -86,6 +92,9 @@ namespace EngGame.screens.chap1
         chap1.End end = new chap1.End();
         private void nextScreen()
         {
+            chap1.Scene2 scene2 = new Scene2();
+            scene2.Player_Stop();
+            timer1.Enabled = false;
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(end);
@@ -111,13 +120,16 @@ namespace EngGame.screens.chap1
             back.Visible = true;
             bookButton.Visible = false;
             safebutton.Visible = false;
+            dialog1.Visible = true;
+            dialogBox.Visible = true;
+            dialog1.Text = "창고를 관리하는 장부 같다.";
             dialog = new string[,]
             {
-                { "","창고를 관리하는 장부 같다.", "" },
+                { "","", "" },
                 { "","\"5월 1일\"" +
                 "\n월간 순기 업무로 금고 비밀번호 변경 완료했습니다." +
                 "\n비밀번호는 다들 알듯이 \"이번달 의식\" 날짜에다 \"희생 횟수\"입니다.", "" },
-                { "","의식 날짜는 당연히 오늘인 5월 16일 일 것이고, \"희생 횟수\"는 뭐지?", "" },
+                { "","의식 날짜는 당연히 오늘인 5월 16일일 것이고, \"희생 횟수\"는 뭐지?", "" },
             };
         }
 
@@ -191,12 +203,14 @@ namespace EngGame.screens.chap1
 
         private void back_Click(object sender, EventArgs e)
         {
+            vaultNum = 0;
             bookButton.Visible = true;
             panel2.Visible = false;
             safebutton.Visible = true;
             back.Visible = false;
             dialog1.Visible = false;
             dialogBox.Visible = false;
+            panel2.MouseWheel -= VaultPasswordEvent;
         }
 
         private void passSubmit_Click(object sender, EventArgs e)
@@ -204,6 +218,7 @@ namespace EngGame.screens.chap1
             if(pass1.Text == "16" && pass2.Text == "13")
             {
                 wmp.URL = @".\Resources\sound\금고_open.mp3";
+                safebutton.Visible = false;
                 afterVault();
             }
             else
@@ -216,15 +231,48 @@ namespace EngGame.screens.chap1
 
         private void afterVault()
         {
+            num = 0;
             dialogBox.Visible = true;
             dialog1.Visible = true;
+            dialog1.Text = "이걸 먹이면 될꺼야!";
             dialog = new string[,]
             {
-                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "" },
+                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "imageOpen" },
                 { "","네, 선생님!", "" },
-                { "","그렇게 우리는 약을 먹이고 탈출했다.", "dialogClose" },
-                { "","", "dialogClose" },
+                { "","그렇게 우리는 친구를 깨운후 탈출했다.", "" },
+                { "","", "imageClose/dialogBoxClose" }, //헉 만들기 귀찮아서 안쓰는 이벤트 번호 재활용
             };
+        }
+
+        String[] time = { };
+        int minute = 0;
+        int sec = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            time = timer.Text.Split(":");
+            minute = int.Parse(time[0]);
+            sec = int.Parse(time[1]);
+
+            sec--;
+            if (sec < 0)
+            {
+                minute--;
+                sec += 60;
+            }
+            if (sec == 0 && minute == 0)
+            {
+                timer1.Enabled = false;
+                Console.WriteLine("시간 끝");
+            }
+            if (sec < 10)
+            {
+                timer.Text = minute + " : 0" + sec;
+            }
+            else
+            {
+                timer.Text = minute + " : " + sec;
+            }
         }
     }
 }

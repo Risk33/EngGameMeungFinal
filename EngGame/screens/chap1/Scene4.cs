@@ -284,6 +284,7 @@ namespace EngGame.screens.chap1
         private void nextScreen()
         {
             timer1.Stop();
+            Variable.timeSet(timer.Text);
             panel2.Controls.Clear();
             panel2.BackColor = Color.Black;
             panel2.Controls.Add(scene5);

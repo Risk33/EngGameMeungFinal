@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene5));
             panel1 = new Panel();
+            timer = new Label();
             openSafePanel = new Panel();
             dialog1 = new Label();
             dialogBox = new PictureBox();
@@ -42,7 +43,6 @@
             safebutton = new Button();
             bookButton = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            panel3 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             panel2.SuspendLayout();
@@ -53,7 +53,7 @@
             panel1.BackColor = Color.Black;
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Controls.Add(panel3);
+            panel1.Controls.Add(timer);
             panel1.Controls.Add(openSafePanel);
             panel1.Controls.Add(dialog1);
             panel1.Controls.Add(dialogBox);
@@ -65,6 +65,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
+            // 
+            // timer
+            // 
+            timer.AutoSize = true;
+            timer.BackColor = Color.FromArgb(255, 128, 0);
+            timer.BorderStyle = BorderStyle.FixedSingle;
+            timer.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            timer.Location = new Point(1035, 45);
+            timer.Name = "timer";
+            timer.Size = new Size(92, 39);
+            timer.TabIndex = 15;
+            timer.Text = "2 : 00";
+            timer.Visible = false;
             // 
             // openSafePanel
             // 
@@ -84,9 +97,9 @@
             dialog1.ForeColor = Color.Black;
             dialog1.Location = new Point(145, 473);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(21, 20);
+            dialog1.Size = new Size(260, 20);
             dialog1.TabIndex = 6;
-            dialog1.Text = "...";
+            dialog1.Text = "ㅇㅇ아..! 얼른 수갑을 풀어줘야겠어..!";
             dialog1.Click += dialogBox_Click;
             // 
             // dialogBox
@@ -102,7 +115,7 @@
             // 
             // back
             // 
-            back.Location = new Point(997, 36);
+            back.Location = new Point(985, 396);
             back.Name = "back";
             back.Size = new Size(130, 38);
             back.TabIndex = 13;
@@ -187,12 +200,10 @@
             bookButton.UseVisualStyleBackColor = true;
             bookButton.Click += bookButton_Click;
             // 
-            // panel3
+            // timer1
             // 
-            panel3.Location = new Point(3, 3);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1259, 676);
-            panel3.TabIndex = 0;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // Scene5
             // 
@@ -223,6 +234,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button passSubmit;
         private Panel openSafePanel;
-        private Panel panel3;
+        private Label timer;
     }
 }

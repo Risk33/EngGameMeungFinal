@@ -32,6 +32,7 @@
             panel1 = new Panel();
             dialog1 = new Label();
             dialogBox = new PictureBox();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             SuspendLayout();
@@ -40,6 +41,7 @@
             // 
             panel1.BackgroundImage = Properties.Resources.탈출;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(panel2);
             panel1.Controls.Add(dialog1);
             panel1.Controls.Add(dialogBox);
             panel1.Location = new Point(0, 0);
@@ -73,6 +75,15 @@
             dialogBox.TabStop = false;
             dialogBox.Click += panel1_Click;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Black;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1259, 679);
+            panel2.TabIndex = 9;
+            panel2.Click += panel2_Click;
+            // 
             // End
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -92,5 +103,6 @@
         private Panel panel1;
         private Label dialog1;
         private PictureBox dialogBox;
+        private Panel panel2;
     }
 }
