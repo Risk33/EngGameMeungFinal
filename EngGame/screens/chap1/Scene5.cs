@@ -9,19 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
 using System.Runtime.CompilerServices;
+using System.Numerics;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene5 : UserControl
     {
         WindowsMediaPlayer wmp;
-        
+        WindowsMediaPlayer Player;
+
         public Scene5()
         {
             InitializeComponent();
             wmp = new WindowsMediaPlayer();
         }
-        
+
         int num;
         bool center = true;
         int imgnum = 0;
@@ -92,8 +94,7 @@ namespace EngGame.screens.chap1
         chap1.End end = new chap1.End();
         private void nextScreen()
         {
-            chap1.Scene2 scene2 = new Scene2();
-            scene2.Player_Stop();
+            Player.controls.stop();
             timer1.Enabled = false;
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
@@ -154,7 +155,7 @@ namespace EngGame.screens.chap1
         int vaultNum = 0;
         Boolean inputSTOP = false; //!!!!
         private void VaultPasswordEvent(object sender, MouseEventArgs e)
-        {           
+        {
             if (inputSTOP == false)
             {
                 if (e.Delta > 0)
@@ -215,7 +216,7 @@ namespace EngGame.screens.chap1
 
         private void passSubmit_Click(object sender, EventArgs e)
         {
-            if(pass1.Text == "16" && pass2.Text == "13")
+            if (pass1.Text == "16" && pass2.Text == "13")
             {
                 wmp.URL = @".\Resources\sound\금고_open.mp3";
                 safebutton.Visible = false;
@@ -273,6 +274,13 @@ namespace EngGame.screens.chap1
             {
                 timer.Text = minute + " : " + sec;
             }
+        }
+
+        private void Scene5_Load(object sender, EventArgs e)
+        {
+            Player = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\horror-background-atmosphere-loop.mp3";
+            Player.controls.play();
         }
     }
 }

@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using Timer = System.Windows.Forms.Timer;
+using WMPLib;
 
 namespace EngGame.screens
 {
     class Variable
     {
+
+
         static Boolean noise = false;
         static String leftOverTime = "";
         public static void NoiseMade()

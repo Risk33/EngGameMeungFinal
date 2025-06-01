@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using WMPLib;
+using System.Numerics;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene4 : UserControl
     {
         WindowsMediaPlayer wmp;
+        WindowsMediaPlayer Player;
         public Scene4()
         {
             InitializeComponent();
@@ -22,7 +24,11 @@ namespace EngGame.screens.chap1
 
         private void Scene4_Load(object sender, EventArgs e)
         {
+            Player = new WindowsMediaPlayer();
             wmp = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\horror-background-atmosphere-loop.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악재시작");
             if (Variable.IsNoiseMaid() == true)
             {
                 timer.Text = "1 : 00";
@@ -288,6 +294,7 @@ namespace EngGame.screens.chap1
             panel2.Controls.Clear();
             panel2.BackColor = Color.Black;
             panel2.Controls.Add(scene5);
+            Player.controls.stop();
         }
 
         private void nextScreenBad()

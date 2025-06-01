@@ -10,12 +10,14 @@ using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using System.Xml.Linq;
 using WMPLib;
+using System.Numerics;
 
 namespace EngGame.screens.chap1
 {
     public partial class Scene3 : UserControl
     {
         WindowsMediaPlayer wmp;
+        WindowsMediaPlayer Player;
         public Scene3()
         {
             InitializeComponent();
@@ -112,6 +114,7 @@ namespace EngGame.screens.chap1
         {
             panel1.Controls.Clear();
             panel1.Controls.Add(scene4);
+            Player.controls.stop();
         }
 
         private void inputConfirm_Click(object sender, EventArgs e) // 영단어 체크
@@ -149,6 +152,11 @@ namespace EngGame.screens.chap1
 
         private void Scene3_Load(object sender, EventArgs e)
         {
+            
+            Player = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\horror-background-atmosphere-loop.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악재시작");
             wmp = new WindowsMediaPlayer();
         }
     }

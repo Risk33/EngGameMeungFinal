@@ -32,37 +32,38 @@
             panel1 = new Panel();
             dialog1 = new Label();
             dialogBox = new PictureBox();
-            panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackgroundImage = Properties.Resources.탈출;
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
-            panel1.Controls.Add(panel2);
             panel1.Controls.Add(dialog1);
+            panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(dialogBox);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
             panel1.Click += panel1_Click;
-            panel1.Paint += panel1_Paint;
             // 
             // dialog1
             // 
+            dialog1.Anchor = AnchorStyles.Top;
             dialog1.AutoSize = true;
-            dialog1.BackColor = Color.WhiteSmoke;
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(151, 474);
+            dialog1.BackColor = Color.Black;
+            dialog1.CausesValidation = false;
+            dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
+            dialog1.Location = new Point(149, 240);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(21, 20);
-            dialog1.TabIndex = 8;
-            dialog1.Text = "...";
-            dialog1.Click += panel1_Click;
+            dialog1.Size = new Size(964, 47);
+            dialog1.TabIndex = 1;
+            dialog1.Text = "우리는 운이 좋게 아무도 마주치지 않고 빠져나올 수 있었다.";
             // 
             // dialogBox
             // 
@@ -75,14 +76,14 @@
             dialogBox.TabStop = false;
             dialogBox.Click += panel1_Click;
             // 
-            // panel2
+            // pictureBox1
             // 
-            panel2.BackColor = Color.Black;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1259, 679);
-            panel2.TabIndex = 9;
-            panel2.Click += panel2_Click;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1262, 679);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // End
             // 
@@ -95,14 +96,15 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
-        private Label dialog1;
         private PictureBox dialogBox;
-        private Panel panel2;
+        private Label dialog1;
+        private PictureBox pictureBox1;
     }
 }

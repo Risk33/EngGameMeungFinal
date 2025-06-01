@@ -80,6 +80,7 @@ namespace EngGame.screens
 
                 if (returnEventNum == 1) // 대사 창이 따로 필요하다면?
                 {
+                    dialog1.BackColor = Color.Transparent;
                     name.Visible = true;
                     dialogBox.Visible = true;
                     dialog1.BringToFront();

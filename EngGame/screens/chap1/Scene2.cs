@@ -18,6 +18,7 @@ namespace EngGame.screens.chap1
     public partial class Scene2 : UserControl
     {
         WindowsMediaPlayer wmp; // 소리 구현
+        WindowsMediaPlayer Player;
         public Scene2()
         {
             InitializeComponent();
@@ -133,10 +134,11 @@ namespace EngGame.screens.chap1
 
         screens.chap1.Scene3 scene3 = new Scene3();
         private void nextScreen()
-        {
+        {      
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(scene3);
+            Player.controls.stop();
         }
 
         private void enter_button_Click(object sender, EventArgs e)
@@ -146,30 +148,13 @@ namespace EngGame.screens.chap1
 
         private void Scene2_Load(object sender, EventArgs e)
         {
-            PlayFile(@".\Resources\sound\horror-background-atmosphere.mp3");
+            
+            Player = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\horror-background-atmosphere.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악시작");
             wmp = new WindowsMediaPlayer();
         }
 
-        WindowsMediaPlayer Player;
-        private void PlayFile(String url)
-        {
-            Player = new WindowsMediaPlayer();
-            Player.PlayStateChange +=
-                new _WMPOCXEvents_PlayStateChangeEventHandler(Player_PlayStateChange);
-            Player.URL = url;
-            Player.controls.play();
-        }
-        private void Player_PlayStateChange(int NewState)
-        {
-            if ((WMPPlayState)NewState == WMPPlayState.wmppsStopped)
-            {
-                PlayFile(@"\Resources\sound\horror-background-atmosphere-loop.mp3");
-            }
-        }
-        public void Player_Stop()
-        {
-            Player.controls.stop();
-        }
-        // 참조 : https://learn.microsoft.com/ko-kr/previous-versions/windows/desktop/wmp/creating-the-windows-media-player-control-programmatically?redirectedfrom=MSDN
     }
 }

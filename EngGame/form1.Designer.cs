@@ -35,6 +35,7 @@
             buttonChap2 = new Button();
             buttonChap1 = new Button();
             backPictureBox = new PictureBox();
+            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).BeginInit();
             SuspendLayout();
@@ -45,6 +46,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(questionButton1);
             panel1.Controls.Add(buttonEnd);
@@ -129,6 +131,16 @@
             backPictureBox.TabIndex = 5;
             backPictureBox.TabStop = false;
             // 
+            // button1
+            // 
+            button1.Location = new Point(264, 268);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -157,5 +169,6 @@
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
+        private Button button1;
     }
 }
