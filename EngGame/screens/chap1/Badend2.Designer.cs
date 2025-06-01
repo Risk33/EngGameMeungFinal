@@ -32,8 +32,10 @@
             pictureBox1 = new PictureBox();
             dialog1 = new Label();
             dialogBox = new PictureBox();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
@@ -45,6 +47,7 @@
             pictureBox1.Size = new Size(1262, 679);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // dialog1
             // 
@@ -52,7 +55,7 @@
             dialog1.BackColor = Color.WhiteSmoke;
             dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(146, 482);
+            dialog1.Location = new Point(146, 475);
             dialog1.Name = "dialog1";
             dialog1.Size = new Size(21, 20);
             dialog1.TabIndex = 4;
@@ -63,18 +66,28 @@
             // 
             dialogBox.BackColor = Color.Transparent;
             dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(135, 472);
+            dialogBox.Location = new Point(135, 465);
             dialogBox.Name = "dialogBox";
             dialogBox.Size = new Size(981, 193);
             dialogBox.TabIndex = 3;
             dialogBox.TabStop = false;
             dialogBox.Click += dialogBox_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(3, 3);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1262, 676);
+            pictureBox2.TabIndex = 5;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
             // Badend2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
+            Controls.Add(pictureBox2);
             Controls.Add(dialog1);
             Controls.Add(dialogBox);
             Controls.Add(pictureBox1);
@@ -82,6 +95,7 @@
             Size = new Size(1262, 679);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -91,5 +105,6 @@
         private PictureBox pictureBox1;
         private Label dialog1;
         private PictureBox dialogBox;
+        private PictureBox pictureBox2;
     }
 }

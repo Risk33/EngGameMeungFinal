@@ -124,6 +124,7 @@ namespace EngGame.screens.chap1
             inputBox.Visible = false;
             inputConfirm.Visible = false;
             wmp.URL = @"Resources\sound\creaking-wooden-door-loud.mp3";
+            wmp.controls.stop();
             String answer = inputBox.Text;
             if (answer.ToLower().Contains("silently"))
             {

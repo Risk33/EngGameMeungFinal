@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            button1 = new Button();
             questionButton2 = new Button();
             questionButton1 = new Button();
             buttonEnd = new Button();
             buttonChap2 = new Button();
             buttonChap1 = new Button();
             backPictureBox = new PictureBox();
-            button1 = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).BeginInit();
             SuspendLayout();
@@ -59,6 +59,16 @@
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(29, 30);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 1;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // questionButton2
             // 
@@ -130,16 +140,6 @@
             backPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
             backPictureBox.TabIndex = 5;
             backPictureBox.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(264, 268);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
             // 
             // Form1
             // 

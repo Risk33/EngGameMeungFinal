@@ -126,12 +126,12 @@ namespace EngGame
 
         }
 
-        screens.chap1.End end = new screens.chap1.End();
+        screens.chap1.Badend2 end2 = new screens.chap1.Badend2();
         private void button1_Click_1(object sender, EventArgs e)
         {
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
-            panel1.Controls.Add(end);
+            panel1.Controls.Add(end2);
         }
     }
 }

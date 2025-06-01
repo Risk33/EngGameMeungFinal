@@ -245,6 +245,7 @@ namespace EngGame.screens.chap1
             };
         }
 
+        chap1.Badend2 badend2 = new Badend2();
         String[] time = { };
         int minute = 0;
         int sec = 0;
@@ -265,6 +266,10 @@ namespace EngGame.screens.chap1
             {
                 timer1.Enabled = false;
                 Console.WriteLine("시간 끝");
+                wmp.URL = @".\Resources\sound\Running.mp3";
+                wmp.controls.play();
+                panel1.Controls.Clear();
+                panel1.Controls.Add(badend2);
             }
             if (sec < 10)
             {
