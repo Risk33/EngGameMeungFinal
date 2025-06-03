@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
+            pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
             questionButton2 = new Button();
             pictureBox2 = new PictureBox();
@@ -38,6 +39,7 @@
             button1 = new Button();
             backPictureBox = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -50,6 +52,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(pictureBox2);
@@ -63,6 +66,15 @@
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.Title_name;
+            pictureBox4.Location = new Point(514, 129);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(215, 165);
+            pictureBox4.TabIndex = 11;
+            pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
@@ -160,6 +172,7 @@
             Text = "Form1";
             Load += From1_load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -178,5 +191,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }
