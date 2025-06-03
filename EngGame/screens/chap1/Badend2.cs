@@ -89,7 +89,7 @@ namespace EngGame.screens.chap1
                 { "","침입자다!", "dialogBoxClose" },
                 { "","밝게 반겨주시던 선생님들이 이곳에서는 무언가에 미쳐있는 사람들로밖에 보이지 않았다.", "dialogBoxOpen" },
                 { "","선생님들께 붙잡히고 나는, 영원히 눈을 뜰 수 없었다.", "" },
-                { "","배드엔딩2", "dialogBoxClose" },
+                { "","배드엔딩3", "dialogBoxClose" },
         }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
         private String[,] dialog2 = new string[,]
