@@ -124,6 +124,9 @@
   <data name="제단" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\제단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="New Title name" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New Title name.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="제단1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\제단.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -206,7 +209,7 @@
     <value>..\Resources\simpleName.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Title name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Title name3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\Title name4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="vault" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vault.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,7 +256,7 @@
   <data name="탈출" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\학교\탈출.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Title name" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Title name4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="New Title name1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New Title name1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

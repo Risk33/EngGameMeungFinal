@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-<<<<<<< HEAD
-=======
+
+
+            
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
+
             questionButton2 = new Button();
             pictureBox2 = new PictureBox();
             questionButton1 = new Button();
@@ -55,11 +56,10 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
-<<<<<<< HEAD
-=======
+
+
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(questionButton1);
@@ -73,14 +73,13 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-<<<<<<< HEAD
-=======
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.Title_name;
-            pictureBox4.Location = new Point(514, 129);
+            pictureBox4.Image = Properties.Resources.New_Title_name1;
+            pictureBox4.Location = new Point(504, 145);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(215, 165);
+            pictureBox4.Size = new Size(230, 180);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 11;
             pictureBox4.TabStop = false;
             // 
@@ -94,7 +93,6 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
             // questionButton2
             // 
             questionButton2.BackColor = Color.DimGray;
@@ -147,11 +145,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(29, 30);
+            button1.Location = new Point(14, 21);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(105, 23);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "배드엔딩테스트";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
@@ -178,7 +176,7 @@
             Name = "Form1";
             Padding = new Padding(1);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Word Escape: Vocabulary Mission";
             Load += From1_load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -196,13 +194,11 @@
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
-<<<<<<< HEAD
-=======
+
         private Button button1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
     }
 }
