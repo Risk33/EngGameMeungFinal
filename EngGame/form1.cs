@@ -31,10 +31,14 @@ namespace EngGame
             InitializeComponent();
             Player = new WindowsMediaPlayer();
 
-        }
-
-        private void From1_load(object sender, EventArgs e)
+            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악시작");
+            wmp = new WindowsMediaPlayer();
         {
+            WindowsMediaPlayer wmp;
+            WindowsMediaPlayer Player;
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // 창 테두리 고정 스타일
             this.MaximizeBox = false; // 최대화 버튼 비활성화
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
@@ -47,10 +51,10 @@ namespace EngGame
             MakeRoundedButton(questionButton2, 30);
 
             questionButton1.FlatStyle = FlatStyle.Flat;
-            questionButton1.FlatAppearance.BorderSize = 0;
-            questionButton2.FlatStyle = FlatStyle.Flat;
-            questionButton2.FlatAppearance.BorderSize = 0;
-
+            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악시작");
+            wmp = new WindowsMediaPlayer();
         }
         // 메인 화면 버튼
 
