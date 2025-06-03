@@ -30,17 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-
-
-            
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
-
             questionButton2 = new Button();
             pictureBox2 = new PictureBox();
             questionButton1 = new Button();
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             backPictureBox = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -56,15 +51,12 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
-
-
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(questionButton1);
             panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(backPictureBox);
             panel1.Location = new Point(1, 1);
             panel1.Margin = new Padding(0);
@@ -75,7 +67,6 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.New_Title_name1;
             pictureBox4.Location = new Point(504, 145);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(230, 180);
@@ -143,16 +134,6 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click_1;
             // 
-            // button1
-            // 
-            button1.Location = new Point(14, 21);
-            button1.Name = "button1";
-            button1.Size = new Size(105, 23);
-            button1.TabIndex = 1;
-            button1.Text = "배드엔딩테스트";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
-            // 
             // backPictureBox
             // 
             backPictureBox.BackColor = Color.FromArgb(255, 192, 128);
@@ -194,8 +175,6 @@
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
-
-        private Button button1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
