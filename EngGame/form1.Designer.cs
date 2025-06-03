@@ -67,6 +67,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Image = Properties.Resources.New_Title_name1;
             pictureBox4.Location = new Point(504, 145);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(230, 180);
