@@ -150,7 +150,7 @@
             // 
             backPictureBox.BackColor = Color.FromArgb(255, 192, 128);
             backPictureBox.Image = (Image)resources.GetObject("backPictureBox.Image");
-            backPictureBox.Location = new Point(0, 0);
+            backPictureBox.Location = new Point(-1, -24);
             backPictureBox.Margin = new Padding(0);
             backPictureBox.Name = "backPictureBox";
             backPictureBox.Size = new Size(1262, 800);
