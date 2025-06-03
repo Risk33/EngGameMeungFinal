@@ -87,6 +87,8 @@
             // questionButton2
             // 
             questionButton2.BackColor = Color.DimGray;
+            questionButton2.FlatAppearance.BorderSize = 0;
+            questionButton2.FlatStyle = FlatStyle.Flat;
             questionButton2.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
             questionButton2.ForeColor = SystemColors.ControlLightLight;
             questionButton2.Location = new Point(506, 509);
@@ -112,6 +114,8 @@
             // questionButton1
             // 
             questionButton1.BackColor = Color.DimGray;
+            questionButton1.FlatAppearance.BorderSize = 0;
+            questionButton1.FlatStyle = FlatStyle.Flat;
             questionButton1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
             questionButton1.ForeColor = SystemColors.ControlLightLight;
             questionButton1.Location = new Point(506, 421);
