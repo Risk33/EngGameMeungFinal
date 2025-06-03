@@ -63,7 +63,7 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.배경1;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(1259, 676);
             pictureBox1.TabIndex = 0;
