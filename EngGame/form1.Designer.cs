@@ -69,10 +69,11 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.Image = Properties.Resources.Title_name;
-            pictureBox4.Location = new Point(514, 129);
+            pictureBox4.Image = Properties.Resources.New_Title_name1;
+            pictureBox4.Location = new Point(504, 145);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(215, 165);
+            pictureBox4.Size = new Size(230, 180);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 11;
             pictureBox4.TabStop = false;
             // 
@@ -138,11 +139,11 @@
             // 
             // button1
             // 
-            button1.Location = new Point(29, 30);
+            button1.Location = new Point(14, 21);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(105, 23);
             button1.TabIndex = 1;
-            button1.Text = "button1";
+            button1.Text = "배드엔딩테스트";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
@@ -169,7 +170,7 @@
             Name = "Form1";
             Padding = new Padding(1);
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Word Escape: Vocabulary Mission";
             Load += From1_load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
