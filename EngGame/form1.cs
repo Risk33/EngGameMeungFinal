@@ -36,13 +36,13 @@ namespace EngGame
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
             this.ControlBox = true;   // 닫기 버튼은 유지
 
-            MakeRoundedButton(questionButton1, 20);
-            MakeRoundedButton(questionButton2, 20);
+            MakeRoundedButton(questionButton1, 30);
+            MakeRoundedButton(questionButton2, 30);
 
             questionButton1.FlatStyle = FlatStyle.Flat;
-            questionButton1.FlatAppearance.BorderSize = 1;
+            questionButton1.FlatAppearance.BorderSize = 0;
             questionButton2.FlatStyle = FlatStyle.Flat;
-            questionButton2.FlatAppearance.BorderSize = 1;
+            questionButton2.FlatAppearance.BorderSize = 0;
 
         }
         // 메인 화면 버튼
@@ -132,6 +132,24 @@ namespace EngGame
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(end2);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(chap2);
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(chap1);
+            // 화면 전환
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

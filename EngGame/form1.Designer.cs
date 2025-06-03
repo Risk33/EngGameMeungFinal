@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-            button1 = new Button();
+            pictureBox3 = new PictureBox();
             questionButton2 = new Button();
+            pictureBox2 = new PictureBox();
             questionButton1 = new Button();
-            buttonEnd = new Button();
-            buttonChap2 = new Button();
-            buttonChap1 = new Button();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
             backPictureBox = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -46,12 +50,12 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(questionButton2);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(questionButton1);
-            panel1.Controls.Add(buttonEnd);
-            panel1.Controls.Add(buttonChap2);
-            panel1.Controls.Add(buttonChap1);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(backPictureBox);
             panel1.Location = new Point(1, 1);
             panel1.Margin = new Padding(0);
@@ -59,6 +63,66 @@
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.End;
+            pictureBox3.Location = new Point(563, 604);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(102, 52);
+            pictureBox3.TabIndex = 10;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // questionButton2
+            // 
+            questionButton2.BackColor = Color.DimGray;
+            questionButton2.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            questionButton2.ForeColor = SystemColors.ControlLightLight;
+            questionButton2.Location = new Point(506, 509);
+            questionButton2.Name = "questionButton2";
+            questionButton2.Size = new Size(30, 30);
+            questionButton2.TabIndex = 8;
+            questionButton2.Text = "?";
+            questionButton2.TextAlign = ContentAlignment.MiddleRight;
+            questionButton2.UseVisualStyleBackColor = false;
+            questionButton2.Click += questionButton2_Click_1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.chap21;
+            pictureBox2.Location = new Point(517, 526);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(200, 62);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 9;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // questionButton1
+            // 
+            questionButton1.BackColor = Color.DimGray;
+            questionButton1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
+            questionButton1.ForeColor = SystemColors.ControlLightLight;
+            questionButton1.Location = new Point(506, 421);
+            questionButton1.Name = "questionButton1";
+            questionButton1.Size = new Size(30, 30);
+            questionButton1.TabIndex = 7;
+            questionButton1.Text = "?";
+            questionButton1.TextAlign = ContentAlignment.MiddleRight;
+            questionButton1.UseVisualStyleBackColor = false;
+            questionButton1.Click += questionbutton1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.Chap1;
+            pictureBox1.Location = new Point(517, 438);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(200, 62);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // button1
             // 
@@ -70,69 +134,10 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
-            // questionButton2
-            // 
-            questionButton2.BackColor = Color.FromArgb(255, 128, 0);
-            questionButton2.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            questionButton2.Location = new Point(518, 557);
-            questionButton2.Name = "questionButton2";
-            questionButton2.Size = new Size(30, 30);
-            questionButton2.TabIndex = 8;
-            questionButton2.Text = "?";
-            questionButton2.TextAlign = ContentAlignment.MiddleRight;
-            questionButton2.UseVisualStyleBackColor = false;
-            questionButton2.Click += questionButton2_Click_1;
-            // 
-            // questionButton1
-            // 
-            questionButton1.BackColor = Color.FromArgb(255, 128, 0);
-            questionButton1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            questionButton1.Location = new Point(519, 459);
-            questionButton1.Name = "questionButton1";
-            questionButton1.Size = new Size(30, 30);
-            questionButton1.TabIndex = 7;
-            questionButton1.Text = "?";
-            questionButton1.TextAlign = ContentAlignment.MiddleRight;
-            questionButton1.UseVisualStyleBackColor = false;
-            questionButton1.Click += questionbutton1_Click;
-            // 
-            // buttonEnd
-            // 
-            buttonEnd.Font = new Font("맑은 고딕", 9F, FontStyle.Bold);
-            buttonEnd.Location = new Point(1136, 606);
-            buttonEnd.Name = "buttonEnd";
-            buttonEnd.Size = new Size(102, 52);
-            buttonEnd.TabIndex = 2;
-            buttonEnd.Text = "게임 종료";
-            buttonEnd.UseVisualStyleBackColor = true;
-            buttonEnd.Click += buttonEnd_Click;
-            // 
-            // buttonChap2
-            // 
-            buttonChap2.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            buttonChap2.Location = new Point(531, 563);
-            buttonChap2.Name = "buttonChap2";
-            buttonChap2.Size = new Size(200, 62);
-            buttonChap2.TabIndex = 1;
-            buttonChap2.Text = "챕터:2 병원";
-            buttonChap2.UseVisualStyleBackColor = true;
-            buttonChap2.Click += button2High_Click;
-            // 
-            // buttonChap1
-            // 
-            buttonChap1.Font = new Font("맑은 고딕", 12F, FontStyle.Bold);
-            buttonChap1.Location = new Point(531, 466);
-            buttonChap1.Name = "buttonChap1";
-            buttonChap1.Size = new Size(200, 62);
-            buttonChap1.TabIndex = 1;
-            buttonChap1.Text = "챕터1: School";
-            buttonChap1.UseVisualStyleBackColor = true;
-            buttonChap1.Click += button1Mid_Click;
-            // 
             // backPictureBox
             // 
             backPictureBox.BackColor = Color.FromArgb(255, 192, 128);
-            backPictureBox.Image = Properties.Resources.mainScreen;
+            backPictureBox.Image = (Image)resources.GetObject("backPictureBox.Image");
             backPictureBox.Location = new Point(0, 0);
             backPictureBox.Margin = new Padding(0);
             backPictureBox.Name = "backPictureBox";
@@ -155,6 +160,9 @@
             Text = "Form1";
             Load += From1_load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).EndInit();
             ResumeLayout(false);
         }
@@ -162,13 +170,13 @@
         #endregion
 
         public Panel panel1;
-        private Button buttonEnd;
-        private Button buttonChap2;
-        private Button buttonChap1;
         private PictureBox backPictureBox;
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
         private Button button1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }
