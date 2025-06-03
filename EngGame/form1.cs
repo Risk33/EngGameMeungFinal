@@ -31,6 +31,7 @@ namespace EngGame
 
         private void From1_load(object sender, EventArgs e)
         {
+            PlayBGM();
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // 창 테두리 고정 스타일
             this.MaximizeBox = false; // 최대화 버튼 비활성화
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
@@ -43,6 +44,7 @@ namespace EngGame
             questionButton1.FlatAppearance.BorderSize = 0;
             questionButton2.FlatStyle = FlatStyle.Flat;
             questionButton2.FlatAppearance.BorderSize = 0;
+
 
         }
         // 메인 화면 버튼
@@ -150,6 +152,18 @@ namespace EngGame
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void PlayBGM()
+        {
+            mediaPlayer.URL = @".\Resources\sounds\MainScreenBGM.mp3"; // 실행 파일과 같은 폴더에 있어야 함
+            mediaPlayer.settings.setMode("loop", true); // 반복 재생
+            mediaPlayer.settings.volume = 50; // 볼륨 (0~100)
+            mediaPlayer.Ctlcontrols.play();
+        }
+        private void mediaPlayer_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

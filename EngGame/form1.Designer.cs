@@ -38,12 +38,14 @@
             pictureBox1 = new PictureBox();
             button1 = new Button();
             backPictureBox = new PictureBox();
+            mediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)mediaPlayer).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -52,6 +54,7 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Controls.Add(mediaPlayer);
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(questionButton2);
@@ -159,6 +162,16 @@
             backPictureBox.TabIndex = 5;
             backPictureBox.TabStop = false;
             // 
+            // mediaPlayer
+            // 
+            mediaPlayer.Enabled = true;
+            mediaPlayer.Location = new Point(14, 633);
+            mediaPlayer.Name = "mediaPlayer";
+            mediaPlayer.OcxState = (AxHost.State)resources.GetObject("mediaPlayer.OcxState");
+            mediaPlayer.Size = new Size(75, 23);
+            mediaPlayer.TabIndex = 12;
+            mediaPlayer.Enter += mediaPlayer_Enter;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -178,6 +191,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)mediaPlayer).EndInit();
             ResumeLayout(false);
         }
 
@@ -193,5 +207,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
+        private AxWMPLib.AxWindowsMediaPlayer mediaPlayer;
     }
 }
