@@ -31,32 +31,22 @@ namespace EngGame
             InitializeComponent();
             Player = new WindowsMediaPlayer();
 
-            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
-            Player.controls.play();
-            Console.WriteLine("배경음악시작");
-            wmp = new WindowsMediaPlayer();
-        {
-            WindowsMediaPlayer wmp;
-            WindowsMediaPlayer Player;
-
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // 창 테두리 고정 스타일
             this.MaximizeBox = false; // 최대화 버튼 비활성화
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
             this.ControlBox = true;   // 닫기 버튼은 유지
 
-
-            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
-            Console.WriteLine("배경음악시작");
             MakeRoundedButton(questionButton1, 30);
             MakeRoundedButton(questionButton2, 30);
-
+            
             questionButton1.FlatStyle = FlatStyle.Flat;
-            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
-            Player.controls.play();
-            Console.WriteLine("배경음악시작");
-            wmp = new WindowsMediaPlayer();
         }
         // 메인 화면 버튼
+        private void Form1_load(object sender,EventArgs e)
+        {
+            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
+            Console.WriteLine("배경음악시작");
+        }
 
         private void questionbutton1_Click(object sender, EventArgs e)
         {
@@ -73,20 +63,12 @@ namespace EngGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Player.close();
+            Player.controls.stop();
             panel1.Controls.Clear();
             panel1.Controls.Add(chap1);
             // 화면 전환
         }
 
-        screens.chap1.Badend2 end2 = new screens.chap1.Badend2();
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            panel1.Controls.Clear();
-            panel1.BackColor = Color.Black;
-            Variable.Scene4End();
-            panel1.Controls.Add(end2);
-        }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

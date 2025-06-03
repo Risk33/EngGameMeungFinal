@@ -158,7 +158,7 @@
             Padding = new Padding(1);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Word Escape: Vocabulary Mission";
-            Load += From1_load;
+            Load += Form1_load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
