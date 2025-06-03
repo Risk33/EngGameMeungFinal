@@ -93,7 +93,6 @@
             Controls.Add(pictureBox1);
             Name = "Badend2";
             Size = new Size(1262, 679);
-            Load += Badend2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -235,11 +235,10 @@ namespace EngGame.screens.chap1
             num = 0;
             dialogBox.Visible = true;
             dialog1.Visible = true;
-            openSafePanel.Visible = true;
             dialog1.Text = "이걸 먹이면 될꺼야!";
             dialog = new string[,]
             {
-                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "" },
+                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "imageOpen" },
                 { "","네, 선생님!", "" },
                 { "","그렇게 우리는 친구를 깨운후 탈출했다.", "" },
                 { "","", "imageClose/dialogBoxClose" }, //헉 만들기 귀찮아서 안쓰는 이벤트 번호 재활용

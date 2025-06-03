@@ -18,7 +18,6 @@ namespace EngGame.screens
 
         static Boolean noise = false;
         static String leftOverTime = "";
-        static bool caughtOnWhat = false;
         public static void NoiseMade()
         {
             noise = true;
@@ -34,15 +33,6 @@ namespace EngGame.screens
         public static String timeGet()
         {
             return leftOverTime;
-        }
-
-        public static void Scene4End()
-        {
-            caughtOnWhat = true;
-        }
-        public static bool Scene4EndTrue()
-        {
-            return caughtOnWhat;
         }
         public static int checkDialog(String dialog)
         {

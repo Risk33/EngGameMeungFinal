@@ -303,7 +303,6 @@ namespace EngGame.screens.chap1
             panel2.Controls.Clear();
             panel2.BackColor = Color.Black;
             panel2.Controls.Add(badend2);
-            Variable.Scene4End();
         }
 
         // 타이머 구현
@@ -327,8 +326,6 @@ namespace EngGame.screens.chap1
             {
                 timer1.Enabled = false;
                 Console.WriteLine("시간 끝");
-                wmp.URL = @".\Resources\sound\Running.mp3";
-                wmp.controls.play();
                 nextScreenBad();
             }
             if (sec < 10)

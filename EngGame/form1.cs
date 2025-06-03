@@ -131,7 +131,6 @@ namespace EngGame
         {
             panel1.Controls.Clear();
             panel1.BackColor = Color.Black;
-            Variable.Scene4End();
             panel1.Controls.Add(end2);
         }
     }
