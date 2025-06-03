@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             panel1 = new Panel();
-<<<<<<< HEAD
-=======
+
+
+            
             pictureBox4 = new PictureBox();
             pictureBox3 = new PictureBox();
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
+
             questionButton2 = new Button();
             pictureBox2 = new PictureBox();
             questionButton1 = new Button();
@@ -55,11 +56,10 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
-<<<<<<< HEAD
-=======
+
+
             panel1.Controls.Add(pictureBox4);
             panel1.Controls.Add(pictureBox3);
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(questionButton1);
@@ -73,8 +73,6 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
-<<<<<<< HEAD
-=======
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.New_Title_name1;
@@ -95,7 +93,6 @@
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
             // 
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
             // questionButton2
             // 
             questionButton2.BackColor = Color.DimGray;
@@ -197,13 +194,11 @@
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
-<<<<<<< HEAD
-=======
+
         private Button button1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
->>>>>>> b940e872f1768049208f9563a8017c0669bdbf8a
     }
 }
