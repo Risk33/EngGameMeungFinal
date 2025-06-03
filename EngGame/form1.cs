@@ -1,13 +1,16 @@
 
-using System.Windows.Forms;
 using EngGame.screens;
 using System.Drawing.Imaging;
+using System.Windows.Forms;
+using WMPLib;
 
 namespace EngGame
 {
 
     public partial class Form1 : Form
     {
+        WindowsMediaPlayer wmp;
+        WindowsMediaPlayer Player;
         private void MakeRoundedButton(Button btn, int radius) // 둥근 버튼을 만드는 함수
         {
             var path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -26,25 +29,29 @@ namespace EngGame
         public Form1()
         {
             InitializeComponent();
-
+            wmp = new WindowsMediaPlayer();
+            Player = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악시작");
+            wmp = new WindowsMediaPlayer();
         }
 
         private void From1_load(object sender, EventArgs e)
         {
-            PlayBGM();
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // 창 테두리 고정 스타일
             this.MaximizeBox = false; // 최대화 버튼 비활성화
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
             this.ControlBox = true;   // 닫기 버튼은 유지
 
+
             MakeRoundedButton(questionButton1, 30);
             MakeRoundedButton(questionButton2, 30);
 
-            questionButton1.FlatStyle = FlatStyle.Flat;
+            questionButton1.FlatStyle = FlatStyle.Flat; 
             questionButton1.FlatAppearance.BorderSize = 0;
             questionButton2.FlatStyle = FlatStyle.Flat;
             questionButton2.FlatAppearance.BorderSize = 0;
-
 
         }
         // 메인 화면 버튼
@@ -85,14 +92,6 @@ namespace EngGame
 
         }
 
-        private void StyleButtons()
-        {
-
-        }
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            StyleButtons();
-        }
 
         private void questionbutton1_Click(object sender, EventArgs e)
         {
@@ -154,16 +153,6 @@ namespace EngGame
             Application.Exit();
         }
 
-        private void PlayBGM()
-        {
-            mediaPlayer.URL = @".\Resources\sounds\MainScreenBGM.mp3"; // 실행 파일과 같은 폴더에 있어야 함
-            mediaPlayer.settings.setMode("loop", true); // 반복 재생
-            mediaPlayer.settings.volume = 50; // 볼륨 (0~100)
-            mediaPlayer.Ctlcontrols.play();
-        }
-        private void mediaPlayer_Enter(object sender, EventArgs e)
-        {
 
-        }
     }
 }
