@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
             questionButton2 = new Button();
             questionButton1 = new Button();
             buttonEnd = new Button();
@@ -46,7 +45,6 @@
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             panel1.BackColor = SystemColors.ControlDarkDark;
-            panel1.Controls.Add(button1);
             panel1.Controls.Add(questionButton2);
             panel1.Controls.Add(questionButton1);
             panel1.Controls.Add(buttonEnd);
@@ -59,16 +57,6 @@
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(29, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
             // 
             // questionButton2
             // 
@@ -169,6 +157,5 @@
         private PictureBox titlePictureBox;
         private Button questionButton1;
         private Button questionButton2;
-        private Button button1;
     }
 }

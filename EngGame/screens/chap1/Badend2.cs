@@ -45,6 +45,7 @@ namespace EngGame.screens.chap1
 
                 if (returnEventNum == 1) // 대사 창이 따로 필요하다면?
                 {
+                    pictureBox2.Visible = false;
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
                     dialog1.ForeColor = Color.Black;
@@ -55,6 +56,8 @@ namespace EngGame.screens.chap1
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
                 {
+                    dialog1.BringToFront();
+                    pictureBox2.Visible = true;
                     dialogBox.Visible = false;
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
@@ -89,6 +92,15 @@ namespace EngGame.screens.chap1
                 { "","배드엔딩2", "dialogBoxClose" },
         }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
+        private String[,] dialog2 = new string[,]
+        {
+                { "","SampleText", "" },
+                { "","침입자다!", "dialogBoxClose" },
+                { "","섬뜩한 복장을 한 선생님들에게 붙잡힌 후 창고로 끌려간 후에야 나는 친구의 모습을 볼 수 있었다.", "dialogBoxOpen" },
+                { "","...", "" },
+                { "","마지막으로 말이다.", "" },
+                { "","배드엔딩2", "dialogBoxClose" },
+        }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
         private void dialogBox_Click(object sender, EventArgs e)
         {
             UpdateDialog();
@@ -101,8 +113,16 @@ namespace EngGame.screens.chap1
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            pictureBox2.Visible = false;
+            
             UpdateDialog();
+        }
+
+        private void Badend2_Load(object sender, EventArgs e)
+        {
+            if (Variable.Scene4EndTrue())
+            {
+                dialog = dialog2;
+            }
         }
     }
 }

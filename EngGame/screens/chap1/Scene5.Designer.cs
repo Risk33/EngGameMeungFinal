@@ -83,7 +83,7 @@
             // 
             openSafePanel.BackgroundImage = Properties.Resources.openSafe;
             openSafePanel.BackgroundImageLayout = ImageLayout.Zoom;
-            openSafePanel.Location = new Point(447, 47);
+            openSafePanel.Location = new Point(448, 47);
             openSafePanel.Name = "openSafePanel";
             openSafePanel.Size = new Size(382, 387);
             openSafePanel.TabIndex = 14;
