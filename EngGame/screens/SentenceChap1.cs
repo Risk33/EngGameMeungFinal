@@ -29,6 +29,8 @@ namespace EngGame.screens
         {
             var wordData = new (string 단어, string 뜻, string 품사)[]
             {
+        //문제 관련 단어
+        ("defect", "결함, 결점", "명사"),
         // 교육 관련 고급 단어
         ("curriculum", "교육과정", "명사"),
         ("pedagogy", "교육학, 교수법", "명사"),
@@ -74,6 +76,10 @@ namespace EngGame.screens
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = Words;
+
+            // 열 너비 자동 조정
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.Dock = DockStyle.Fill;
         }
 
 
