@@ -9,8 +9,7 @@ namespace EngGame
 
     public partial class Form1 : Form
     {
-        WindowsMediaPlayer wmp;
-        WindowsMediaPlayer Player;
+      
         private void MakeRoundedButton(Button btn, int radius) // 둥근 버튼을 만드는 함수
         {
             var path = new System.Drawing.Drawing2D.GraphicsPath();
@@ -29,16 +28,13 @@ namespace EngGame
         public Form1()
         {
             InitializeComponent();
-            wmp = new WindowsMediaPlayer();
-            Player = new WindowsMediaPlayer();
-            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
-            Player.controls.play();
-            Console.WriteLine("배경음악시작");
-            wmp = new WindowsMediaPlayer();
         }
 
         private void From1_load(object sender, EventArgs e)
         {
+            WindowsMediaPlayer wmp;
+            WindowsMediaPlayer Player;
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle; // 창 테두리 고정 스타일
             this.MaximizeBox = false; // 최대화 버튼 비활성화
             this.MinimizeBox = true;  // 최소화 버튼은 원하면 유지
@@ -53,6 +49,12 @@ namespace EngGame
             questionButton2.FlatStyle = FlatStyle.Flat;
             questionButton2.FlatAppearance.BorderSize = 0;
 
+            wmp = new WindowsMediaPlayer();
+            Player = new WindowsMediaPlayer();
+            Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
+            Player.controls.play();
+            Console.WriteLine("배경음악시작");
+            wmp = new WindowsMediaPlayer();
         }
         // 메인 화면 버튼
 
