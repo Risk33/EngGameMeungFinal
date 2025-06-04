@@ -439,7 +439,7 @@
             Back.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
             Back.Location = new Point(30, 24);
             Back.Name = "Back";
-            Back.Size = new Size(78, 26);
+            Back.Size = new Size(87, 26);
             Back.TabIndex = 10;
             Back.Text = "뒤로가기";
             Back.Visible = false;
@@ -471,7 +471,7 @@
             timer.Name = "timer";
             timer.Size = new Size(92, 39);
             timer.TabIndex = 12;
-            timer.Text = "2 : 00";
+            timer.Text = "1 : 00";
             // 
             // hint
             // 
@@ -505,8 +505,7 @@
             // 
             // Scene1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(name);
             Controls.Add(panel2);
             Name = "Scene1";

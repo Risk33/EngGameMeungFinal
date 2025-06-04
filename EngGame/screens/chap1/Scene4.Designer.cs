@@ -314,7 +314,7 @@
             timer.Name = "timer";
             timer.Size = new Size(92, 39);
             timer.TabIndex = 14;
-            timer.Text = "2 : 00";
+            timer.Text = "4 : 00";
             // 
             // panel2
             // 
@@ -333,8 +333,7 @@
             // 
             // Scene4
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Black;
             Controls.Add(panel1);
             Controls.Add(panel2);

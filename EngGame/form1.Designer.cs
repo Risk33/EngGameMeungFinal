@@ -152,8 +152,7 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             AutoSize = true;
             ClientSize = new Size(1264, 681);
             Controls.Add(panel1);

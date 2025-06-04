@@ -60,7 +60,7 @@
             // 
             // back
             // 
-            back.Location = new Point(38, 32);
+            back.Location = new Point(50, 31);
             back.Name = "back";
             back.Size = new Size(130, 38);
             back.TabIndex = 11;
@@ -112,7 +112,7 @@
             name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
             name.ForeColor = Color.Black;
             name.Image = Properties.Resources.simpleName;
-            name.Location = new Point(146, 418);
+            name.Location = new Point(149, 403);
             name.Name = "name";
             name.Size = new Size(0, 45);
             name.TabIndex = 7;
@@ -145,8 +145,7 @@
             // 
             // Scene2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(panel1);
             Name = "Scene2";
             Size = new Size(1262, 679);

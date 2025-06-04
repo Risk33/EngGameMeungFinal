@@ -88,7 +88,8 @@
             // 
             hintButton.BackColor = SystemColors.Control;
             hintButton.FlatStyle = FlatStyle.Flat;
-            hintButton.Location = new Point(1048, 623);
+            hintButton.Font = new Font("맑은 고딕", 7F);
+            hintButton.Location = new Point(1048, 619);
             hintButton.Name = "hintButton";
             hintButton.Size = new Size(63, 23);
             hintButton.TabIndex = 10;
@@ -101,7 +102,8 @@
             // 
             inputConfirm.BackColor = SystemColors.Control;
             inputConfirm.FlatStyle = FlatStyle.Flat;
-            inputConfirm.Location = new Point(979, 623);
+            inputConfirm.Font = new Font("맑은 고딕", 7F);
+            inputConfirm.Location = new Point(979, 619);
             inputConfirm.Name = "inputConfirm";
             inputConfirm.Size = new Size(61, 23);
             inputConfirm.TabIndex = 9;
@@ -112,7 +114,7 @@
             // 
             // inputBox
             // 
-            inputBox.Location = new Point(869, 623);
+            inputBox.Location = new Point(869, 619);
             inputBox.Name = "inputBox";
             inputBox.Size = new Size(102, 23);
             inputBox.TabIndex = 8;
@@ -160,8 +162,7 @@
             // 
             // Scene3
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(panel1);
             Name = "Scene3";
             Size = new Size(1262, 679);

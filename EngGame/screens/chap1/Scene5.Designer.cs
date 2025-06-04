@@ -207,8 +207,7 @@
             // 
             // Scene5
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(panel1);
             Name = "Scene5";
             Size = new Size(1262, 679);

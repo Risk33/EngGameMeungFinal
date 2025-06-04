@@ -31,7 +31,7 @@ namespace EngGame.screens.chap1
             Console.WriteLine("배경음악재시작");
             if (Variable.IsNoiseMaid() == true)
             {
-                timer.Text = "1 : 00";
+                timer.Text = "3 : 00";
             }
         }
 
@@ -81,7 +81,7 @@ namespace EngGame.screens.chap1
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
                     dialog1.BackColor = Color.Black;
-                    dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+                    dialog1.Font = new Font("맑은 고딕", 20F, FontStyle.Regular, GraphicsUnit.Point, 129);
                     center = true;
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
@@ -106,6 +106,15 @@ namespace EngGame.screens.chap1
                     panel1.Visible = true;
                     Console.WriteLine("타이머 시작");
                 }
+            }
+
+            if (center == true)
+            {
+                dialog1.Left = (pictureBox1.Width - dialog1.Width) / 2;
+            }
+            else
+            {
+                dialog1.Location = new Point(150, 471);
             }
         }
 

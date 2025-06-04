@@ -59,7 +59,7 @@ namespace EngGame.screens
             name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
             name.ForeColor = Color.Black;
             name.Image = Properties.Resources.simpleName;
-            name.Location = new Point(151, 412);
+            name.Location = new Point(151, 409);
             name.Name = "name";
             name.Size = new Size(84, 45);
             name.TabIndex = 5;
@@ -97,8 +97,7 @@ namespace EngGame.screens
             // 
             // chap1Main
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             Controls.Add(chap1);
             Name = "chap1Main";
             Size = new Size(1262, 679);

@@ -89,8 +89,7 @@
             // 
             // Badend1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Black;
             Controls.Add(dialog1);
             Controls.Add(dialogBox);

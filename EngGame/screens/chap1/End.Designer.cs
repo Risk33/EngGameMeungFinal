@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(End));
             panel1 = new Panel();
             dialog1 = new Label();
-            dialogBox = new PictureBox();
             pictureBox1 = new PictureBox();
+            dialogBox = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -57,13 +57,22 @@
             dialog1.AutoSize = true;
             dialog1.BackColor = Color.Black;
             dialog1.CausesValidation = false;
-            dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dialog1.Font = new Font("맑은 고딕", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.White;
             dialog1.Location = new Point(149, 240);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(964, 47);
+            dialog1.Size = new Size(743, 37);
             dialog1.TabIndex = 1;
             dialog1.Text = "우리는 운이 좋게 아무도 마주치지 않고 빠져나올 수 있었다.";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(1262, 679);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // dialogBox
             // 
@@ -76,27 +85,17 @@
             dialogBox.TabStop = false;
             dialogBox.Click += panel1_Click;
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1262, 679);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
             // End
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.Black;
             Controls.Add(panel1);
             Name = "End";
             Size = new Size(1262, 679);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             ResumeLayout(false);
         }
 
