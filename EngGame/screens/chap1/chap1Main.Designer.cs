@@ -30,55 +30,50 @@ namespace EngGame.screens
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chap1Main));
             chap1 = new Panel();
+            dialogBox = new Panel();
             name = new Label();
-            dialogBox = new PictureBox();
             dialog1 = new Label();
             chap1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            dialogBox.SuspendLayout();
             SuspendLayout();
             // 
             // chap1
             // 
             chap1.BackColor = Color.Black;
             chap1.BackgroundImageLayout = ImageLayout.Zoom;
-            chap1.Controls.Add(name);
             chap1.Controls.Add(dialogBox);
-            chap1.Controls.Add(dialog1);
             chap1.Location = new Point(0, 0);
             chap1.Name = "chap1";
             chap1.Size = new Size(1262, 679);
             chap1.TabIndex = 0;
             chap1.Click += chap1story1_Click;
             // 
-            // name
-            // 
-            name.AutoSize = true;
-            name.BackColor = Color.White;
-            name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.simpleName;
-            name.Location = new Point(151, 412);
-            name.Name = "name";
-            name.Size = new Size(84, 45);
-            name.TabIndex = 5;
-            name.Text = "이름";
-            name.Visible = false;
-            // 
             // dialogBox
             // 
             dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.ErrorImage = null;
-            dialogBox.InitialImage = (Image)resources.GetObject("dialogBox.InitialImage");
-            dialogBox.Location = new Point(144, 465);
+            dialogBox.BackgroundImage = Properties.Resources.dialog1;
+            dialogBox.BackgroundImageLayout = ImageLayout.Stretch;
+            dialogBox.Controls.Add(name);
+            dialogBox.Controls.Add(dialog1);
+            dialogBox.Location = new Point(0, 0);
             dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
-            dialogBox.TabIndex = 3;
-            dialogBox.TabStop = false;
-            dialogBox.Visible = false;
+            dialogBox.Size = new Size(1262, 679);
+            dialogBox.TabIndex = 6;
             dialogBox.Click += dialogBox_Click;
+            // 
+            // name
+            // 
+            name.AutoSize = true;
+            name.BackColor = Color.Transparent;
+            name.Font = new Font("함초롬돋움", 24F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            name.ForeColor = Color.White;
+            name.Location = new Point(106, 460);
+            name.Name = "name";
+            name.Size = new Size(80, 41);
+            name.TabIndex = 5;
+            name.Text = "이름";
+            name.Visible = false;
             // 
             // dialog1
             // 
@@ -86,11 +81,11 @@ namespace EngGame.screens
             dialog1.AutoSize = true;
             dialog1.BackColor = Color.Transparent;
             dialog1.CausesValidation = false;
-            dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dialog1.Font = new Font("Felix Titling", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             dialog1.ForeColor = Color.White;
-            dialog1.Location = new Point(491, 265);
+            dialog1.Location = new Point(517, 266);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(175, 47);
+            dialog1.Size = new Size(209, 40);
             dialog1.TabIndex = 0;
             dialog1.Text = "Chapter 1";
             dialog1.Click += Dialog1_Click;
@@ -104,15 +99,15 @@ namespace EngGame.screens
             Size = new Size(1262, 679);
             Load += chap1Main_Load;
             chap1.ResumeLayout(false);
-            chap1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
+            dialogBox.ResumeLayout(false);
+            dialogBox.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private Panel chap1;
         private Label dialog1;
-        private PictureBox dialogBox;
         private Label name;
+        private Panel dialogBox;
     }
 }

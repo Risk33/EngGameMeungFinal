@@ -31,7 +31,7 @@ namespace EngGame.screens.chap1
             Console.WriteLine("배경음악재시작");
             if (Variable.IsNoiseMaid() == true)
             {
-                timer.Text = "1 : 00";
+                timer.Text = "2 : 00";
             }
         }
 
@@ -71,8 +71,8 @@ namespace EngGame.screens.chap1
                 {
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
-                    dialog1.ForeColor = Color.Black;
-                    dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+                    dialog1.ForeColor = Color.White;
+                    dialog1.Font = new Font("함초롬돋움", 17.9999981F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
@@ -81,7 +81,7 @@ namespace EngGame.screens.chap1
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
                     dialog1.BackColor = Color.Black;
-                    dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+                    dialog1.Font = new Font("함초롬돋움", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
                     center = true;
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)

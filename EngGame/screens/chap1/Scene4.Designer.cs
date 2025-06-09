@@ -1,4 +1,6 @@
-﻿namespace EngGame.screens.chap1
+﻿using System.Xml.Linq;
+
+namespace EngGame.screens.chap1
 {
     partial class Scene4
     {
@@ -30,10 +32,8 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene4));
-            pictureBox1 = new PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             dialog1 = new Label();
-            dialogBox = new PictureBox();
             doorButton = new Button();
             swordButton = new Button();
             alter = new Panel();
@@ -51,23 +51,13 @@
             panel1 = new Panel();
             timer = new Label();
             panel2 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            dialogBox = new Panel();
             alter.SuspendLayout();
             doorpanel.SuspendLayout();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
+            dialogBox.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources.배경1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1259, 676);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // timer1
             // 
@@ -77,26 +67,16 @@
             // dialog1
             // 
             dialog1.AutoSize = true;
-            dialog1.BackColor = Color.FromArgb(255, 193, 198);
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(152, 490);
+            dialog1.BackColor = Color.Transparent;
+            dialog1.Font = new Font("함초롬돋움", 17.9999981F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(21, 20);
+            dialog1.Size = new Size(32, 32);
             dialog1.TabIndex = 4;
             dialog1.Text = "...";
             dialog1.Click += dialog1_Click;
-            // 
-            // dialogBox
-            // 
-            dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(137, 470);
-            dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
-            dialogBox.TabIndex = 3;
-            dialogBox.TabStop = false;
-            dialogBox.Click += dialogBox_Click;
+            dialog1.Location = new Point(111, 87);
+
             // 
             // doorButton
             // 
@@ -314,22 +294,33 @@
             timer.Name = "timer";
             timer.Size = new Size(92, 39);
             timer.TabIndex = 14;
-            timer.Text = "2 : 00";
+            timer.Text = "4 : 00";
             // 
             // panel2
             // 
+            panel2.BackgroundImage = Properties.Resources.배경_제사실_내부;
+            panel2.BackgroundImageLayout = ImageLayout.Zoom;
             panel2.Controls.Add(doorpanel);
             panel2.Controls.Add(alter);
             panel2.Controls.Add(doorButton);
-            panel2.Controls.Add(dialog1);
-            panel2.Controls.Add(dialogBox);
             panel2.Controls.Add(timer);
             panel2.Controls.Add(back);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(dialogBox);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1262, 679);
             panel2.TabIndex = 15;
+            // 
+            // dialogBox
+            // 
+            dialogBox.BackColor = Color.Transparent;
+            dialogBox.BackgroundImage = Properties.Resources.dialog123;
+            dialogBox.Controls.Add(dialog1);
+            dialogBox.Location = new Point(0, 430);
+            dialogBox.Name = "dialogBox";
+            dialogBox.Size = new Size(1265, 249);
+            dialogBox.TabIndex = 5;
+            dialogBox.Click += dialogBox_Click;
             // 
             // Scene4
             // 
@@ -341,14 +332,14 @@
             Name = "Scene4";
             Size = new Size(1262, 679);
             Load += Scene4_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
             alter.ResumeLayout(false);
             doorpanel.ResumeLayout(false);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            dialogBox.ResumeLayout(false);
+            dialogBox.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -357,7 +348,6 @@
         private PictureBox pictureBox1;
         private System.Windows.Forms.Timer timer1;
         private Label dialog1;
-        private PictureBox dialogBox;
         private Button doorButton;
         private Button swordButton;
         private Panel alter;
@@ -375,5 +365,6 @@
         private Button lockbutton2;
         private Label timer;
         private Panel panel2;
+        private Panel dialogBox;
     }
 }

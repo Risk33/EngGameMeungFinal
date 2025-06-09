@@ -48,8 +48,8 @@ namespace EngGame.screens.chap1
                     pictureBox2.Visible = false;
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
-                    dialog1.ForeColor = Color.Black;
-                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
+                    dialog1.ForeColor = Color.White;
+                    dialog1.BackColor = Color.Transparent;
                     dialog1.Location = new Point(150, 471);
                     dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
@@ -58,11 +58,10 @@ namespace EngGame.screens.chap1
                 {
                     dialog1.BringToFront();
                     pictureBox2.Visible = true;
-                    dialogBox.Visible = false;
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
                     dialog1.BackColor = Color.Black;
-                    dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+                    dialog1.Font = new Font("함초롬돋움", 26.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = true;
                 }   // 원래 자리로 돌려놓고 대사창 끄기
                 if (returnEventNum == 3)
@@ -71,6 +70,15 @@ namespace EngGame.screens.chap1
                 if (returnEventNum == 4)
                 {
                 }   // 이미지 닫기
+
+                if (center == true)
+                {
+                    dialog1.Left = (dialogBox.Width - dialog1.Width) / 2;
+                }
+                else
+                {
+                    dialog1.Location = new Point(100, 509);
+                }
             }
 
             if (center == true)

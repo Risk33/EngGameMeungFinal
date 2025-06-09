@@ -31,11 +31,12 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene5));
             panel1 = new Panel();
+            name = new Label();
+            back = new Button();
             timer = new Label();
             openSafePanel = new Panel();
             dialog1 = new Label();
             dialogBox = new PictureBox();
-            back = new Button();
             panel2 = new Panel();
             passSubmit = new Button();
             pass2 = new Label();
@@ -54,10 +55,11 @@
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
             panel1.BackgroundImageLayout = ImageLayout.Zoom;
             panel1.Controls.Add(timer);
+            panel1.Controls.Add(name);
+            panel1.Controls.Add(back);
             panel1.Controls.Add(openSafePanel);
             panel1.Controls.Add(dialog1);
             panel1.Controls.Add(dialogBox);
-            panel1.Controls.Add(back);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(safebutton);
             panel1.Controls.Add(bookButton);
@@ -65,6 +67,29 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(1262, 679);
             panel1.TabIndex = 0;
+            // 
+            // name
+            // 
+            name.AutoSize = true;
+            name.BackColor = Color.Transparent;
+            name.Font = new Font("함초롬돋움", 24F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            name.ForeColor = Color.White;
+            name.Location = new Point(102, 458);
+            name.Name = "name";
+            name.Size = new Size(183, 41);
+            name.TabIndex = 16;
+            name.Text = "가영 선생님";
+            // 
+            // back
+            // 
+            back.Location = new Point(1009, 396);
+            back.Name = "back";
+            back.Size = new Size(130, 38);
+            back.TabIndex = 13;
+            back.Text = "뒤로 가기";
+            back.UseVisualStyleBackColor = true;
+            back.Visible = false;
+            back.Click += back_Click;
             // 
             // timer
             // 
@@ -92,37 +117,26 @@
             // dialog1
             // 
             dialog1.AutoSize = true;
-            dialog1.BackColor = Color.FromArgb(255, 193, 198);
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(145, 473);
+            dialog1.BackColor = Color.Transparent;
+            dialog1.Font = new Font("함초롬돋움", 17.9999981F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
+            dialog1.Location = new Point(102, 503);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(260, 20);
+            dialog1.Size = new Size(397, 32);
             dialog1.TabIndex = 6;
-            dialog1.Text = "ㅇㅇ아..! 얼른 수갑을 풀어줘야겠어..!";
+            dialog1.Text = "영훈아..! 얼른 수갑을 풀어줘야겠어..!";
             dialog1.Click += dialogBox_Click;
             // 
             // dialogBox
             // 
             dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(134, 463);
+            dialogBox.BackgroundImage = Properties.Resources.dialog123;
+            dialogBox.Location = new Point(0, 440);
             dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
+            dialogBox.Size = new Size(1259, 239);
             dialogBox.TabIndex = 5;
             dialogBox.TabStop = false;
             dialogBox.Click += dialogBox_Click;
-            // 
-            // back
-            // 
-            back.Location = new Point(985, 396);
-            back.Name = "back";
-            back.Size = new Size(130, 38);
-            back.TabIndex = 13;
-            back.Text = "뒤로 가기";
-            back.UseVisualStyleBackColor = true;
-            back.Visible = false;
-            back.Click += back_Click;
             // 
             // panel2
             // 
@@ -236,5 +250,6 @@
         private Button passSubmit;
         private Panel openSafePanel;
         private Label timer;
+        private Label name;
     }
 }

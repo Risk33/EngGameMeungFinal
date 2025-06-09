@@ -30,90 +30,101 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Scene1));
-            pictureBox1 = new PictureBox();
-            dialogBox = new PictureBox();
-            dialog1 = new Label();
-            name = new Label();
+            V = new ImageList(components);
+            W = new ImageList(components);
+            P = new ImageList(components);
+            R = new ImageList(components);
+            imageList1 = new ImageList(components);
+            T = new ImageList(components);
+            L = new ImageList(components);
+            timer1 = new System.Windows.Forms.Timer(components);
             chainButton = new Button();
+            hint_button = new Button();
+            hint = new PictureBox();
+            timer = new Label();
             panel1 = new Panel();
             V_checkBox = new CheckBox();
-            V = new ImageList(components);
             W2_checkBox = new CheckBox();
-            W = new ImageList(components);
             W_checkBox = new CheckBox();
             P_checkBox = new CheckBox();
-            P = new ImageList(components);
             R_checkBox = new CheckBox();
-            R = new ImageList(components);
             A2_checkBox = new CheckBox();
-            imageList1 = new ImageList(components);
             T_checkBox = new CheckBox();
-            T = new ImageList(components);
             L_checkBox = new CheckBox();
-            L = new ImageList(components);
             A_checkbox = new CheckBox();
             pictureBox2 = new PictureBox();
-            Back = new TextBox();
             panel2 = new Panel();
-            timer = new Label();
-            hint = new PictureBox();
-            hint_button = new Button();
-            timer1 = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            Back = new Button();
+            dialogBox = new Panel();
+            name = new Label();
+            dialog1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)hint).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)hint).BeginInit();
+            dialogBox.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // V
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.ErrorImage = null;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1262, 679);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            V.ColorDepth = ColorDepth.Depth32Bit;
+            V.ImageStream = (ImageListStreamer)resources.GetObject("V.ImageStream");
+            V.TransparentColor = Color.Transparent;
+            V.Images.SetKeyName(0, "V.png");
+            V.Images.SetKeyName(1, "V_pressed.png");
             // 
-            // dialogBox
+            // W
             // 
-            dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(144, 467);
-            dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
-            dialogBox.TabIndex = 1;
-            dialogBox.TabStop = false;
-            dialogBox.Click += dialogBox_Click;
+            W.ColorDepth = ColorDepth.Depth32Bit;
+            W.ImageStream = (ImageListStreamer)resources.GetObject("W.ImageStream");
+            W.TransparentColor = Color.Transparent;
+            W.Images.SetKeyName(0, "W.png");
+            W.Images.SetKeyName(1, "W_pressed.PNG");
             // 
-            // dialog1
+            // P
             // 
-            dialog1.AutoSize = true;
-            dialog1.BackColor = Color.WhiteSmoke;
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(155, 477);
-            dialog1.Name = "dialog1";
-            dialog1.Size = new Size(21, 20);
-            dialog1.TabIndex = 2;
-            dialog1.Text = "...";
-            dialog1.Click += label1_Click;
+            P.ColorDepth = ColorDepth.Depth32Bit;
+            P.ImageStream = (ImageListStreamer)resources.GetObject("P.ImageStream");
+            P.TransparentColor = Color.Transparent;
+            P.Images.SetKeyName(0, "P.png");
+            P.Images.SetKeyName(1, "P_pressed.PNG");
             // 
-            // name
+            // R
             // 
-            name.AutoSize = true;
-            name.BackColor = Color.White;
-            name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.cat_reacts;
-            name.Location = new Point(143, 416);
-            name.Name = "name";
-            name.Size = new Size(0, 45);
-            name.TabIndex = 6;
-            name.Visible = false;
+            R.ColorDepth = ColorDepth.Depth32Bit;
+            R.ImageStream = (ImageListStreamer)resources.GetObject("R.ImageStream");
+            R.TransparentColor = Color.Transparent;
+            R.Images.SetKeyName(0, "R.png");
+            R.Images.SetKeyName(1, "R_pressed.PNG");
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = ColorDepth.Depth32Bit;
+            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
+            imageList1.TransparentColor = Color.Black;
+            imageList1.Images.SetKeyName(0, "A.PNG");
+            imageList1.Images.SetKeyName(1, "A_pressed.PNG");
+            // 
+            // T
+            // 
+            T.ColorDepth = ColorDepth.Depth32Bit;
+            T.ImageStream = (ImageListStreamer)resources.GetObject("T.ImageStream");
+            T.TransparentColor = Color.Transparent;
+            T.Images.SetKeyName(0, "T.PNG");
+            T.Images.SetKeyName(1, "T_pressed.PNG");
+            // 
+            // L
+            // 
+            L.ColorDepth = ColorDepth.Depth32Bit;
+            L.ImageStream = (ImageListStreamer)resources.GetObject("L.ImageStream");
+            L.TransparentColor = Color.Transparent;
+            L.Images.SetKeyName(0, "L.PNG");
+            L.Images.SetKeyName(1, "L_pressed.PNG");
+            // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
             // 
             // chainButton
             // 
@@ -129,6 +140,43 @@
             chainButton.UseVisualStyleBackColor = true;
             chainButton.Visible = false;
             chainButton.Click += chainButton_Click;
+            // 
+            // hint_button
+            // 
+            hint_button.BackgroundImage = (Image)resources.GetObject("hint_button.BackgroundImage");
+            hint_button.Cursor = Cursors.Hand;
+            hint_button.FlatAppearance.BorderSize = 0;
+            hint_button.FlatStyle = FlatStyle.Flat;
+            hint_button.Location = new Point(342, 525);
+            hint_button.Margin = new Padding(0);
+            hint_button.Name = "hint_button";
+            hint_button.Size = new Size(154, 91);
+            hint_button.TabIndex = 11;
+            hint_button.UseVisualStyleBackColor = true;
+            hint_button.Click += hint_button_Click;
+            // 
+            // hint
+            // 
+            hint.BackgroundImage = Properties.Resources.hint1;
+            hint.BackgroundImageLayout = ImageLayout.Zoom;
+            hint.Location = new Point(429, 49);
+            hint.Name = "hint";
+            hint.Size = new Size(361, 360);
+            hint.TabIndex = 10;
+            hint.TabStop = false;
+            hint.Visible = false;
+            // 
+            // timer
+            // 
+            timer.AutoSize = true;
+            timer.BackColor = Color.FromArgb(255, 128, 0);
+            timer.BorderStyle = BorderStyle.FixedSingle;
+            timer.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            timer.Location = new Point(1149, 19);
+            timer.Name = "timer";
+            timer.Size = new Size(92, 39);
+            timer.TabIndex = 12;
+            timer.Text = "2 : 00";
             // 
             // panel1
             // 
@@ -172,14 +220,6 @@
             V_checkBox.UseVisualStyleBackColor = false;
             V_checkBox.CheckedChanged += V_CheckedChanged;
             // 
-            // V
-            // 
-            V.ColorDepth = ColorDepth.Depth32Bit;
-            V.ImageStream = (ImageListStreamer)resources.GetObject("V.ImageStream");
-            V.TransparentColor = Color.Transparent;
-            V.Images.SetKeyName(0, "V.png");
-            V.Images.SetKeyName(1, "V_pressed.png");
-            // 
             // W2_checkBox
             // 
             W2_checkBox.Appearance = Appearance.Button;
@@ -203,14 +243,6 @@
             W2_checkBox.TextImageRelation = TextImageRelation.ImageAboveText;
             W2_checkBox.UseVisualStyleBackColor = false;
             W2_checkBox.CheckedChanged += W2_CheckedChanged;
-            // 
-            // W
-            // 
-            W.ColorDepth = ColorDepth.Depth32Bit;
-            W.ImageStream = (ImageListStreamer)resources.GetObject("W.ImageStream");
-            W.TransparentColor = Color.Transparent;
-            W.Images.SetKeyName(0, "W.png");
-            W.Images.SetKeyName(1, "W_pressed.PNG");
             // 
             // W_checkBox
             // 
@@ -260,14 +292,6 @@
             P_checkBox.UseVisualStyleBackColor = false;
             P_checkBox.CheckedChanged += P_CheckedChanged;
             // 
-            // P
-            // 
-            P.ColorDepth = ColorDepth.Depth32Bit;
-            P.ImageStream = (ImageListStreamer)resources.GetObject("P.ImageStream");
-            P.TransparentColor = Color.Transparent;
-            P.Images.SetKeyName(0, "P.png");
-            P.Images.SetKeyName(1, "P_pressed.PNG");
-            // 
             // R_checkBox
             // 
             R_checkBox.Appearance = Appearance.Button;
@@ -292,14 +316,6 @@
             R_checkBox.UseVisualStyleBackColor = false;
             R_checkBox.CheckedChanged += R_CheckedChanged;
             // 
-            // R
-            // 
-            R.ColorDepth = ColorDepth.Depth32Bit;
-            R.ImageStream = (ImageListStreamer)resources.GetObject("R.ImageStream");
-            R.TransparentColor = Color.Transparent;
-            R.Images.SetKeyName(0, "R.png");
-            R.Images.SetKeyName(1, "R_pressed.PNG");
-            // 
             // A2_checkBox
             // 
             A2_checkBox.Appearance = Appearance.Button;
@@ -314,7 +330,7 @@
             A2_checkBox.FlatStyle = FlatStyle.Flat;
             A2_checkBox.ImageIndex = 0;
             A2_checkBox.ImageList = imageList1;
-            A2_checkBox.Location = new Point(104, 233);
+            A2_checkBox.Location = new Point(104, 235);
             A2_checkBox.Margin = new Padding(0);
             A2_checkBox.Name = "A2_checkBox";
             A2_checkBox.Size = new Size(25, 27);
@@ -323,14 +339,6 @@
             A2_checkBox.TextImageRelation = TextImageRelation.ImageAboveText;
             A2_checkBox.UseVisualStyleBackColor = false;
             A2_checkBox.CheckedChanged += A2_CheckedChanged;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = ColorDepth.Depth32Bit;
-            imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
-            imageList1.TransparentColor = Color.Black;
-            imageList1.Images.SetKeyName(0, "A.PNG");
-            imageList1.Images.SetKeyName(1, "A_pressed.PNG");
             // 
             // T_checkBox
             // 
@@ -346,7 +354,7 @@
             T_checkBox.FlatStyle = FlatStyle.Flat;
             T_checkBox.ImageIndex = 0;
             T_checkBox.ImageList = T;
-            T_checkBox.Location = new Point(165, 202);
+            T_checkBox.Location = new Point(166, 203);
             T_checkBox.Margin = new Padding(0);
             T_checkBox.Name = "T_checkBox";
             T_checkBox.Size = new Size(25, 27);
@@ -355,14 +363,6 @@
             T_checkBox.TextImageRelation = TextImageRelation.ImageAboveText;
             T_checkBox.UseVisualStyleBackColor = false;
             T_checkBox.CheckedChanged += T_CheckedChanged;
-            // 
-            // T
-            // 
-            T.ColorDepth = ColorDepth.Depth32Bit;
-            T.ImageStream = (ImageListStreamer)resources.GetObject("T.ImageStream");
-            T.TransparentColor = Color.Transparent;
-            T.Images.SetKeyName(0, "T.PNG");
-            T.Images.SetKeyName(1, "T_pressed.PNG");
             // 
             // L_checkBox
             // 
@@ -378,7 +378,7 @@
             L_checkBox.FlatStyle = FlatStyle.Flat;
             L_checkBox.ImageIndex = 0;
             L_checkBox.ImageList = L;
-            L_checkBox.Location = new Point(136, 202);
+            L_checkBox.Location = new Point(136, 203);
             L_checkBox.Margin = new Padding(0);
             L_checkBox.Name = "L_checkBox";
             L_checkBox.Size = new Size(25, 27);
@@ -387,14 +387,6 @@
             L_checkBox.TextImageRelation = TextImageRelation.ImageAboveText;
             L_checkBox.UseVisualStyleBackColor = false;
             L_checkBox.CheckedChanged += L_CheckedChanged;
-            // 
-            // L
-            // 
-            L.ColorDepth = ColorDepth.Depth32Bit;
-            L.ImageStream = (ImageListStreamer)resources.GetObject("L.ImageStream");
-            L.TransparentColor = Color.Transparent;
-            L.Images.SetKeyName(0, "L.PNG");
-            L.Images.SetKeyName(1, "L_pressed.PNG");
             // 
             // A_checkbox
             // 
@@ -410,7 +402,7 @@
             A_checkbox.FlatStyle = FlatStyle.Flat;
             A_checkbox.ImageIndex = 0;
             A_checkbox.ImageList = imageList1;
-            A_checkbox.Location = new Point(104, 203);
+            A_checkbox.Location = new Point(104, 204);
             A_checkbox.Margin = new Padding(0);
             A_checkbox.Name = "A_checkbox";
             A_checkbox.Size = new Size(25, 27);
@@ -425,134 +417,122 @@
             pictureBox2.BackColor = Color.Black;
             pictureBox2.BackgroundImage = Properties.Resources.자물쇠_교실;
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(0, -2);
+            pictureBox2.Location = new Point(0, -1);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(302, 455);
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // Back
-            // 
-            Back.BackColor = Color.Silver;
-            Back.BorderStyle = BorderStyle.None;
-            Back.Cursor = Cursors.Hand;
-            Back.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            Back.Location = new Point(30, 24);
-            Back.Name = "Back";
-            Back.Size = new Size(78, 26);
-            Back.TabIndex = 10;
-            Back.Text = "뒤로가기";
-            Back.Visible = false;
-            Back.MouseClick += Back_MouseClick;
-            // 
             // panel2
             // 
+            panel2.BackgroundImage = Properties.Resources.배경_학교_교실;
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(Back);
+            panel2.Controls.Add(panel1);
+            panel2.Controls.Add(dialogBox);
             panel2.Controls.Add(timer);
             panel2.Controls.Add(hint);
-            panel2.Controls.Add(dialog1);
-            panel2.Controls.Add(dialogBox);
             panel2.Controls.Add(hint_button);
-            panel2.Controls.Add(Back);
             panel2.Controls.Add(chainButton);
-            panel2.Controls.Add(panel1);
-            panel2.Controls.Add(pictureBox1);
             panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1262, 679);
             panel2.TabIndex = 11;
+            panel2.Click += dialogBox_Click;
             // 
-            // timer
+            // Back
             // 
-            timer.AutoSize = true;
-            timer.BackColor = Color.FromArgb(255, 128, 0);
-            timer.BorderStyle = BorderStyle.FixedSingle;
-            timer.Font = new Font("맑은 고딕", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            timer.Location = new Point(1149, 19);
-            timer.Name = "timer";
-            timer.Size = new Size(92, 39);
-            timer.TabIndex = 12;
-            timer.Text = "2 : 00";
+            Back.Font = new Font("함초롬돋움", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            Back.Location = new Point(24, 19);
+            Back.Name = "Back";
+            Back.Size = new Size(94, 31);
+            Back.TabIndex = 13;
+            Back.Text = "뒤로가기";
+            Back.UseVisualStyleBackColor = true;
+            Back.Visible = false;
+            Back.MouseClick += Back_MouseClick;
             // 
-            // hint
+            // dialogBox
             // 
-            hint.BackgroundImage = Properties.Resources.hint1;
-            hint.BackgroundImageLayout = ImageLayout.Zoom;
-            hint.Location = new Point(429, 49);
-            hint.Name = "hint";
-            hint.Size = new Size(361, 360);
-            hint.TabIndex = 10;
-            hint.TabStop = false;
-            hint.Visible = false;
+            dialogBox.BackColor = Color.Transparent;
+            dialogBox.BackgroundImage = Properties.Resources.dialog123;
+            dialogBox.Controls.Add(name);
+            dialogBox.Controls.Add(dialog1);
+            dialogBox.Location = new Point(0, 430);
+            dialogBox.Name = "dialogBox";
+            dialogBox.Size = new Size(1265, 249);
+            dialogBox.TabIndex = 5;
+            dialogBox.Click += label1_Click;
             // 
-            // hint_button
+            // name
             // 
-            hint_button.BackgroundImage = (Image)resources.GetObject("hint_button.BackgroundImage");
-            hint_button.Cursor = Cursors.Hand;
-            hint_button.FlatAppearance.BorderSize = 0;
-            hint_button.FlatStyle = FlatStyle.Flat;
-            hint_button.Location = new Point(342, 525);
-            hint_button.Margin = new Padding(0);
-            hint_button.Name = "hint_button";
-            hint_button.Size = new Size(154, 91);
-            hint_button.TabIndex = 11;
-            hint_button.UseVisualStyleBackColor = true;
-            hint_button.Click += hint_button_Click;
+            name.AutoSize = true;
+            name.BackColor = Color.Transparent;
+            name.Font = new Font("함초롬돋움", 24F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            name.ForeColor = Color.White;
+            name.Location = new Point(111, 35);
+            name.Name = "name";
+            name.Size = new Size(0, 41);
+            name.TabIndex = 16;
             // 
-            // timer1
+            // dialog1
             // 
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
+            dialog1.AutoSize = true;
+            dialog1.BackColor = Color.Transparent;
+            dialog1.Font = new Font("함초롬돋움", 17.9999981F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
+            dialog1.Location = new Point(111, 87);
+            dialog1.Name = "dialog1";
+            dialog1.Size = new Size(0, 32);
+            dialog1.TabIndex = 4;
+            dialog1.Click += label1_Click;
             // 
             // Scene1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(name);
             Controls.Add(panel2);
             Name = "Scene1";
             Size = new Size(1262, 679);
             Load += Scene1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
+            ((System.ComponentModel.ISupportInitialize)hint).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)hint).EndInit();
+            dialogBox.ResumeLayout(false);
+            dialogBox.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
-        private PictureBox dialogBox;
-        private Label dialog1;
-        private Label name;
-        private Button chainButton;
-        private Panel panel1;
-        private PictureBox pictureBox2;
-        private CheckBox A_checkbox;
         private ImageList imageList1;
-        private CheckBox L_checkBox;
         private ImageList L;
         private ImageList P;
         private ImageList R;
         private ImageList T;
         private ImageList V;
         private ImageList W;
-        private CheckBox T_checkBox;
-        private CheckBox P_checkBox;
-        private CheckBox R_checkBox;
-        private CheckBox A2_checkBox;
-        private CheckBox V_checkBox;
-        private CheckBox W2_checkBox;
-        private CheckBox W_checkBox;
-        private TextBox Back;
-        private Panel panel2;
         private System.Windows.Forms.Timer timer1;
+        private Button chainButton;
         private Button hint_button;
         private PictureBox hint;
         private Label timer;
+        private Panel panel1;
+        private CheckBox V_checkBox;
+        private CheckBox W2_checkBox;
+        private CheckBox W_checkBox;
+        private CheckBox P_checkBox;
+        private CheckBox R_checkBox;
+        private CheckBox A2_checkBox;
+        private CheckBox T_checkBox;
+        private CheckBox L_checkBox;
+        private CheckBox A_checkbox;
+        private PictureBox pictureBox2;
+        private Panel panel2;
+        private Button Back;
+        private Panel dialogBox;
+        private Label name;
+        private Label dialog1;
     }
 }

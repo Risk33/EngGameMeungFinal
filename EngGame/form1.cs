@@ -38,11 +38,11 @@ namespace EngGame
 
             MakeRoundedButton(questionButton1, 30);
             MakeRoundedButton(questionButton2, 30);
-            
+
             questionButton1.FlatStyle = FlatStyle.Flat;
         }
         // 메인 화면 버튼
-        private void Form1_load(object sender,EventArgs e)
+        private void Form1_load(object sender, EventArgs e)
         {
             Player.URL = @".\Resources\sound\MainScreenBGM.mp3";
             Console.WriteLine("배경음악시작");
@@ -88,6 +88,13 @@ namespace EngGame
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        screens.chap1.End end = new screens.chap1.End();
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            panel1.Controls.Clear();
+            panel1.Controls.Add(end);
         }
     }
 }

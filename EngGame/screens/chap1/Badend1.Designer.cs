@@ -28,51 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Badend1));
-            pictureBox1 = new PictureBox();
             dialog1 = new Label();
-            dialogBox = new PictureBox();
             name = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
+            dialogBox = new Panel();
+            panel1 = new Panel();
+            dialogBox.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImage = Properties.Resources.badend1;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(3, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1256, 679);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // dialog1
             // 
             dialog1.AutoSize = true;
-            dialog1.BackColor = Color.WhiteSmoke;
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            dialog1.ForeColor = Color.Black;
-            dialog1.Location = new Point(159, 483);
+            dialog1.BackColor = Color.Transparent;
+            dialog1.Font = new Font("함초롬돋움", 21.7499962F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            dialog1.ForeColor = Color.White;
+            dialog1.Location = new Point(591, 317);
             dialog1.Name = "dialog1";
-            dialog1.Size = new Size(21, 20);
+            dialog1.Size = new Size(41, 38);
             dialog1.TabIndex = 8;
             dialog1.Text = "...";
             dialog1.Visible = false;
             dialog1.Click += dialogBox_Click;
-            // 
-            // dialogBox
-            // 
-            dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.Location = new Point(145, 463);
-            dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
-            dialogBox.TabIndex = 7;
-            dialogBox.TabStop = false;
-            dialogBox.Visible = false;
-            dialogBox.Click += dialogBox_Click;
             // 
             // name
             // 
@@ -87,29 +63,50 @@
             name.TabIndex = 9;
             name.Visible = false;
             // 
+            // dialogBox
+            // 
+            dialogBox.BackColor = Color.Transparent;
+            dialogBox.BackgroundImage = Properties.Resources.dialog1;
+            dialogBox.BackgroundImageLayout = ImageLayout.Stretch;
+            dialogBox.Controls.Add(dialog1);
+            dialogBox.Location = new Point(0, 0);
+            dialogBox.Name = "dialogBox";
+            dialogBox.Size = new Size(1262, 679);
+            dialogBox.TabIndex = 10;
+            dialogBox.Click += pictureBox1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackgroundImage = Properties.Resources.badend1;
+            panel1.BackgroundImageLayout = ImageLayout.Zoom;
+            panel1.Controls.Add(dialogBox);
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1262, 679);
+            panel1.TabIndex = 0;
+            // 
             // Badend1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            Controls.Add(dialog1);
-            Controls.Add(dialogBox);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            Controls.Add(panel1);
             Controls.Add(name);
-            Controls.Add(pictureBox1);
             Name = "Badend1";
             Size = new Size(1262, 679);
             Load += Badend1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
+            dialogBox.ResumeLayout(false);
+            dialogBox.PerformLayout();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private PictureBox pictureBox1;
         private Label dialog1;
-        private PictureBox dialogBox;
         private Label name;
+        private Panel dialogBox;
+        private Panel panel1;
     }
 }

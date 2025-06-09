@@ -68,16 +68,15 @@ namespace EngGame.screens.chap1
                     name.Visible = true;
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
-                    dialog1.ForeColor = Color.Black;
-                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
-                    dialog1.Location = new Point(150, 471);
+                    dialog1.ForeColor = Color.White;
+                    dialog1.BackColor = Color.Transparent;
+                    dialog1.Location = new Point(100, 509);
                     dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
                 {
                     name.Visible = false;
-                    dialogBox.Visible = false;
                     dialog1.ForeColor = Color.White;
                     dialog1.Location = new Point(491, 265);
                     dialog1.BackColor = Color.Black;
@@ -90,7 +89,7 @@ namespace EngGame.screens.chap1
                     switch (imgnum)
                     {
                         case 1:
-                            pictureBox1.Visible = true;
+                            panel1.Visible = true;
                             enter_button.Visible = true;
                             peek_button.Visible = true;
                             break;
@@ -107,15 +106,15 @@ namespace EngGame.screens.chap1
         private String[,] dialog = new string[,]
     {
                 { "","SampleText", "" },
-                { "ㅁㅁ선생님","시간이 얼마 없으니까 바로 선생님들 목소리가 들렸던 지하로 가보자.", "dialogBoxOpen" },
-                { "","지하에 도착했다. 어떻게 해야할까?", "imageOpen/eventTempStop" },
+                { "가영 선생님","시간이 얼마 없으니까 바로 선생님들 목소리가 들렸던 지하로 가보자.", "dialogBoxOpen" },
+                { "","지하에 도착했다. 어떻게 해야할까?", "imageOpen" },
     }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
         private void peek_button_Click(object sender, EventArgs e)
         {
             wmp.URL = @".\Resources\sound\wood-creek-short.mp3";
             wmp.controls.play();
-            pictureBox1.BackgroundImage = Resources.배경_제사실_내부_peek;
+            panel1.BackgroundImage = Resources.배경_제사실_내부_peek;
             dialog1.Text = "일단은 안전한거 같은데. 친구의 모습은 보이지 않는다." +
                             "\n...손만 대었는데 문이 삐걱거린다..";
             peek_button.Visible = false;
@@ -125,7 +124,7 @@ namespace EngGame.screens.chap1
 
         private void back_Click(object sender, EventArgs e)
         {
-            pictureBox1.BackgroundImage = Resources.배경_제사실_앞;
+            panel1.BackgroundImage = Resources.배경_제사실_앞;
             dialog1.Text = "어떻게 할까?";
             peek_button.Visible = true;
             enter_button.Visible = true;

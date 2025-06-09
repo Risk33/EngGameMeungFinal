@@ -26,8 +26,6 @@ namespace EngGame.screens.chap1
         private void Scene1_Load(object sender, EventArgs e)
         {
             wmp = new WindowsMediaPlayer();
-            dialog1.BackColor = Color.FromArgb(255, 193, 198);
-            dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
         }
 
         private void dialogBox_Click(object sender, EventArgs e)
@@ -65,10 +63,9 @@ namespace EngGame.screens.chap1
                     name.Visible = true;
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
-                    dialog1.ForeColor = Color.Black;
-                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
+                    dialog1.ForeColor = Color.White;
                     //dialog1.Location = new Point(150, 471);
-                    dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+                    dialog1.Font = new Font("함초롬돋움", 17.9999981F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
                 }   // 대사 창 켜고 대사 위치 조정
                 if (returnEventNum == 2) // 대사 창이 필요 없다면?
@@ -110,11 +107,12 @@ namespace EngGame.screens.chap1
 
             if (center == true)
             {
-                dialog1.Left = (pictureBox1.Width - dialog1.Width) / 2;
+                dialog1.Left = (panel2.Width - dialog1.Width) / 2;
             }
             else
             {
-                dialog1.Location = new Point(150, 471);
+                dialog1.Location = new Point(111, 87);
+                name.Location = new Point(111, 35);
             }
         }
 
@@ -122,7 +120,7 @@ namespace EngGame.screens.chap1
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            UpdateDialog();
         }
 
         private String[,] dialog = new string[,]

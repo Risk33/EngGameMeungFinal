@@ -36,6 +36,7 @@ namespace EngGame.screens.chap1
             {
                 ss = dialog[num, 2].Split("/");
                 dialog1.Text = dialog[num, 1];
+                name.Text = dialog[num, 0];
             }
             catch
             {
@@ -51,9 +52,9 @@ namespace EngGame.screens.chap1
                 {
                     dialogBox.Visible = true;
                     dialog1.BringToFront();
-                    dialog1.ForeColor = Color.Black;
-                    dialog1.BackColor = Color.FromArgb(255, 193, 198);
-                    dialog1.Location = new Point(150, 471);
+                    dialog1.ForeColor = Color.White;
+                    dialog1.BackColor = Color.Transparent;
+                    dialog1.Location = new Point(100, 509);
                     dialog1.Font = new Font("맑은 고딕", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
                     center = false;
                 }   // 대사 창 켜고 대사 위치 조정
@@ -103,10 +104,10 @@ namespace EngGame.screens.chap1
 
         private String[,] dialog = new string[,]
         {
-                { "","ㅇㅇ아..! 얼른 수갑을 풀어줘야겠어..!", "" },
-                { "","ㅇㅇ아! 일어나!", "" },
+                { "가영 선생님","영훈아..! 얼른 수갑을 풀어줘야겠어..!", "" },
+                { "","영훈아! 일어나!", "" },
                 { "","(숨은 쉬는데 반응이 없다...)", "" },
-                { "","빨리 ㅇㅇ이의 수갑을 풀고 탈출하자!", "" },
+                { "","빨리 영훈이를 깨워서 탈출하자!", "" },
                 { "","", "endoftheDialog" },
         }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
 
@@ -142,12 +143,14 @@ namespace EngGame.screens.chap1
             bookButton.Visible = false;
             back.Visible = true;
             panel2.Visible = true;
+            dialog1.Visible = true;
+            dialogBox.Visible = true;
             pass1.Text = "00";
             pass2.Text = "00";
             num = 0;
+            dialog1.Text = "금고다! 이 안에 분명히 영훈이를 깨우는 약이 들어있을꺼야!";
             dialog = new string[,]
             {
-                { "","금고다! 이 안에 분명히 ㅁㅁ이를 깨우는 약이 들어있을꺼야!", "" },
                 { "","비밀번호가 필요한거 같다. 어딘가에 적혀 있지 않을까?", "" },
                 { "","마우스 휠으로 입력", "" },
             };
@@ -236,10 +239,11 @@ namespace EngGame.screens.chap1
             dialogBox.Visible = true;
             dialog1.Visible = true;
             openSafePanel.Visible = true;
+            name.Text = "가영 선생님";
             dialog1.Text = "이걸 먹이면 될꺼야!";
             dialog = new string[,]
             {
-                { "ㅁㅁ 선생님","이걸 먹이면 될꺼야!", "" },
+                { "가영 선생님","이걸 먹이면 될꺼야!", "" },
                 { "","네, 선생님!", "" },
                 { "","그렇게 우리는 친구를 깨운후 탈출했다.", "" },
                 { "","", "imageClose/dialogBoxClose" }, //헉 만들기 귀찮아서 안쓰는 이벤트 번호 재활용

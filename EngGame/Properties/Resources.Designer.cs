@@ -243,6 +243,26 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap dialog123 {
+            get {
+                object obj = ResourceManager.GetObject("dialog123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap dialog1234 {
+            get {
+                object obj = ResourceManager.GetObject("dialog1234", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap door {
             get {
                 object obj = ResourceManager.GetObject("door", resourceCulture);
@@ -463,6 +483,16 @@ namespace EngGame.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap 배경_제사실_내부 {
+            get {
+                object obj = ResourceManager.GetObject("배경.제사실_내부", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap 배경_제사실_내부_peek {
             get {
                 object obj = ResourceManager.GetObject("배경.제사실_내부_peek", resourceCulture);
@@ -486,6 +516,16 @@ namespace EngGame.Properties {
         internal static System.Drawing.Bitmap 배경_창고 {
             get {
                 object obj = ResourceManager.GetObject("배경.창고", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 배경_학교_교실 {
+            get {
+                object obj = ResourceManager.GetObject("배경.학교_교실", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
