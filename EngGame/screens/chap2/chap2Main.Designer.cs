@@ -32,12 +32,14 @@ namespace EngGame.screens
         {
             chap2 = new Panel();
             decoPanel = new Panel();
+            pictureBox1 = new PictureBox();
             name2 = new Label();
             name1 = new Label();
             dialog1 = new Label();
             dialog2 = new Label();
             chap2.SuspendLayout();
             decoPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // chap2
@@ -57,6 +59,7 @@ namespace EngGame.screens
             decoPanel.BackColor = Color.Transparent;
             decoPanel.BackgroundImage = Properties.Resources.dialog;
             decoPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            decoPanel.Controls.Add(pictureBox1);
             decoPanel.Controls.Add(name2);
             decoPanel.Controls.Add(name1);
             decoPanel.Controls.Add(dialog1);
@@ -66,6 +69,18 @@ namespace EngGame.screens
             decoPanel.Size = new Size(1259, 673);
             decoPanel.TabIndex = 3;
             decoPanel.Click += chap1story1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.기록지;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.Location = new Point(412, 68);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(473, 434);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Visible = false;
+            pictureBox1.Click += chap1story1_Click;
             // 
             // name2
             // 
@@ -125,6 +140,7 @@ namespace EngGame.screens
             chap2.ResumeLayout(false);
             decoPanel.ResumeLayout(false);
             decoPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,5 +152,6 @@ namespace EngGame.screens
         private Panel decoPanel;
         private Label name1;
         private Label name2;
+        private PictureBox pictureBox1;
     }
 }

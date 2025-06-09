@@ -15,11 +15,14 @@ using System.Runtime.CompilerServices;
 using System.Drawing.Imaging;
 using Timer = System.Windows.Forms.Timer;
 using EngGame.Properties;
+using WMPLib;
 
 namespace EngGame.screens
 {
     public partial class chap2Main : UserControl
     {
+        WindowsMediaPlayer wmp;
+        WindowsMediaPlayer background;
         public chap2Main()
         {
             InitializeComponent();
@@ -32,6 +35,8 @@ namespace EngGame.screens
         private void chap1Main_Load(object sender, EventArgs e)
         {
             dialog1.Left = (chap2.Width - dialog1.Width) / 2;
+            wmp = new WindowsMediaPlayer();
+            background = new WindowsMediaPlayer();
         }
 
         int line = 0;
@@ -52,6 +57,7 @@ namespace EngGame.screens
 
         int num = 0;
         int picNum = 0;
+        int soundNum = 0;
         bool center = true;
         private void UpdateDialog() // 대사 넘기기
         {
@@ -65,7 +71,6 @@ namespace EngGame.screens
                 ss = dialog[num, 2].Split("/");
                 ss2 = dialog[num, 1].Split("/");
                 names = dialog[num, 0].Split("/");
-                Console.WriteLine(ss2[0]);
                 dialog1.Text = ss2[0];
                 name1.Text = names[0];
                 try {
@@ -133,9 +138,16 @@ namespace EngGame.screens
                             chap2.BackgroundImage = Resources.배경_새벽_병원_내부;
                             break;
                         case 4:
-                            chap2.BackgroundImage = Resources.병원_원장실;
+                            pictureBox1.Visible = true;
                             break;
                         case 5:
+                            pictureBox1.Visible = false;
+                            chap2.BackgroundImage = Resources.원장실_문;
+                            break;
+                        case 6:
+                            chap2.BackgroundImage = Resources.병원_원장실;
+                            break;
+                        case 7:
                             chap2.BackgroundImage = Resources.병원_원장실_비상;
                             break;
 
@@ -150,6 +162,42 @@ namespace EngGame.screens
                     chap2.BackgroundImage.Dispose();
                     chap2.BackgroundImage = null;
                 }   // 이미지 닫기
+                if (returnEventNum == 6)
+                {
+                    soundNum++;
+                    switch (soundNum)
+                    {
+                        case 1:
+                            wmp.URL = @".\Resources\sound\telephone.mp3";
+                            wmp.controls.play();
+                            break;
+                        case 2:
+                            wmp.URL = @".\Resources\sound\telephone-pickup.mp3";
+                            wmp.controls.play();
+                            break;
+                        case 3:
+                            wmp.URL = @".\Resources\sound\telephone-alert.mp3";
+                            wmp.controls.play();
+                            break;
+                        case 4:
+                            background.URL = @".\Resources\sound\white-noise.mp3";
+                            background.controls.play();
+                            break;
+                        case 5:
+                            wmp.URL = @".\Resources\sound\metaldoor-close.mp3";
+                            wmp.controls.play();
+                            break;
+                        case 6:
+                            background.URL = @".\Resources\sound\alert.mp3";
+                            background.controls.play();
+                            break;
+                        case 7:
+                            background.URL = @".\Resources\sound\alert-fadeout.mp3";
+                            background.controls.play();
+                            break;
+
+                    } // 소리
+                }
             }
 
             if (center == true)
@@ -168,26 +216,22 @@ namespace EngGame.screens
         
         private void nextScreen()
         {
-            Form1 form1 = new Form1();
-            chap2.Controls.Clear();
-            chap2.BackColor = Color.Black;
-            chap2.Controls.Add(form1);
-            Console.WriteLine("무한 루핑");
+            Console.WriteLine("화면의 끝");
             // 화면 전환
         }
 
         private String[,] dialog = new string[,]
         {
             { "","SampleText", "" },
-            { "","...", "" },
-            { "만식","네, 전화받았습니다./ ", "dialogBoxOpen/imageOpen" },
+            { "","...", "soundPlay" },
+            { "만식","네, 전화받았습니다./ ", "dialogBoxOpen/imageOpen/soundPlay" },
             { "만식/공철","네, 전화받았습니다./오랜만이네, 동창회 이후로 몇 달 만이지..?\n 다름이 아니라 이번에 명지리에 있는 명지병원 취재를 맡았어. 혹시 아는 거 있어?","" },
             { "만식/공철","거기 완전 외딴 마을 아냐? \n 뭐 때문에?/오랜만이네, 동창회 이후로 몇 달 만이지..?\n 다름이 아니라 이번에 명지리에 있는 명지병원 취재를 맡았어. 혹시 아는 거 있어?", "" },
             { "만식/공철","거기 완전 외딴 마을 아냐? \n 뭐 때문에?/신혼부부가 여행 갔다가 남편이 다쳐서 그 병원에 입원했는데 퇴원도 안 시켜주고 면회도 안 된다더라.\n 수상해서 직접 가보려고.", "" },
             { "만식/공철", "조심해라. 이상하면 바로 빠져나오고./신혼부부가 여행 갔다가 남편이 다쳐서 그 병원에 입원했는데 퇴원도 안 시켜주고 면회도 안 된다더라.\n 수상해서 직접 가보려고.", "" },
             { "만식/공철","조심해라. 이상하면 바로 빠져나오고./응. 일 끝나고 연락할게. 한잔하자","dialogBoxOpen" },
             { "","그렇게 며칠뒤..","dialogBoxClose/imageClose" }
-           ,{ "","[음성 메시지 도착 소리]/",""}
+           ,{ "","[음성 메시지 도착 소리]/","soundPlay"}
             ,{ "/공철(녹음된 메시지)","/야, 여기 뭔가 이상해... " +
              "감기 환자처럼 위장하고 진료받았는데 \n 입원하라고 하더니 물건도 뺏기고 이상한 주사를 놓더라. "
            ,"dialogBoxOpen"}
@@ -195,18 +239,18 @@ namespace EngGame.screens
            ,{ "","[그날 바로 병원 앞에서 잠복해 보았지만 아무것도 찾지 못했다.]","dialogBoxClose/imageOpen"}
            ,{ "","[그러면 뭐... 직접 들어가 보는 수밖에 없지]",""}
            ,{ "","(낮에는 아무런 증거를 찾지 못했다. " +
-             "병원은 평범한 것처럼 보였지만… \n 뭔가 감춰져 있어.)","dialogBoxOpen/imageOpen"}
+             "병원은 평범한 것처럼 보였지만… \n 뭔가 감춰져 있어.)","dialogBoxOpen/imageOpen/soundPlay"}
            ,{ "","[병원 복도는 비상등 불빛만 작게 빛나 음산한 분위기를 자아냈다.]",""}
            ,{ "만식","공철... 네가 마지막으로 연락한 그날, \n 대체 무슨 일이 있었던 거야.",""}
            ,{ "","[이후 난 폐쇄된 병실, 의무 기록서, 의료 장비등을 수색했다.]",""}
-           ,{ "만식","이건… 감기 환자 기록이라기엔 이상한 처방 내역인데…",""}
-           ,{ "","[원장실 앞]",""}
+           ,{ "만식","(이건… 처방전인거 같은데 알수 없는 말 밖에 적혀져 있지 않다.)","imageOpen"}
+           ,{ "","[원장실 앞]","imageOpen"}
            ,{ "만식","여긴… 분명히 잠겨 있었는데.. \n 열려 있어?",""}
            ,{ "","[원장실 내부에 들어섬]","imageOpen"}
-           ,{ "만식","뭐야…? \n 문이 잠겼어?!",""}
-           ,{ "","[불이 꺼지고 경고등이 켜짐]","imageOpen"}
+           ,{ "만식","뭐야…? \n 문이 잠겼어?!","soundPlay"}
+           ,{ "만식","!!!","imageOpen/soundPlay"}
            ,{ "만식","(이 병원, 그냥 이상한 수준이 아니야. \n 반드시 진실을 밝혀야 해… \n 그리고 공철을 찾아야 한다.)",""}
-           ,{ "","To be Continued..","dialogBoxClose/imageClose"}
+           ,{ "","To be Continued..","dialogBoxClose/imageClose/soundPlay"}
            
 
         }; // 대사 모음, 2차원 배열 각가 캐릭터 이름, 대사, 필요한 이벤트 번호
