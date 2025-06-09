@@ -30,33 +30,63 @@ namespace EngGame.screens
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(chap2Main));
-            chap1 = new Panel();
+            chap2 = new Panel();
+            decoPanel = new Panel();
+            name2 = new Label();
+            name1 = new Label();
             dialog1 = new Label();
-            name = new Label();
-            dialogBox = new PictureBox();
-            pictureBox1 = new PictureBox();
-            timer1 = new System.Windows.Forms.Timer(components);
-            chap1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            dialog2 = new Label();
+            chap2.SuspendLayout();
+            decoPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // chap1
+            // chap2
             // 
-            chap1.AutoSize = true;
-            chap1.BackColor = Color.Black;
-            chap1.BackgroundImageLayout = ImageLayout.Center;
-            chap1.Controls.Add(dialog1);
-            chap1.Controls.Add(name);
-            chap1.Controls.Add(dialogBox);
-            chap1.Controls.Add(pictureBox1);
-            chap1.Location = new Point(0, 0);
-            chap1.Name = "chap1";
-            chap1.Size = new Size(1262, 682);
-            chap1.TabIndex = 0;
-            chap1.Click += chap1story1_Click;
+            chap2.AutoSize = true;
+            chap2.BackColor = Color.Black;
+            chap2.BackgroundImageLayout = ImageLayout.Zoom;
+            chap2.Controls.Add(decoPanel);
+            chap2.Location = new Point(0, 0);
+            chap2.Name = "chap2";
+            chap2.Size = new Size(1265, 682);
+            chap2.TabIndex = 0;
+            chap2.Click += chap1story1_Click;
+            // 
+            // decoPanel
+            // 
+            decoPanel.BackColor = Color.Transparent;
+            decoPanel.BackgroundImage = Properties.Resources.dialog;
+            decoPanel.BackgroundImageLayout = ImageLayout.Stretch;
+            decoPanel.Controls.Add(name2);
+            decoPanel.Controls.Add(name1);
+            decoPanel.Controls.Add(dialog1);
+            decoPanel.Controls.Add(dialog2);
+            decoPanel.Location = new Point(3, 3);
+            decoPanel.Name = "decoPanel";
+            decoPanel.Size = new Size(1259, 673);
+            decoPanel.TabIndex = 3;
+            decoPanel.Click += chap1story1_Click;
+            // 
+            // name2
+            // 
+            name2.AutoSize = true;
+            name2.Font = new Font("함초롬바탕 확장", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            name2.ForeColor = Color.Red;
+            name2.Location = new Point(35, 101);
+            name2.Name = "name2";
+            name2.Size = new Size(0, 32);
+            name2.TabIndex = 4;
+            name2.Visible = false;
+            // 
+            // name1
+            // 
+            name1.AutoSize = true;
+            name1.Font = new Font("함초롬바탕 확장", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            name1.ForeColor = Color.Yellow;
+            name1.Location = new Point(35, 508);
+            name1.Name = "name1";
+            name1.Size = new Size(0, 32);
+            name1.TabIndex = 3;
             // 
             // dialog1
             // 
@@ -65,74 +95,46 @@ namespace EngGame.screens
             dialog1.CausesValidation = false;
             dialog1.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
             dialog1.ForeColor = Color.White;
-            dialog1.Location = new Point(532, 325);
+            dialog1.Location = new Point(542, 318);
             dialog1.Name = "dialog1";
             dialog1.Size = new Size(175, 47);
             dialog1.TabIndex = 0;
             dialog1.Text = "Chapter 2";
             dialog1.Click += Dialog1_Click;
             // 
-            // name
+            // dialog2
             // 
-            name.AutoSize = true;
-            name.BackColor = Color.White;
-            name.Font = new Font("맑은 고딕", 24F, FontStyle.Regular, GraphicsUnit.Point, 129);
-            name.ForeColor = Color.Black;
-            name.Image = Properties.Resources.simpleName;
-            name.Location = new Point(151, 412);
-            name.Name = "name";
-            name.Size = new Size(84, 45);
-            name.TabIndex = 5;
-            name.Text = "이름";
-            name.Visible = false;
-            // 
-            // dialogBox
-            // 
-            dialogBox.BackColor = Color.Transparent;
-            dialogBox.BackgroundImage = (Image)resources.GetObject("dialogBox.BackgroundImage");
-            dialogBox.ErrorImage = null;
-            dialogBox.InitialImage = (Image)resources.GetObject("dialogBox.InitialImage");
-            dialogBox.Location = new Point(144, 465);
-            dialogBox.Name = "dialogBox";
-            dialogBox.Size = new Size(981, 193);
-            dialogBox.TabIndex = 3;
-            dialogBox.TabStop = false;
-            dialogBox.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Location = new Point(88, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1072, 679);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Visible = false;
-            pictureBox1.Click += pictureBox1_Click;
+            dialog2.AutoSize = true;
+            dialog2.BackColor = Color.Transparent;
+            dialog2.CausesValidation = false;
+            dialog2.Font = new Font("맑은 고딕", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 129);
+            dialog2.ForeColor = Color.White;
+            dialog2.Location = new Point(573, 167);
+            dialog2.Name = "dialog2";
+            dialog2.Size = new Size(0, 47);
+            dialog2.TabIndex = 2;
             // 
             // chap2Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(chap1);
+            Controls.Add(chap2);
             Name = "chap2Main";
             Size = new Size(1262, 679);
             Load += chap1Main_Load;
-            chap1.ResumeLayout(false);
-            chap1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dialogBox).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            chap2.ResumeLayout(false);
+            decoPanel.ResumeLayout(false);
+            decoPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Panel chap1;
+        private Panel chap2;
         private Label dialog1;
-        private PictureBox dialogBox;
-        private Label name;
-        private PictureBox pictureBox1;
-        private System.Windows.Forms.Timer timer1;
+        private Label dialog2;
+        private Panel decoPanel;
+        private Label name1;
+        private Label name2;
     }
 }
